@@ -48,16 +48,31 @@ Os estudantes devem ter conhecimento intermediário dos seguintes tópicos:
 ## Temas de Estudo
 
 - Fundamentos de Redes Neurais Artificiais: _Perceptron_, _Multilayer Perceptron_ e _Backpropagation_.
-- Componentes de Redes Neurais Artificiais: Arquiteturas, Otimizadores, _Loss Functions_.
+- Paradigmas de Aprendizagem Supervisionada: Classificação e Regressão, Algoritmos de Otimização e _Loss Functions_. 
+- Arquiteturas de Redes Neurais Artificiais: Redes Neurais Convolucionais, Redes Neurais Recorrentes e Mecanismos de Atenção.
+- Arquiteturas Generativas de Redes Neurais Artificiais: Autoencoders, Variational Autoencoders, Generative Adversarial Networks
+- Paradigmas de Aprendizagem Avançadas: Contrastive Learning, Self-Supervised Learning e Meta-learning
+- Paradigmas de Aprendizagem Compostas: Multi-task Learning, Multi-modal Learning, Joint-embedding Learning
+- Aspectos Práticos: Hyperparameter Tuning, Transfer Learning, Fine-tuning, Few-shot Learning, Zero-shot Learning, Domain Adaptation.
+- Arquiteturas Emergentes: Diffusion, Hyper Networks, Mixture of Experts, State-space Models, Graph Neural Networks
+- Tópicos Especiais: Explainable AI, Ética em IA, Deep Reinforcement Learning, Deep Recommendation
 
 ## Ferramentas Utilizadas
 
-- Google Colaboratory
-- 
+- Ambiente de Desenvolvimento Cloud (Gratuito): Google Colaboratory ou Lightning AI
+- Python: Pytorch, Numpy, Pyplot, Scikit-learn, OpenCV, etc.
 
 ## Aulas
 
-- Aula 01
+- Aula 01: Fundamentos de Redes Neurais Artificiais
+- Aula 02: Paradigmas de Aprendizagem Supervisionada
+- Aula 03: Arquiteturas de Redes Neurais Artificiais
+- Aula 04: Arquiteturas Generativas de Redes Neurais Artificiais
+- Aula 05: Paradigmas de Aprendizagem Avançadas
+- Aula 06: Paradigmas de Aprendizagem Compostas
+- Aula 07: Aspectos Práticos
+- Aula 08: Arquiteturas Emergentes e Tópicos Especiais
+- Aula 09: Projeto Final
 
 ## Materiais Adicionais
 
