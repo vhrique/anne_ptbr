@@ -17,22 +17,22 @@ Pesquisadores que continuaram estudando esta área conseguiram desenvolver model
 Isto foi possível principalmente pelo desenvolvimento do algorithmo de _backpropagration_, que permitiu treinar modelos maiores de forma eficiente.
 Porém, realizar o treinamento de modelos muito grandes se tornou uma tarefa computacionalmente muito complexa, e outros modelos computacionais mais eficientes começaram a ser desenvolvidos na área de _machine learning_ entre as décadas de 1990 e 2000.
 
-Anos depois, entre o final da década de 2000 e início de 2010, modelos cada vez maiores e mais eficientes foram desenvolvidos, graças a avanços em técnicas e a maior disponibilidade de poder computacional.
-Finalmente, em 2012, a RNA AlexNet foi vencedora numa competição de Visão Computacional por uma distância considerável em relação às outras técnicas clássicas de visão computacional.
-Isto trouxe muito otimismo na área de RNAs, que trouxe rápidos avanços na área de visão computacional.
+Anos depois, entre o final da década de 2000 e início de 2010, modelos cada vez maiores e mais eficientes foram desenvolvidos, graças a avanços em técnicas e a uma maior disponibilidade de poder computacional.
+Finalmente, em 2012, a RNA AlexNet foi vencedora de uma famosa competição de Visão Computacional (ImageNet) por uma distância considerável em relação às outras técnicas clássicas de visão computacional.
+Isto trouxe muito otimismo no uso de RNAs, resultando em novas pesquisas e em rápidos avanços na área de visão computacional.
 
 Consequentemente, novas arquiteturas foram desenvolvidos para resolver outros problemas de engenharia.
-Em 2017, foi desenvolvido o modelo _transformer_, que causou um rápido avanço na área de processamento de linguagem natural.
+Em 2017, foi desenvolvido o modelo _transformer_, que trouxe um rápido avanço na área de processamento de linguagem natural.
 Tal modelo também foi utilizado em outras áreas, incluindo visão computacional, o que trouxe ainda mais avanços, como Inteligência Artificial Generativa, capaz de conversar, gerar imagens e vídeos.
 
 Hoje em dia, estamos em uma fase de rápida transformação graças a esta tecnologia.
-Utilizamos chatbots que nos auxiliam no aprimoramento de nosso trabalho, nos livram de tarefas repetitivas, e conseguem inclusive realizar trabalho criativo.
+Utilizamos chatbots que nos auxiliam em nosso trabalho, nos livram de tarefas repetitivas, e conseguem inclusive realizar trabalho criativo.
 Nosso objetivo nessa disciplina é estudar os fundamentos e o estado da arte de redes neurais para compreender como utilizar esta tecnologia para resolver problemas complexos de engenharia.
 
 ## Ementa
 
 Ensinar conceitos básicos e avançados de redes neurais artificiais, assim como formas inovadoras de usar esta tecnologia para resolver problemas de _machine learning_ e engenharia.
-Por meio de exemplos e atividades, os estudantes irão resolver problemas de diversos de engenharia e _machine learning_.
+Por meio de exemplos e atividades, os estudantes irão resolver problemas de diversos de engenharia e _machine learning_, como processamento de imagens e sinais e geração de dados sintéticos.
 
 ## Público-alvo
 
@@ -51,11 +51,11 @@ Os estudantes devem ter conhecimento intermediário dos seguintes tópicos:
 - Paradigmas de Aprendizagem Supervisionada: Classificação e Regressão, Algoritmos de Otimização e _Loss Functions_. 
 - Arquiteturas de Redes Neurais Artificiais: Redes Neurais Convolucionais, Redes Neurais Recorrentes e Mecanismos de Atenção.
 - Arquiteturas Generativas de Redes Neurais Artificiais: Autoencoders, Variational Autoencoders, Generative Adversarial Networks
-- Paradigmas de Aprendizagem Avançadas: Contrastive Learning, Self-Supervised Learning e Meta-learning
-- Paradigmas de Aprendizagem Compostas: Multi-task Learning, Multi-modal Learning, Joint-embedding Learning
-- Aspectos Práticos: Hyperparameter Tuning, Transfer Learning, Fine-tuning, Few-shot Learning, Zero-shot Learning, Domain Adaptation.
-- Arquiteturas Emergentes: Diffusion, Hyper Networks, Mixture of Experts, State-space Models, Graph Neural Networks
-- Tópicos Especiais: Explainable AI, Ética em IA, Deep Reinforcement Learning, Deep Recommendation
+- Paradigmas de Aprendizagem Avançadas I: Contrastive Learning, Self-Supervised Learning e Meta-learning
+- Paradigmas de Aprendizagem Avançadas II: Multi-task Learning, Multi-modal Learning, Joint-embedding Learning
+- Aspectos Práticos: Hyperparameter Tuning, Transfer Learning, Fine-tuning, Model Distillation, Few-shot Learning, Zero-shot Learning, Domain Adaptation.
+- Arquiteturas Emergentes: Diffusion, Mixture of Experts, State-space Models, Hyper Networks, Graph Neural Networks
+- Tópicos Especiais: Explainable AI, Ética em IA, Deep Reinforcement Learning, Deep Recommender Systems
 
 ## Ferramentas Utilizadas
 
