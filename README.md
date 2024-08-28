@@ -64,7 +64,7 @@ Os estudantes devem ter conhecimento intermediário dos seguintes tópicos:
 
 ## Aulas
 
-- Aula 01: Fundamentos de Redes Neurais Artificiais
+- [Aula 01: Fundamentos de Redes Neurais Artificiais](01_Fundamentos_de_Redes_Neurais_Artificiais.ipynb)
 - Aula 02: Paradigmas de Aprendizagem Supervisionada
 - Aula 03: Arquiteturas de Redes Neurais Artificiais
 - Aula 04: Arquiteturas Generativas de Redes Neurais Artificiais
