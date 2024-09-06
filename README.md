@@ -65,7 +65,7 @@ Os estudantes devem ter conhecimento intermediário dos seguintes tópicos:
 ## Aulas
 
 - [Aula 01: Fundamentos de Redes Neurais Artificiais](01_Fundamentos_de_Redes_Neurais_Artificiais.ipynb)
-- Aula 02: Paradigmas de Aprendizagem Supervisionada
+- [Aula 02: Paradigmas de Aprendizagem Supervisionada](02_Aprendizagem_Supervisionada.ipynb)
 - Aula 03: Arquiteturas de Redes Neurais Artificiais
 - Aula 04: Arquiteturas Generativas de Redes Neurais Artificiais
 - Aula 05: Paradigmas de Aprendizagem Avançadas
@@ -76,7 +76,7 @@ Os estudantes devem ter conhecimento intermediário dos seguintes tópicos:
 
 ## Materiais Adicionais
 
-- Material Adicional 01
+- [Aula 01: Fundamentos de Pytorch](01a_Fnundamentos_de_Pytorch.ipynb)
 
 ## Professor
 
