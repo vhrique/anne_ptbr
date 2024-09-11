@@ -72,7 +72,19 @@ Os estudantes devem ter conhecimento intermediário dos seguintes tópicos:
 - Aula 06: Paradigmas de Aprendizagem Compostas
 - Aula 07: Aspectos Práticos
 - Aula 08: Arquiteturas Emergentes e Tópicos Especiais
-- Aula 09: Projeto Final
+- [Aula 09: Apresentação do Projeto Final](09_Intrucoes_para_Projeto_Final.md)
+
+## Avaliação
+
+Esta disciplina será avaliada da seguinte forma:
+
+- Listas de Exercícios (40%):
+  - Cada aula terá uma lista de exercícios que deve ser entregue até o final do curso.
+  - As listas deverão ser entregues como arquivos ipynb pelo sistema da disciplina.
+- Projeto Final (60%):
+  - O projeto final deve ser desenvolvido durante a disciplina, conforme [Instruções do Projeto Final](09_Intrucoes_para_Projeto_Final.md)
+  - O projeto final deverá ser apresentado na Aula 09
+  - O relatório deverá ser entregue no sistema da disciplina.
 
 ## Materiais Adicionais
 
