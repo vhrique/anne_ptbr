@@ -94,4 +94,4 @@ Esta disciplina será avaliada da seguinte forma:
 
 Dr. Eng. Victor Henrique Alves Ribeiro
 
-[![Linkedin](https://skillicons.dev/icons?i=linkedin)](https://www.linkedin.com/in/vhrique/) [![Twitter](https://skillicons.dev/icons?i=twitter)]([https://www.linkedin.com/in/vhrique/](https://x.com/vhrique))
+[![Linkedin](https://skillicons.dev/icons?i=linkedin)](https://www.linkedin.com/in/vhrique/) [![Twitter](https://skillicons.dev/icons?i=twitter)](https://x.com/vhrique)
