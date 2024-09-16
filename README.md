@@ -92,7 +92,7 @@ Esta disciplina será avaliada da seguinte forma:
 
 ## Materiais Adicionais
 
-- [Aula 01: Fundamentos de Pytorch](01a_Fnundamentos_de_Pytorch.ipynb)
+- [Aula 01: Fundamentos de Pytorch](01a_Fundamentos_de_Pytorch.ipynb)
 
 ## Professor
 
