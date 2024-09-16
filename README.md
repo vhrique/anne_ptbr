@@ -57,6 +57,10 @@ Os estudantes devem ter conhecimento intermediário dos seguintes tópicos:
 - Arquiteturas Emergentes: Diffusion, Mixture of Experts, State-space Models, Hyper Networks, Graph Neural Networks
 - Tópicos Especiais: Explainable AI, Ética em IA, Deep Reinforcement Learning, Deep Recommender Systems
 
+### Mapa Mental da Disciplina
+
+![Mapa Mental](https://raw.githubusercontent.com/vhrique/anne2024/main/figures/mapa_mental.drawio.svg)
+
 ## Ferramentas Utilizadas
 
 - Ambiente de Desenvolvimento Cloud (Gratuito): Google Colaboratory ou Lightning AI
