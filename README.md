@@ -94,6 +94,17 @@ Esta disciplina será avaliada da seguinte forma:
 
 - [Aula 01: Fundamentos de Pytorch](01a_Fundamentos_de_Pytorch.ipynb)
 
+- [Materiais de Curso sobre Deep Learning, de Yann LeCun](https://atcold.github.io/NYU-DLSP21/)
+
+## Referências
+
+- [Livro sobre Deep Learning, de Ian Goodfellow](https://www.deeplearningbook.org/)
+- [Livro sobre Deep Learning, de Christopher Bishop](https://www.bishopbook.com/)
+- [Livro sobre Tópicos Avançados de Machine Learning, de Kevin Murphy](https://probml.github.io/pml-book/book2.html)
+
+- [Licro de Aprendizagem Estatística, de Hastie et al.](https://hastie.su.domains/Papers/ESLII.pdf)
+- [Livro sobre Introdução de Machine Learning, de Kevin Murphy](https://probml.github.io/pml-book/book1.html)
+
 ## Professor
 
 Dr. Eng. Victor Henrique Alves Ribeiro
