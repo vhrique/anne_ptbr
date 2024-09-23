@@ -95,6 +95,7 @@ Esta disciplina será avaliada da seguinte forma:
 - [Aula 01: Fundamentos de Pytorch](01a_Fundamentos_de_Pytorch.ipynb)
 
 - [Materiais de Curso sobre Deep Learning, de Yann LeCun](https://atcold.github.io/NYU-DLSP21/)
+- [Notas de Aula sobre Algoritmos de Otimização, de Geoffrey Hinton](https://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec6.pdf)
 
 ## Referências
 
