@@ -48,7 +48,7 @@ Os estudantes devem ter conhecimento intermediário dos seguintes tópicos:
 ## Temas de Estudo
 
 - Fundamentos de Redes Neurais Artificiais: _Perceptron_, _Multilayer Perceptron_ e _Backpropagation_.
-- Paradigmas de Aprendizagem Supervisionada: Problemas de Classificação e Regressão, Algoritmos de Otimização, Funções de Perda. 
+- Paradigmas de Aprendizagem: Problemas de Classificação e Regressão, Algoritmos de Otimização, Funções de Perda. 
 - Arquiteturas de Redes Neurais Artificiais: Redes Neurais Convolucionais, Redes Neurais Recorrentes e Mecanismos de Atenção.
 - Arquiteturas Generativas de Redes Neurais Artificiais: Autoencoders, Variational Autoencoders, Generative Adversarial Networks
 - Paradigmas de Aprendizagem Avançadas I: Contrastive Learning, Self-Supervised Learning e Meta-learning
@@ -69,8 +69,8 @@ Os estudantes devem ter conhecimento intermediário dos seguintes tópicos:
 ## Aulas
 
 - [Aula 01: Fundamentos de Redes Neurais Artificiais](01_Fundamentos_de_Redes_Neurais_Artificiais.ipynb)
-- [Aula 02: Paradigmas de Aprendizagem Supervisionada](02_Aprendizagem_Supervisionada.ipynb)
-- [Aula 03: Arquiteturas de Redes Neurais Artificiais](03_Arquiteturas_Classicas.ipynb)
+- [Aula 02: Introdução à Paradigmas de Aprendizagem](02_Aprendizagem_Supervisionada.ipynb)
+- [Aula 03: Arquiteturas Discriminativas de Redes Neurais Artificiais](03_Arquiteturas_Classicas.ipynb)
 - Aula 04: Arquiteturas Generativas de Redes Neurais Artificiais
 - Aula 05: Paradigmas de Aprendizagem Avançadas
 - Aula 06: Paradigmas de Aprendizagem Compostas
