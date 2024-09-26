@@ -49,8 +49,8 @@ Os estudantes devem ter conhecimento intermediário dos seguintes tópicos:
 
 - Fundamentos de Redes Neurais Artificiais: _Perceptron_, _Multilayer Perceptron_ e _Backpropagation_.
 - Paradigmas de Aprendizagem: Problemas de Classificação e Regressão, Algoritmos de Otimização, Funções de Perda. 
-- Arquiteturas Discriminativas de Redes Neurais Artificiais: Redes Neurais Convolucionais, Redes Neurais Recorrentes e Mecanismos de Atenção.
-- Arquiteturas Generativas de Redes Neurais Artificiais: Autoencoders, Variational Autoencoders, Generative Adversarial Networks
+- Principais Arquiteturas de Redes Neurais Artificiais: Redes Neurais Convolucionais, Redes Neurais Recorrentes e Mecanismos de Atenção.
+- Arquiteturas Especializadas de Redes Neurais Artificiais: Autoencoders, Variational Autoencoders, Generative Adversarial Networks, Seq2seq
 - Paradigmas de Aprendizagem Avançadas I: Contrastive Learning, Self-Supervised Learning e Meta-learning
 - Paradigmas de Aprendizagem Avançadas II: Multi-task Learning, Multi-modal Learning, Joint-embedding Learning
 - Aspectos Práticos: Hyperparameter Tuning, Transfer Learning, Fine-tuning, Model Distillation, Few-shot Learning, Zero-shot Learning, Domain Adaptation.
@@ -70,8 +70,8 @@ Os estudantes devem ter conhecimento intermediário dos seguintes tópicos:
 
 - [Aula 01: Fundamentos de Redes Neurais Artificiais](01_Fundamentos_de_Redes_Neurais_Artificiais.ipynb)
 - [Aula 02: Introdução à Paradigmas de Aprendizagem](02_Paradigmas_Aprendizagem.ipynb)
-- [Aula 03: Arquiteturas Discriminativas de Redes Neurais Artificiais](03_Arquiteturas_Discriminativas.ipynb)
-- Aula 04: Arquiteturas Generativas de Redes Neurais Artificiais
+- [Aula 03: Principais Arquiteturas de Redes Neurais Artificiais](03_Arquiteturas_Principais.ipynb)
+- Aula 04: Arquiteturas Especializadas de Redes Neurais Artificiais
 - Aula 05: Paradigmas de Aprendizagem Avançadas
 - Aula 06: Paradigmas de Aprendizagem Compostas
 - Aula 07: Aspectos Práticos
