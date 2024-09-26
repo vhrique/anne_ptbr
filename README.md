@@ -78,6 +78,13 @@ Os estudantes devem ter conhecimento intermediário dos seguintes tópicos:
 - Aula 08: Arquiteturas Emergentes e Tópicos Especiais
 - [Aula 09: Apresentação do Projeto Final](09_Intrucoes_para_Projeto_Final.md)
 
+## Materiais Adicionais
+
+- [Aula 01: Fundamentos de Pytorch](01a_Fundamentos_de_Pytorch.ipynb)
+- [Aula 03: Exemplo Visão Computacional](03a_Exemplo_Visao_Computacional.ipynb)
+- [Aula 03: Exemplo de Série Temporal](03b_Exemplo_Serie_Temporal.ipynb)
+- [Aula 03: Exemplo de Processamento de Linguagem Natural](03c_Exemplo_PLN.ipynb)
+
 ## Avaliação
 
 Esta disciplina será avaliada da seguinte forma:
@@ -90,12 +97,11 @@ Esta disciplina será avaliada da seguinte forma:
   - O projeto final deverá ser apresentado na Aula 09
   - O relatório deverá ser entregue no sistema da disciplina.
 
-## Materiais Adicionais
-
-- [Aula 01: Fundamentos de Pytorch](01a_Fundamentos_de_Pytorch.ipynb)
+## Materiais Externos
 
 - [Materiais de Curso sobre Deep Learning, de Yann LeCun](https://atcold.github.io/NYU-DLSP21/)
 - [Notas de Aula sobre Algoritmos de Otimização, de Geoffrey Hinton](https://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec6.pdf)
+- [Livro Interativo _Dive into Deep Learning_](https://pt.d2l.ai/index.html)
 
 ## Referências
 
