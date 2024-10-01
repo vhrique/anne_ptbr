@@ -71,11 +71,11 @@ Os estudantes devem ter conhecimento intermediário dos seguintes tópicos:
 - [Aula 01: Fundamentos de Redes Neurais Artificiais](01_Fundamentos_de_Redes_Neurais_Artificiais.ipynb)
 - [Aula 02: Introdução à Paradigmas de Aprendizagem](02_Paradigmas_Aprendizagem.ipynb)
 - [Aula 03: Principais Arquiteturas de Redes Neurais Artificiais](03_Arquiteturas_Principais.ipynb)
-- Aula 04: Arquiteturas Especializadas de Redes Neurais Artificiais
-- Aula 05: Paradigmas de Aprendizagem Avançadas
-- Aula 06: Paradigmas de Aprendizagem Compostas
-- Aula 07: Aspectos Práticos
-- Aula 08: Arquiteturas Emergentes e Tópicos Especiais
+- [Aula 04: Arquiteturas Especializadas de Redes Neurais Artificiais](04_Arquiteturas_Especializadas.ipynb)
+- [Aula 05: Paradigmas de Aprendizagem Avançadas](05_Paradigmas_Avancados.ipynb)
+- [Aula 06: Paradigmas de Aprendizagem Compostas](06_Paradigmas_Compostos.ipynb)
+- [Aula 07: Aspectos Práticos](07_Aspectos_Praticos.ipynb)
+- [Aula 08: Arquiteturas Emergentes](08a_Arquiteturas_Emergentes.ipynb) e [Aula 08: Tópicos Especiais](08b_Topicos_Especiais.ipynb)
 - [Aula 09: Apresentação do Projeto Final](09_Intrucoes_para_Projeto_Final.md)
 
 ## Materiais Adicionais
