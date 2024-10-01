@@ -54,7 +54,7 @@ Os estudantes devem ter conhecimento intermediário dos seguintes tópicos:
 - Paradigmas de Aprendizagem Avançadas I: Contrastive Learning, Self-Supervised Learning e Meta-learning
 - Paradigmas de Aprendizagem Avançadas II: Multi-task Learning, Multi-modal Learning, Joint-embedding Learning
 - Aspectos Práticos: Hyperparameter Tuning, Transfer Learning, Fine-tuning, Model Distillation, Few-shot Learning, Zero-shot Learning, Domain Adaptation.
-- Arquiteturas Emergentes: Diffusion, Mixture of Experts, State-space Models, Hyper Networks, Graph Neural Networks
+- Arquiteturas Emergentes: Diffusion, Mixture of Experts, State-space Models, Deep Equilibrium Networks, Hyper Networks, Graph Neural Networks
 - Tópicos Especiais: Explainable AI, Ética em IA, Deep Reinforcement Learning, Deep Recommender Systems
 
 ### Mapa Mental da Disciplina
