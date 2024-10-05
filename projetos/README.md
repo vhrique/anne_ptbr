@@ -11,6 +11,8 @@ Os desafios são detalhados abaixo:
 Desafio proposto em 2008 a partir de dados de simulação da NASA.
 O Notebook já possui módulos para carregar dados processados, um exemplo simples de pré-processamento, e códigos com LSTM e MLP, assim como códigos de avaliação.
 
+Link: [Notebook](CMAPSS_RUL.ipynb)
+
 ## Outros Exemplos (NASA)
 
 A NASA possui um repositório com diversos datasets relacionados à prognóstico e detecção de falhas em máquinas.
