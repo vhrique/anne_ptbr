@@ -6,6 +6,8 @@ Esta página descreve os requisitos para o Projeto Final da disciplina de Egenha
 
 O objetivo deste projeto é a resolução de um problema de engenharia, da escolha do aluno, utilizando redes neurais artificiais.
 
+Alguns projetos de exemplo são disponibilizados na pasta [Projetos](projetos)
+
 ## Requisitos
 
 ### Requisitos do Projeto
