@@ -53,7 +53,7 @@ Os estudantes devem ter conhecimento intermediário dos seguintes tópicos:
 - Arquiteturas Especializadas de Redes Neurais Artificiais: Autoencoders, Variational Autoencoders, Generative Adversarial Networks, Seq2seq
 - Paradigmas de Aprendizagem Avançadas I: Contrastive Learning, Self-Supervised Learning e Meta-learning
 - Paradigmas de Aprendizagem Avançadas II: Multi-task Learning, Multi-modal Learning, Joint-embedding Learning
-- Aspectos Práticos: Hyperparameter Tuning, Transfer Learning, Fine-tuning, Model Distillation, Few-shot Learning, Zero-shot Learning, Domain Adaptation.
+- Aspectos Práticos: Hyperparameter Tuning, Transfer Learning, Fine-tuning, Model Distillation, Few-shot Learning, Zero-shot Learning, Domain Adaptation, Label Smoothing, Regularization, Neural Collapse.
 - Arquiteturas Emergentes: Diffusion, Mixture of Experts, State-space Models, Deep Equilibrium Networks, Hyper Networks, Graph Neural Networks, PointNet
 - Tópicos Especiais: Explainable AI, Ética em IA, Deep Reinforcement Learning, Deep Recommender Systems
 
