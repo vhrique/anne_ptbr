@@ -49,9 +49,9 @@ Os estudantes devem ter conhecimento intermediário dos seguintes tópicos:
 
 - Fundamentos de Redes Neurais Artificiais: _Perceptron_, _Multilayer Perceptron_ e _Backpropagation_.
 - Paradigmas de Aprendizagem: Problemas de Classificação e Regressão, Algoritmos de Otimização, Funções de Perda. 
-- Principais Arquiteturas de Redes Neurais Artificiais: Redes Neurais Convolucionais, Redes Neurais Recorrentes e Mecanismos de Atenção.
-- Arquiteturas Especializadas de Redes Neurais Artificiais: Autoencoders, Variational Autoencoders, Generative Adversarial Networks, Seq2seq
-- Paradigmas de Aprendizagem Avançadas I: Contrastive Learning, Self-Supervised Learning e Meta-learning
+- Arquiteturas Especializadas para Visão Computacional: Redes Neurais Convolucionais, Classificação de Imagens, Detecção de Objetos, Segmentação de Imagens.
+- Arquiteturas Especializadas para Dados Sequenciais: RNN, LSTM, GRU, Transformers.
+- Paradigmas de Aprendizagem Avançadas I: Self-Supervised Learning, Contrastive Learning e Meta-learning
 - Paradigmas de Aprendizagem Avançadas II: Multi-task Learning, Multi-modal Learning, Joint-embedding Learning
 - Aspectos Práticos: Hyperparameter Tuning, Transfer Learning, Fine-tuning, Model Distillation, Few-shot Learning, Zero-shot Learning, Domain Adaptation, Label Smoothing, Regularization, Neural Collapse.
 - Arquiteturas Emergentes: Diffusion, Mixture of Experts, State-space Models, Deep Equilibrium Networks, Hyper Networks, Graph Neural Networks, PointNet
@@ -70,8 +70,8 @@ Os estudantes devem ter conhecimento intermediário dos seguintes tópicos:
 
 - [Aula 01: Fundamentos de Redes Neurais Artificiais](01_Fundamentos_de_Redes_Neurais_Artificiais.ipynb)
 - [Aula 02: Introdução à Paradigmas de Aprendizagem](02_Paradigmas_Aprendizagem.ipynb)
-- [Aula 03: Principais Arquiteturas de Redes Neurais Artificiais](03_Arquiteturas_Principais.ipynb)
-- [Aula 04: Arquiteturas Especializadas de Redes Neurais Artificiais](04_Arquiteturas_Especializadas.ipynb)
+- [Aula 03: Arquiteturas Especializadas em Visão Computacional](03_CNN.ipynb)
+- [Aula 04: Arquiteturas Especializadas em Dados Sequenciais](04_RNN_Transformers.ipynb)
 - [Aula 05: Paradigmas de Aprendizagem Avançadas](05_Paradigmas_Avancados.ipynb)
 - [Aula 06: Paradigmas de Aprendizagem Compostas](06_Paradigmas_Compostos.ipynb)
 - [Aula 07: Aspectos Práticos](07_Aspectos_Praticos.ipynb)
@@ -82,8 +82,8 @@ Os estudantes devem ter conhecimento intermediário dos seguintes tópicos:
 
 - [Aula 01: Fundamentos de Pytorch](01a_Fundamentos_de_Pytorch.ipynb)
 - [Aula 03: Exemplo Visão Computacional](03a_Exemplo_Visao_Computacional.ipynb)
-- [Aula 03: Exemplo de Série Temporal](03b_Exemplo_Serie_Temporal.ipynb)
-- [Aula 03: Exemplo de Processamento de Linguagem Natural](03c_Exemplo_PLN.ipynb)
+- [Aula 04: Exemplo de Série Temporal](04a_Exemplo_Serie_Temporal.ipynb)
+- [Aula 04: Exemplo de Processamento de Linguagem Natural](04b_Exemplo_PLN.ipynb)
 
 ## Avaliação
 
