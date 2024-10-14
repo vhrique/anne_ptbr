@@ -51,11 +51,11 @@ Os estudantes devem ter conhecimento intermediário dos seguintes tópicos:
 - Paradigmas de Aprendizagem: Problemas de Classificação e Regressão, Algoritmos de Otimização, Funções de Perda. 
 - Arquiteturas Especializadas para Visão Computacional: Redes Neurais Convolucionais, Classificação de Imagens, Detecção de Objetos, Segmentação de Imagens.
 - Arquiteturas Especializadas para Dados Sequenciais: RNN, LSTM, GRU, Transformers.
-- Paradigmas de Aprendizagem Avançadas I: Self-Supervised Learning, Contrastive Learning e Meta-learning
+- Paradigmas de Aprendizagem Avançadas I: Self-Supervised Learning: Auto-encoders, GANs, Redes Siamesas e Contrastive Learning
 - Paradigmas de Aprendizagem Avançadas II: Multi-task Learning, Multi-modal Learning, Joint-embedding Learning
 - Aspectos Práticos: Hyperparameter Tuning, Transfer Learning, Fine-tuning, Model Distillation, Few-shot Learning, Zero-shot Learning, Domain Adaptation, Label Smoothing, Regularization, Neural Collapse.
 - Arquiteturas Emergentes: Diffusion, Mixture of Experts, State-space Models, Deep Equilibrium Networks, Hyper Networks, Graph Neural Networks, PointNet
-- Tópicos Especiais: Explainable AI, Ética em IA, Deep Reinforcement Learning, Deep Recommender Systems
+- Tópicos Especiais: Explainable AI, Ética em IA, Deep Reinforcement Learning, Deep Recommender Systems, Meta-learning
 
 ### Mapa Mental da Disciplina
 
