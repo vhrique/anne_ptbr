@@ -53,7 +53,7 @@ Os estudantes devem ter conhecimento intermediário dos seguintes tópicos:
 - Arquiteturas Especializadas para Dados Sequenciais: RNN, LSTM, GRU, Transformers.
 - Paradigmas de Aprendizagem Avançadas I: Self-Supervised Learning: Auto-encoders, GANs, Redes Siamesas e Contrastive Learning
 - Paradigmas de Aprendizagem Avançadas II: Multi-task Learning, Multi-modal Learning, Joint-embedding Learning
-- Aspectos Práticos: Hyperparameter Tuning, Transfer Learning, Fine-tuning, Model Distillation, Few-shot Learning, Zero-shot Learning, Domain Adaptation, Label Smoothing, Regularization, Neural Collapse.
+- Aspectos Práticos: Transfer Learning, Model Distillation, Domain Adaptation.
 - Arquiteturas Emergentes: Diffusion, Mixture of Experts, State-space Models, Deep Equilibrium Networks, Hyper Networks, Graph Neural Networks, PointNet
 - Tópicos Especiais: Explainable AI, Ética em IA, Deep Reinforcement Learning, Deep Recommender Systems, Meta-learning
 
