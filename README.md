@@ -54,7 +54,7 @@ Os estudantes devem ter conhecimento intermediário dos seguintes tópicos:
 - Paradigmas de Aprendizagem Avançadas I: Self-Supervised Learning: Auto-encoders, GANs, Redes Siamesas e Contrastive Learning
 - Paradigmas de Aprendizagem Avançadas II: Multi-task Learning, Multi-modal Learning, Joint-embedding Learning
 - Aspectos Práticos: Transfer Learning, Model Distillation, Domain Adaptation.
-- Arquiteturas Emergentes: Diffusion, Mixture of Experts, State-space Models, Deep Equilibrium Networks, Hyper Networks, Graph Neural Networks, PointNet
+- Novas Fronteiras em RNAs: Diffusion, Mixture of Experts, State-space Models, Deep Equilibrium Networks, Hyper Networks, Graph Neural Networks, PointNet
 - Tópicos Especiais: Explainable AI, Ética em IA, Deep Reinforcement Learning, Deep Recommender Systems, Meta-learning
 
 ### Mapa Mental da Disciplina
@@ -75,7 +75,7 @@ Os estudantes devem ter conhecimento intermediário dos seguintes tópicos:
 - [Aula 05: Paradigmas de Aprendizagem Avançadas](05_Paradigmas_Avancados.ipynb)
 - [Aula 06: Paradigmas de Aprendizagem Compostas](06_Paradigmas_Compostos.ipynb)
 - [Aula 07: Aspectos Práticos](07_Aspectos_Praticos.ipynb)
-- [Aula 08: Arquiteturas Emergentes](08a_Arquiteturas_Emergentes.ipynb) e [Aula 08: Tópicos Especiais](08b_Topicos_Especiais.ipynb)
+- [Aula 08: Novas Fronteiras](08a_Novas_Fronteiras.ipynb) e [Aula 08: Tópicos Especiais](08b_Topicos_Especiais.ipynb)
 - [Aula 09: Apresentação do Projeto Final](09_Intrucoes_para_Projeto_Final.md)
 
 ## Materiais Adicionais
