@@ -107,6 +107,7 @@ Esta disciplina será avaliada da seguinte forma:
 
 - [Livro sobre Deep Learning, de Ian Goodfellow](https://www.deeplearningbook.org/)
 - [Livro sobre Deep Learning, de Christopher Bishop](https://www.bishopbook.com/)
+- [Livro de Bolso sobre Deep Learning, de François Fleuret](https://fleuret.org/public/lbdl.pdf)
 - [Livro sobre Tópicos Avançados de Machine Learning (Deep Learning), de Kevin Murphy](https://probml.github.io/pml-book/book2.html)
 - [Livro sobre Introdução de Machine Learning, de Kevin Murphy](https://probml.github.io/pml-book/book1.html)
 - [Livro de Aprendizagem Estatística, de Hastie et al.](https://hastie.su.domains/Papers/ESLII.pdf)
