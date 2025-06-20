@@ -1,0 +1,9 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: README
+chapters:
+- file: 01_Fundamentos_de_Redes_Neurais_Artificiais
+- file: 02_Paradigmas_de_Aprendizagem
+- file: 03_CNN
