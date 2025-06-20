@@ -1,0 +1,647 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Paradigmas Compostos &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '06_Paradigmas_Compostos';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F06_Paradigmas_Compostos.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/06_Paradigmas_Compostos.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Paradigmas Compostos</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Paradigmas Compostos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-task-learning">Multi-task Learning</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formas">Formas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos-e-aplicacoes">Exemplos e Aplicações</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-modal-learning">Multi-modal Learning</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entradas-multi-modais">Entradas Multi-modais</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Formas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-para-conversao">Modelos para Conversão</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saidas-e-entradas-multi-modais">Saídas e Entradas Multi-modais</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perceiver-e-perceiver-io-2021">Perceiver e Perceiver IO (2021)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacoes">Aplicações</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#joint-embedding-learning">Joint-embedding Learning</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Formas</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consideracoes-finais">Considerações Finais</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proxima-aula">Próxima aula</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referências</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><a href="https://colab.research.google.com/github/vhrique/anne_ptbr/blob/main/06_Paradigmas_Compostos.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="paradigmas-compostos">
+<h1>Paradigmas Compostos<a class="headerlink" href="#paradigmas-compostos" title="Link to this heading">#</a></h1>
+<p>Os paradigmas compostos em redes neurais artificiais representam abordagens poderosas que integram diferentes aspectos do aprendizado simultâneo para maximizar o desempenho e a eficiência dos modelos. Entre esses paradigmas, destacam-se o multi-task learning, o multi-modal learning e o uso de joint embeddings. O multi-task learning permite que um único modelo resolva múltiplas tarefas ao mesmo tempo, aproveitando o compartilhamento de informações entre elas para melhorar a generalização e eficiência computacional. Já o multi-modal learning envolve a combinação de diferentes tipos de dados, como imagens, texto e áudio, permitindo que redes neurais integrem informações complementares de várias modalidades. Por fim, o joint embedding learning foca na criação de espaços de representação compartilhados, onde diferentes modalidades, como imagens e descrições textuais, podem ser mapeadas e comparadas diretamente, facilitando a interoperabilidade entre elas. Juntos, esses paradigmas formam a base de abordagens avançadas que ampliam o escopo e a flexibilidade das redes neurais artificiais em aplicações complexas e diversas.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="multi-task-learning">
+<h1>Multi-task Learning<a class="headerlink" href="#multi-task-learning" title="Link to this heading">#</a></h1>
+<p>O multi-task learning (MTL) é um paradigma que visa resolver múltiplas tarefas simultaneamente, utilizando um único modelo. A principal motivação por trás do MTL é o compartilhamento de informação entre tarefas relacionadas, onde as representações aprendidas em uma tarefa podem beneficiar outras, levando a uma melhor generalização e redução do overfitting (Caruana, 1997). Ao compartilhar representações internas, o MTL permite que o modelo capte padrões comuns entre as tarefas, o que muitas vezes resulta em um aprendizado mais robusto e eficiente. Além disso, o MTL também proporciona eficiência computacional, pois evita a necessidade de treinar modelos separados para cada tarefa, o que pode reduzir significativamente o custo de treinamento e a complexidade do sistema. Este paradigma é amplamente utilizado em diversas áreas, como visão computacional e processamento de linguagem natural, onde tarefas inter-relacionadas podem compartilhar características comuns.</p>
+<section id="formas">
+<h2>Formas<a class="headerlink" href="#formas" title="Link to this heading">#</a></h2>
+<p>O multi-task learning (MTL) pode ser realizado de diversas maneiras, dependendo de como as tarefas são integradas e de como as representações são compartilhadas. Uma das abordagens mais comuns é a de compartilhamento tardio de parâmetros, onde as tarefas compartilham as primeiras camadas do modelo para aprender representações gerais, e as camadas finais são específicas para cada tarefa. Outra abordagem é o compartilhamento antecipado, onde as tarefas têm redes praticamente separadas desde o início.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/multitask.jpg?raw=true" width=400></center>
+<p>Além disso, existem abordagens com redes completamente separadas que utilizam mecanismos para alinhar o aprendizado entre as tarefas, permitindo que troquem informações indiretamente, como as cross-stitch networks (Misra, 2016), ajustando as representações com base em seus respectivos contextos. Essas diferentes formas de realizar MTL são escolhidas dependendo da relação entre as tarefas e da necessidade de personalização das representações para cada uma.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/cross_stitch.jpg?raw=true" width=400></center></section>
+<section id="exemplos-e-aplicacoes">
+<h2>Exemplos e Aplicações<a class="headerlink" href="#exemplos-e-aplicacoes" title="Link to this heading">#</a></h2>
+<p>Multi-task Learning permite o desenvolvimento de diversas aplicações. De forma simplificada, um exemplo simples pode ser considerado o multi-label classification, já que a detecção de diferentes classes são realizadas simultaneamente. Porém, costumamos utilizar o termo de MTL para tarefas mais complexas.</p>
+<p>Um grande exemplo de MTL é a detecção de objetos, visto que temos saídas nas redes neurais para classificação e regressão (bounding boxes). Também temos modelos que realizam detecção e segmentação de objetos simultâneos, como Mask-RCNN, caracterizando aplicações de MTL.</p>
+<p>Além de visão computacional, também é possível realizar MTL ao treinar redes de processamento de linguagem natural para  analisar sentimentos e classificar tópicos simultaneamente. Em séries temporais, podemos realizar previsão de diversas saídas, como previsão de demanda e preço de produtos, simultaneemente.</p>
+<p>Aplicações mais recentes, como o desenvolvimento de veículos autônomos, envolvem não apenas realização de diversas tarefas, mas também uso de diversas modalidades de dados. Para isto, começamos também a trabalhar com Multi-modal Learning.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="multi-modal-learning">
+<h1>Multi-modal Learning<a class="headerlink" href="#multi-modal-learning" title="Link to this heading">#</a></h1>
+<p>O multi-modal learning é um paradigma de aprendizado que envolve a integração de dados de diferentes modalidades, como imagens, texto, áudio e vídeo, em um único modelo. A ideia principal é aproveitar as informações complementares oferecidas por cada modalidade para melhorar o desempenho em tarefas complexas. Por exemplo, um modelo de aprendizado multimodal pode combinar dados visuais e linguísticos para gerar descrições de imagens ou responder a perguntas sobre o conteúdo visual. Uma das grandes vantagens do multi-modal learning é sua capacidade de capturar representações mais ricas e contextualmente completas, o que resulta em uma melhor generalização. Essa abordagem tem aplicações em áreas como reconhecimento de fala, geração de legendas para imagens, e sistemas de recomendação, onde a combinação de várias fontes de dados permite que o modelo ofereça soluções mais precisas e robustas.</p>
+<section id="entradas-multi-modais">
+<h2>Entradas Multi-modais<a class="headerlink" href="#entradas-multi-modais" title="Link to this heading">#</a></h2>
+<p>Os modelos com entradas multi-modais são aqueles que processam simultaneamente diferentes tipos de dados, como imagens, texto e áudio, para realizar uma ou mais tarefas. A principal vantagem desses modelos é a capacidade de combinar as informações complementares fornecidas por cada modalidade, permitindo que o modelo tenha uma visão mais abrangente e rica do problema. Por exemplo, em tarefas de pergunta-resposta visual (Visual Question Answering - VQA), o modelo recebe tanto uma imagem quanto uma pergunta em formato textual e precisa gerar uma resposta precisa, utilizando dados visuais e linguísticos. Outro exemplo são os sistemas de recomendação multimodal, que integram dados como histórico de comportamento, imagens de produtos e descrições textuais para fornecer recomendações mais personalizadas. Esses modelos são amplamente usados em várias áreas, como saúde, onde combinam imagens médicas e relatórios clínicos, e em sistemas autônomos, que processam dados de sensores visuais e LiDAR. O uso de entradas multi-modais permite que o modelo capture relações mais profundas entre os dados e ofereça soluções mais robustas e adaptáveis.</p>
+<section id="id1">
+<h3>Formas<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Os dados multi-modais podem ser processados de diferentes maneiras, dependendo do estágio em que as informações de cada modalidade são combinadas no modelo. Uma abordagem comum é a fusão antecipada (early fusion), onde as entradas de diferentes modalidades são combinadas logo no início do pipeline, criando uma representação conjunta que é alimentada pelas camadas subsequentes da rede neural. Outra abordagem é a fusão tardia (late fusion), onde cada modalidade é processada separadamente por redes dedicadas, e as representações resultantes são combinadas apenas nas etapas finais para gerar a predição. Há também a fusão híbrida (hybrid fusion), onde as modalidades são combinadas em diferentes estágios do modelo, permitindo que cada fonte de dados contribua de forma mais eficaz em diferentes níveis de abstração. Essas técnicas são utilizadas em tarefas como reconhecimento de fala multimodal, sistemas de recomendação e análise de vídeos, onde a combinação eficiente de diferentes modalidades pode melhorar a precisão e robustez dos modelos. Cada abordagem de fusão oferece um equilíbrio entre complexidade computacional e a capacidade de capturar relações profundas entre as modalidades.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/multidomain.jpg?raw=true" width=400></center></section>
+</section>
+<section id="modelos-para-conversao">
+<h2>Modelos para Conversão<a class="headerlink" href="#modelos-para-conversao" title="Link to this heading">#</a></h2>
+<p>Os modelos multi-modais para conversão de dados são projetados para transformar dados de uma modalidade em outra, aproveitando informações provenientes de fontes distintas. Um exemplo notável é o DALL-E, que converte texto em imagens, gerando representações visuais a partir de descrições textuais detalhadas. Outro exemplo é o Text-to-Speech (TTS), onde o modelo transforma texto em áudio, permitindo que assistentes virtuais, como Alexa e Google Assistant, conversem com os usuários em linguagem natural.</p>
+<p>Da mesma forma, sistemas de Speech-to-Text (STT) convertem áudio em texto (Hannun, 2014), sendo amplamente usados em reconhecimento de fala para transcrição de áudio. Também temos exemplos de conversão de imagens em legendas (Xu, 2015). Esses modelos de conversão entre modalidades são essenciais para facilitar a comunicação entre humanos e máquinas, criar conteúdos automaticamente, e melhorar a acessibilidade para deficientes auditivos ou visuais.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/deep_speech.png?raw=true" width=400></center>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/show_attend_tell.png?raw=true" width=400></center></section>
+<section id="saidas-e-entradas-multi-modais">
+<h2>Saídas e Entradas Multi-modais<a class="headerlink" href="#saidas-e-entradas-multi-modais" title="Link to this heading">#</a></h2>
+<section id="perceiver-e-perceiver-io-2021">
+<h3>Perceiver e Perceiver IO (2021)<a class="headerlink" href="#perceiver-e-perceiver-io-2021" title="Link to this heading">#</a></h3>
+<p>O Perceiver foi desenvolvido para enfrentar as limitações de escalabilidade dos Transformers tradicionais, especialmente quando aplicados a entradas de alta dimensão, como vídeos ou nuvens de pontos 3D. Ao invés de processar todos os tokens de entrada diretamente, o Perceiver projeta os dados para um espaço latente de dimensão fixa, onde o mecanismo de atenção latente é aplicado, reduzindo drasticamente o custo computacional. Uma extensão, o Perceiver IO, vai além ao adaptar esse modelo para lidar com uma variedade de tipos de entradas e saídas, permitindo que o mesmo modelo processe dados como imagens, vídeos, texto e até sinais 3D, com diferentes formatos de saída. Com essa flexibilidade e eficiência, o Perceiver e o Perceiver IO estão tornando os Transformers mais adequados para aplicações multimodais e de grandes dimensões.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/perceiver-io.png?raw=true" width=500></center></section>
+</section>
+<section id="aplicacoes">
+<h2>Aplicações<a class="headerlink" href="#aplicacoes" title="Link to this heading">#</a></h2>
+<p>As aplicações de multi-modal learning são amplas e abrangem diversas áreas que se beneficiam da combinação de diferentes tipos de dados. Na área de visão computacional, por exemplo, sistemas como Visual Question Answering (VQA) integram imagens e textos para responder perguntas sobre o conteúdo visual de uma cena. Outra aplicação comum é na geração de legendas automáticas para imagens e vídeos, onde modelos multimodais combinam informações visuais e linguísticas para gerar descrições em linguagem natural. No campo da saúde, modelos multimodais podem combinar imagens médicas (como raios-X) com dados clínicos (como relatórios de pacientes) para realizar diagnósticos mais precisos e eficientes. Sistemas de recomendação multimodal também utilizam uma combinação de dados de texto, imagem e vídeo para personalizar recomendações de produtos em plataformas de e-commerce e mídia social. Além disso, os assistentes virtuais, como os sistemas de reconhecimento de fala, integram dados de áudio e texto para entender e gerar respostas mais naturais. Essas aplicações demonstram como a integração de múltiplas modalidades permite que os modelos compreendam melhor contextos complexos e forneçam soluções mais robustas.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="joint-embedding-learning">
+<h1>Joint-embedding Learning<a class="headerlink" href="#joint-embedding-learning" title="Link to this heading">#</a></h1>
+<p>O joint-embedding learning é uma abordagem que busca projetar diferentes modalidades de dados, como texto e imagens, em um espaço de representação compartilhado. O objetivo é permitir que dados de diferentes tipos sejam comparáveis diretamente, mesmo que venham de modalidades distintas. Esse processo de aprendizado é amplamente utilizado em modelos como o CLIP (Contrastive Language-Image Pre-training), que mapeia texto e imagens para o mesmo espaço vetorial, permitindo que descrições textuais e imagens correspondentes fiquem próximas entre si nesse espaço (Ramesh et al., 2022). Essa técnica possibilita tarefas como a busca cruzada entre modalidades, onde, por exemplo, pode-se encontrar uma imagem a partir de uma descrição textual ou vice-versa. Outra aplicação de joint-embedding é a criação de espaços semânticos que facilitam o zero-shot learning, permitindo que o modelo generalize para tarefas ou classes não vistas durante o treinamento. A principal vantagem do joint-embedding learning é a criação de uma representação comum que captura as relações semânticas entre diferentes formas de dados, tornando o aprendizado multimodal mais eficiente e flexível.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/clip.png?raw=true" width=700></center>
+<section id="id2">
+<h2>Formas<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>Existem diferentes tipos de joint-embedding que variam conforme a forma como as representações de diferentes modalidades são combinadas no espaço compartilhado. Um dos tipos mais comuns é o joint-embedding contrastivo, utilizado em modelos como o CLIP, onde as representações de modalidades (como imagens e textos) são aprendidas em paralelo e forçadas a se alinhar no mesmo espaço por meio de loss functions contrastivas. Esse método garante que as representações de itens correspondentes, como uma imagem e sua legenda, estejam próximas no espaço de embedding, enquanto itens não relacionados ficam distantes.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/joint_embedding.jpg?raw=true" width=400></center>
+<p>Outro tipo é o joint-embedding supervisionado, onde as modalidades são projetadas para um espaço compartilhado usando rótulos explícitos durante o treinamento, ajudando o modelo a aprender uma correspondência entre modalidades supervisionada por dados rotulados.</p>
+<p>Há também o joint-embedding não supervisionado, onde o modelo aprende a alinhar diferentes modalidades de forma autônoma, sem depender de rótulos, explorando padrões intrínsecos nos dados.</p>
+<p>Esses diferentes tipos de joint-embedding são amplamente aplicados em tarefas como busca multimodal, classificação cross-modal, e zero-shot learning, em que a flexibilidade do modelo para integrar informações de diferentes modalidades no mesmo espaço é crítica para seu sucesso.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="consideracoes-finais">
+<h1>Considerações Finais<a class="headerlink" href="#consideracoes-finais" title="Link to this heading">#</a></h1>
+<p>Nesta aula, abordamos diferentes paradigmas relacionados a arquiteturas compostas. Primeiro, iniciamos com multi-task learning, onde podemos realizar diversas tarefas simultaneamente com um modelo. Em seguida, avançamos para modelos multi-modais, que conseguem trabalhar com dados de diversas modalidades diferentes para realizar uma tarefa específica ou múltiplas. Por fim, falamos sobre joint-embedding learning, onde utilizamos técnicas como contrastive learning (aula passada) para mapear dados de modalidades diferentes em um mesmo espaço latente.</p>
+<section id="proxima-aula">
+<h2>Próxima aula<a class="headerlink" href="#proxima-aula" title="Link to this heading">#</a></h2>
+<p>Na próxima aula, falaremos sobre aspectos práticos no desenvolvimento de redes neurais artificiais.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercicios">
+<h1>Exercícios<a class="headerlink" href="#exercicios" title="Link to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>Volte ao exemplo de séries temporais da aula 4 (4.a) e explique como os modelos definidos trabalham com o conceito de multi-task learning</p></li>
+<li><p>Ao invés de um modelo multi-task, separe em dois modelos, um para GR e outro para CO2. Compare o resultado com a abordagem multi-task original.</p></li>
+<li><p>Explore modificações de arquitetura utilizando compartilhamento tardio (late sharing).</p></li>
+</ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="referencias">
+<h1>Referências<a class="headerlink" href="#referencias" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Caruana, R. (1997). Multitask learning. Machine learning, 28, 41-75.</p></li>
+<li><p>Misra, I., Shrivastava, A., Gupta, A., &amp; Hebert, M. (2016). Cross-stitch networks for multi-task learning. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 3994-4003).</p></li>
+<li><p>Ramesh, A., Pavlov, M., Goh, G., Gray, S., Voss, C., Radford, A., … &amp; Sutskever, I. (2021, July). Zero-shot text-to-image generation. In International conference on machine learning (pp. 8821-8831). Pmlr.</p></li>
+<li><p>Hannun, A. (2014). Deep Speech: Scaling up end-to-end speech recognition. arXiv preprint arXiv:1412.5567.</p></li>
+<li><p>Xu, K. (2015). Show, attend and tell: Neural image caption generation with visual attention. arXiv preprint arXiv:1502.03044.</p></li>
+<li><p>Jaegle, A., Gimeno, F., Brock, A., Vinyals, O., Zisserman, A., &amp; Carreira, J. (2021, July). Perceiver: General perception with iterative attention. In International conference on machine learning (pp. 4651-4664). PMLR.</p></li>
+<li><p>Jaegle, A., Borgeaud, S., Alayrac, J. B., Doersch, C., Ionescu, C., Ding, D., … &amp; Carreira, J. (2021). Perceiver io: A general architecture for structured inputs &amp; outputs. arXiv preprint arXiv:2107.14795.</p></li>
+<li><p>Radford, A., Kim, J. W., Hallacy, C., Ramesh, A., Goh, G., Agarwal, S., … &amp; Sutskever, I. (2021, July). Learning transferable visual models from natural language supervision. In International conference on machine learning (pp. 8748-8763). PMLR.</p></li>
+<li><p>Ramesh, A., Dhariwal, P., Nichol, A., Chu, C., &amp; Chen, M. (2022). Hierarchical text-conditional image generation with clip latents. arXiv preprint arXiv:2204.06125, 1(2), 3.</p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Paradigmas Compostos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-task-learning">Multi-task Learning</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formas">Formas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos-e-aplicacoes">Exemplos e Aplicações</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-modal-learning">Multi-modal Learning</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entradas-multi-modais">Entradas Multi-modais</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Formas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-para-conversao">Modelos para Conversão</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saidas-e-entradas-multi-modais">Saídas e Entradas Multi-modais</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perceiver-e-perceiver-io-2021">Perceiver e Perceiver IO (2021)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacoes">Aplicações</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#joint-embedding-learning">Joint-embedding Learning</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Formas</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consideracoes-finais">Considerações Finais</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proxima-aula">Próxima aula</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referências</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

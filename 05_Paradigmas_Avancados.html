@@ -1,0 +1,1054 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Paradigmas Avançados de Aprendizagem &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '05_Paradigmas_Avancados';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F05_Paradigmas_Avancados.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/05_Paradigmas_Avancados.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Paradigmas Avançados de Aprendizagem</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Paradigmas Avançados de Aprendizagem</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#self-supervised-learning">Self-Supervised Learning</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autoencoders">Autoencoders</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autoencoder-classico">Autoencoder Clássico</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#variantes-de-autoencoder">Variantes de Autoencoder</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-autoencoders">Variational Autoencoders</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-adversarial-networks">Generative Adversarial Networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gan-classico">GAN Clássico</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stylegan">StyleGAN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cyclegan">CycleGAN</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-de-reconstrucao-e-geracao-de-dados-com-mnist">Exemplo de Reconstrução e Geração de Dados com MNIST</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#siamese-networks">Siamese Networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#siamese-networks-modernas">Siamese Networks Modernas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tarefas-de-pretexto">Tarefas de Pretexto</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ideias-iniciais">Idéias Iniciais</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#masked-language-modelling">Masked Language Modelling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#masked-autoencoders">Masked Autoencoders</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contrastive-learning">Contrastive Learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simclr">SimCLR</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moco">MoCo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#byol">BYOL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-contrastive-learning">Supervised Contrastive Learning</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consideracoes-finais">Considerações Finais</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proxima-aula">Próxima Aula</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referências</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><a href="https://colab.research.google.com/github/vhrique/anne_ptbr/blob/main/05_Paradigmas_Avancados.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<span class="kn">import</span> <span class="nn">torch.optim</span> <span class="k">as</span> <span class="nn">optim</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">transforms</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="paradigmas-avancados-de-aprendizagem">
+<h1>Paradigmas Avançados de Aprendizagem<a class="headerlink" href="#paradigmas-avancados-de-aprendizagem" title="Link to this heading">#</a></h1>
+<p>Na aula de hoje, exploraremos um dos paradigmas mais avançados no campo do aprendizado de máquinas: o self-supervised learning. O self-supervised learning está revolucionando a forma como os modelos são treinados, permitindo o aprendizado de representações poderosas a partir de dados não rotulados, utilizando tarefas auxiliares que extraem informações úteis diretamente do próprio dado, como a predição de partes ausentes ou o aprendizado de similaridade. Vamos mergulhar nas técnicas mais influentes, como autoencoders, contrastive learning, e abordagens inovadoras como o BERT e masked autoencoders. Esse paradigma abre novas possibilidades no uso da inteligência artificial para resolver problemas complexos de forma mais eficiente e autônoma.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="self-supervised-learning">
+<h1>Self-Supervised Learning<a class="headerlink" href="#self-supervised-learning" title="Link to this heading">#</a></h1>
+<p>No self-supervised learning, o modelo resolve tarefas de pretexto — tarefas auxiliares geradas automaticamente a partir dos próprios dados, como a predição de partes mascaradas, reconstrução de imagens ou a aprendizagem de similaridades entre amostras. Durante a aula, discutiremos tópicos como autoencoders, masked autoencoders, e técnicas poderosas de aprendizado contrastivo, como SimCLR e MoCo. Além disso, veremos como modelos como o BERT utilizam essas ideias no processamento de linguagem natural e como isso impulsiona o desenvolvimento de soluções de ponta sem a necessidade de grandes quantidades de dados rotulados.
+Antes disso, vamos entender autoencoders e generative adversarial networks.</p>
+<section id="autoencoders">
+<h2>Autoencoders<a class="headerlink" href="#autoencoders" title="Link to this heading">#</a></h2>
+<p>Autoencoders são modelos projetados para aprender representações dos dados ao tentar reconstruir a entrada original a partir de uma codificação latente. Eles funcionam sem a necessidade de rótulos, utilizando a própria estrutura dos dados como supervisão, tornando-os extremamente úteis para tarefas como compressão, remoção de ruído e geração de dados. Estes modelos foram introduzidos bem antes da definição formal de self-supervised learning, mas seu princípio de utilizar os próprios dados como supervisão se alinha perfeitamente com esse paradigma.</p>
+<section id="autoencoder-classico">
+<h3>Autoencoder Clássico<a class="headerlink" href="#autoencoder-classico" title="Link to this heading">#</a></h3>
+<p>Os autoencoders são um tipo de rede neural projetada para aprender uma representação compacta dos dados, também conhecida como codificação latente, de forma não supervisionada. Uma das suas primeiras idéias surgiu na década de 1980 por Geoffrey Hinton. Eles são compostos por duas partes principais: o codificador, que reduz a dimensionalidade dos dados de entrada ao projetá-los em um espaço latente de menor dimensão, e o decodificador, que tenta reconstruir os dados originais a partir dessa representação comprimida. A principal aplicação dos autoencoders está em tarefas como redução de dimensionalidade, remoção de ruído e geração de novas amostras.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/ae.jpg?raw=true" width=500></center>
+<p>A avaliação de autoencoders geralmente é feita comparando a similaridade entre os dados de entrada e sua reconstrução gerada pelo decodificador, utilizando métricas como erro quadrático médio (MSE) ou entropia cruzada, dependendo do tipo de dados. O objetivo é minimizar essa diferença, o que indica que o autoencoder aprendeu uma boa representação latente. A otimização dos autoencoders é realizada através de técnicas padrão de redes neurais, como a <em>backpropagation</em> e o uso de algoritmos de otimização, como o gradiente descendente e suas variantes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Autoencoder</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Autoencoder</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="mi">256</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">decoder</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">256</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="n">input_size</span><span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">decoder</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="variantes-de-autoencoder">
+<h4>Variantes de Autoencoder<a class="headerlink" href="#variantes-de-autoencoder" title="Link to this heading">#</a></h4>
+<p>Entre as variações dos autoencoders, o <strong>Denoising Autoencoder</strong> merece destaque por sua capacidade de aprender representações robustas ao ruído. Diferente do autoencoder tradicional, ele é treinado para reconstruir a versão original de uma entrada corrompida, o que o torna ideal para tarefas de remoção de ruído e aprendizado de características mais estáveis dos dados (Vincent et al., 2008).</p>
+<p>Outro tipo importante é o <strong>Stacked Autoencoder</strong>, que consiste em uma rede mais profunda, onde várias camadas de autoencoders são empilhadas (Hinton &amp; Salakhutdinov, 2006). Isso permite que o modelo aprenda representações hierárquicas, capturando características de baixo e alto nível dos dados. Ao empilhar múltiplos autoencoders, o modelo pode capturar padrões mais complexos e abstrações, sendo amplamente utilizado em pré-treinamento de redes neurais profundas.</p>
+</section>
+</section>
+<section id="variational-autoencoders">
+<h3>Variational Autoencoders<a class="headerlink" href="#variational-autoencoders" title="Link to this heading">#</a></h3>
+<p>Os autoencoders variacionais (VAEs) são uma extensão dos autoencoders tradicionais que introduzem uma abordagem probabilística para a geração de dados (Kingma e Welling, 2013). Em vez de codificar os dados diretamente em um espaço latente fixo, os VAEs aprendem distribuições probabilísticas que representam as características latentes dos dados, com a rede aprendendo os parâmetros de média e variância dessas distribuições. Essa estrutura permite que o modelo gere novas amostras ao amostrar dessas distribuições latentes, o que torna os VAEs ideais para tarefas como síntese de dados, geração de imagens e aprendizado de características latentes com maior capacidade de generalização.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/vae.jpg?raw=true" width=600></center>
+<p>Em termos de avaliação e otimização, além da reconstrução dos dados, o VAE incorpora na função de perda um termo de regularização chamado divergência Kullback-Leibler (KL), que mede o quão próxima a distribuição latente aprendida está de uma distribuição normal padrão. A otimização, então, busca equilibrar dois objetivos: minimizar a perda de reconstrução, para garantir que a entrada seja bem reconstruída, e minimizar a divergência KL, para manter a estrutura latente bem regularizada. Esse processo permite que o VAE não apenas reconstrua os dados, mas também gere novas amostras de maneira mais controlada e com maior capacidade de generalização.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">VAE</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">VAE</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="mi">400</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mu_layer</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logvar_layer</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>  <span class="c1"># Log variância</span>
+
+        <span class="c1"># Decoder</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">decoder</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">400</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="n">input_size</span><span class="p">),</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">reparameterize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">logvar</span><span class="p">):</span>
+        <span class="n">std</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">logvar</span><span class="p">)</span>
+        <span class="n">eps</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn_like</span><span class="p">(</span><span class="n">std</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">mu</span> <span class="o">+</span> <span class="n">eps</span> <span class="o">*</span> <span class="n">std</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">encoded</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mu_layer</span><span class="p">(</span><span class="n">encoded</span><span class="p">)</span>
+        <span class="n">logvar</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">logvar_layer</span><span class="p">(</span><span class="n">encoded</span><span class="p">)</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reparameterize</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">logvar</span><span class="p">)</span>
+        <span class="n">decoded</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">decoder</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">decoded</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">logvar</span>
+
+<span class="k">def</span> <span class="nf">loss_function</span><span class="p">(</span><span class="n">recon_x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">logvar</span><span class="p">):</span>
+    <span class="n">BCE</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">functional</span><span class="o">.</span><span class="n">binary_cross_entropy</span><span class="p">(</span><span class="n">recon_x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">reduction</span><span class="o">=</span><span class="s1">&#39;sum&#39;</span><span class="p">)</span>
+    <span class="n">KLD</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">logvar</span> <span class="o">-</span> <span class="n">mu</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">logvar</span><span class="o">.</span><span class="n">exp</span><span class="p">())</span> <span class="c1"># KL Diverg.</span>
+    <span class="k">return</span> <span class="n">BCE</span> <span class="o">+</span> <span class="n">KLD</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="generative-adversarial-networks">
+<h2>Generative Adversarial Networks<a class="headerlink" href="#generative-adversarial-networks" title="Link to this heading">#</a></h2>
+<p>As GANs consistem em duas redes neurais que competem entre si: uma geradora, que cria dados falsos a partir de ruído, e uma discriminadora, que tenta distinguir entre dados reais e gerados. Embora as GANs não se encaixem diretamente nas típicas tarefas de pretexto que veremos em uma seção futura, elas utilizam o aprendizado auto-supervisionado na medida em que a rede discriminadora não precisa de rótulos explícitos; ela aprende a identificar padrões nos dados gerados e reais através da própria estrutura dos dados. Este processo adversarial resulta em um modelo capaz de aprender representações poderosas sem supervisão explícita, o que torna as GANs uma ferramenta essencial para tarefas como geração de imagens, aumento de dados e transferência de estilo.</p>
+<section id="gan-classico">
+<h3>GAN Clássico<a class="headerlink" href="#gan-classico" title="Link to this heading">#</a></h3>
+<p>As Generative Adversarial Networks (GANs), introduzidas por Ian Goodfellow em 2014, são um tipo de rede neural composta por dois modelos que competem entre si: um gerador, que cria novos dados a partir de uma entrada aleatória, e um discriminador, que tenta distinguir entre os dados reais e os gerados. O gerador busca melhorar suas amostras de forma a “enganar” o discriminador, enquanto o discriminador tenta identificar corretamente os dados gerados. Esse processo adversarial resulta em um gerador capaz de produzir dados realistas, como imagens, vídeos, ou textos, que são quase indistinguíveis dos dados reais. GANs têm aplicações amplas em áreas como geração de imagens, super-resolução, e síntese de dados.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/gan.jpg?raw=true" width=600></center><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Generator</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">latent_dim</span><span class="p">,</span> <span class="n">output_size</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Generator</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">latent_dim</span><span class="p">,</span> <span class="mi">256</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="mi">512</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="mi">1024</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="n">output_size</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Tanh</span><span class="p">()</span>  <span class="c1"># Para normalizar a saída entre [-1, 1]</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">img</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Discriminator</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Discriminator</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="mi">1024</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">LeakyReLU</span><span class="p">(</span><span class="mf">0.2</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">512</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">LeakyReLU</span><span class="p">(</span><span class="mf">0.2</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="mi">256</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">LeakyReLU</span><span class="p">(</span><span class="mf">0.2</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Sigmoid</span><span class="p">()</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">validity</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">validity</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="stylegan">
+<h3>StyleGAN<a class="headerlink" href="#stylegan" title="Link to this heading">#</a></h3>
+<p>A arquitetura do StyleGAN é uma evolução das redes generativas adversárias (GANs), projetada para permitir controle preciso sobre os atributos de imagens geradas. Diferente das GANs tradicionais, o StyleGAN introduz um mapeamento de espaço latente separado, onde um vetor de entrada passa por várias camadas completamente conectadas antes de ser injetado, em diferentes estágios, na rede geradora. Esse mapeamento, chamado de “style space”, permite que a rede controle aspectos específicos da imagem, como cor, textura ou formato, em múltiplas escalas. A rede geradora também utiliza Adaptive Instance Normalization (AdaIN), que ajusta a ativação em cada nível da rede, permitindo variações finas nos detalhes da imagem. Essa abordagem resulta em imagens altamente realistas e oferece controle sobre características específicas, como pose ou identidade em imagens de rostos, o que torna o StyleGAN um dos modelos mais avançados para a síntese de imagens realistas.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/stylegan.JPG?raw=true" width=500></center></section>
+<section id="cyclegan">
+<h3>CycleGAN<a class="headerlink" href="#cyclegan" title="Link to this heading">#</a></h3>
+<p>O CycleGAN é uma arquitetura de rede neural voltada para a tradução de imagens entre domínios sem a necessidade de pares de imagens correspondentes no treinamento. Diferente de outras GANs, que requerem dados emparelhados (como uma imagem de entrada e sua versão modificada), o CycleGAN utiliza um ciclo de consistência para garantir que uma imagem convertida de um domínio possa ser revertida para sua forma original. Isso é feito com duas redes geradoras e duas redes discriminadoras: uma geradora transforma imagens de um domínio para outro (por exemplo, fotos para pinturas) e a segunda faz a transformação inversa. O ciclo de consistência, onde uma imagem transformada retorna ao seu estado original, ajuda a manter a estrutura da imagem. O CycleGAN é amplamente utilizado para tarefas como transferência de estilo, mudanças sazonais em fotos e modificação de imagens sem a necessidade de grandes conjuntos de dados anotados.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/cyclegan.JPG?raw=true" width=700></center>
+</section>
+</section>
+<section id="exemplo-de-reconstrucao-e-geracao-de-dados-com-mnist">
+<h2>Exemplo de Reconstrução e Geração de Dados com MNIST<a class="headerlink" href="#exemplo-de-reconstrucao-e-geracao-de-dados-com-mnist" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">64</span>
+<span class="n">latent_dim</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">lr</span> <span class="o">=</span> <span class="mf">0.0002</span>
+<span class="n">epochs</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">((</span><span class="mf">0.5</span><span class="p">,),</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,))])</span>
+
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">MNIST</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="s1">&#39;./data&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">)</span>
+<span class="n">dataloader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/40d2944b877a0352c3ba5dc4bba507ad3cca68155d15940b6880a78bfbdd26ce.png" src="_images/40d2944b877a0352c3ba5dc4bba507ad3cca68155d15940b6880a78bfbdd26ce.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ae</span> <span class="o">=</span> <span class="n">Autoencoder</span><span class="p">(</span><span class="n">input_size</span><span class="o">=</span><span class="mi">28</span><span class="o">*</span><span class="mi">28</span><span class="p">)</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">ae</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">imgs</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">dataloader</span><span class="p">:</span>
+        <span class="n">imgs</span> <span class="o">=</span> <span class="n">imgs</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">imgs</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">recon</span> <span class="o">=</span> <span class="n">ae</span><span class="p">(</span><span class="n">imgs</span><span class="p">)</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">recon</span><span class="p">,</span> <span class="n">imgs</span><span class="p">)</span>
+
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Epoch [</span><span class="si">{</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">epochs</span><span class="si">}</span><span class="s1">], Loss: </span><span class="si">{</span><span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">ae</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/0a8ec6fdeb766c1d4b2342a2542e882e979479d3f35e3e7dbf54e80e40cf47ca.png" src="_images/0a8ec6fdeb766c1d4b2342a2542e882e979479d3f35e3e7dbf54e80e40cf47ca.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="n">ae</span><span class="o">.</span><span class="n">decoder</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">64</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a5e6d6e8464223952881110ffe7ff154dd0f0a1843c2beb70fb21103bac899b5.png" src="_images/a5e6d6e8464223952881110ffe7ff154dd0f0a1843c2beb70fb21103bac899b5.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vae</span> <span class="o">=</span> <span class="n">VAE</span><span class="p">(</span><span class="n">input_size</span><span class="o">=</span><span class="mi">28</span><span class="o">*</span><span class="mi">28</span><span class="p">)</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">vae</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">vae_loss</span><span class="p">(</span><span class="n">recon_x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">logvar</span><span class="p">):</span>
+    <span class="n">recon_loss</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">functional</span><span class="o">.</span><span class="n">mse_loss</span><span class="p">(</span><span class="n">recon_x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">reduction</span><span class="o">=</span><span class="s1">&#39;sum&#39;</span><span class="p">)</span>
+    <span class="n">kld</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">logvar</span> <span class="o">-</span> <span class="n">mu</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">logvar</span><span class="o">.</span><span class="n">exp</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">recon_loss</span> <span class="o">+</span> <span class="n">kld</span>
+
+<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">imgs</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">dataloader</span><span class="p">:</span>
+        <span class="n">imgs</span> <span class="o">=</span> <span class="n">imgs</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">imgs</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Flatten the image</span>
+        <span class="n">recon</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">logvar</span> <span class="o">=</span> <span class="n">vae</span><span class="p">(</span><span class="n">imgs</span><span class="p">)</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">vae_loss</span><span class="p">(</span><span class="n">recon</span><span class="p">,</span> <span class="n">imgs</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">logvar</span><span class="p">)</span>
+
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Epoch [</span><span class="si">{</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">epochs</span><span class="si">}</span><span class="s1">], Loss: </span><span class="si">{</span><span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">output</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">vae</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f62b53c01bbdb1f93a9e52b94ad3786b4fccc020b7abe771a4a38ccfe621153a.png" src="_images/f62b53c01bbdb1f93a9e52b94ad3786b4fccc020b7abe771a4a38ccfe621153a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="n">vae</span><span class="o">.</span><span class="n">decoder</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ef5442a5e3397a0aab8240c2d8585aa14fb650a6f7ed6de748b39c5f9c45591c.png" src="_images/ef5442a5e3397a0aab8240c2d8585aa14fb650a6f7ed6de748b39c5f9c45591c.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">generator</span> <span class="o">=</span> <span class="n">Generator</span><span class="p">(</span><span class="n">latent_dim</span><span class="p">,</span> <span class="mi">28</span><span class="o">*</span><span class="mi">28</span><span class="p">)</span>
+<span class="n">discriminator</span> <span class="o">=</span> <span class="n">Discriminator</span><span class="p">(</span><span class="mi">28</span><span class="o">*</span><span class="mi">28</span><span class="p">)</span>
+<span class="n">adversarial_loss</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">BCELoss</span><span class="p">()</span>
+
+<span class="n">optimizer_G</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">generator</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">lr</span><span class="p">)</span>
+<span class="n">optimizer_D</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">discriminator</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">lr</span><span class="p">)</span>
+
+<span class="n">epochs</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Epoch [</span><span class="si">{</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">epochs</span><span class="si">}</span><span class="s1">]&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">imgs</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dataloader</span><span class="p">):</span>
+        <span class="c1"># Ground truths</span>
+        <span class="n">real_imgs</span> <span class="o">=</span> <span class="n">imgs</span>
+        <span class="n">real_labels</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">imgs</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">fake_labels</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">imgs</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># ---------------------</span>
+        <span class="c1"># Train Discriminator</span>
+        <span class="c1"># ---------------------</span>
+        <span class="n">optimizer_D</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+
+        <span class="c1"># Real images</span>
+        <span class="n">real_loss</span> <span class="o">=</span> <span class="n">adversarial_loss</span><span class="p">(</span><span class="n">discriminator</span><span class="p">(</span><span class="n">real_imgs</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">real_imgs</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)),</span> <span class="n">real_labels</span><span class="p">)</span>
+
+        <span class="c1"># Fake images</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">imgs</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">latent_dim</span><span class="p">)</span>
+        <span class="n">fake_imgs</span> <span class="o">=</span> <span class="n">generator</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+        <span class="n">fake_loss</span> <span class="o">=</span> <span class="n">adversarial_loss</span><span class="p">(</span><span class="n">discriminator</span><span class="p">(</span><span class="n">fake_imgs</span><span class="o">.</span><span class="n">detach</span><span class="p">()),</span> <span class="n">fake_labels</span><span class="p">)</span>
+
+        <span class="n">d_loss</span> <span class="o">=</span> <span class="n">real_loss</span> <span class="o">+</span> <span class="n">fake_loss</span>
+        <span class="n">d_loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="n">optimizer_D</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+        <span class="c1"># -----------------</span>
+        <span class="c1"># Train Generator</span>
+        <span class="c1"># -----------------</span>
+        <span class="n">optimizer_G</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+
+        <span class="c1"># Train the generator to &quot;fool&quot; the discriminator</span>
+        <span class="n">g_loss</span> <span class="o">=</span> <span class="n">adversarial_loss</span><span class="p">(</span><span class="n">discriminator</span><span class="p">(</span><span class="n">fake_imgs</span><span class="p">),</span> <span class="n">real_labels</span><span class="p">)</span>
+        <span class="n">g_loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="n">optimizer_G</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+        <span class="c1"># Print the progress</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">400</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">Batch </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">dataloader</span><span class="p">)</span><span class="si">}</span><span class="s1"> Loss D: </span><span class="si">{</span><span class="n">d_loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">}</span><span class="s1">, Loss G: </span><span class="si">{</span><span class="n">g_loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="n">generator</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">latent_dim</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/639b0906989ed4b24fd0754aeadd71e79b6121f2af5274fe079826552e702560.png" src="_images/639b0906989ed4b24fd0754aeadd71e79b6121f2af5274fe079826552e702560.png" />
+</div>
+</div>
+</section>
+<section id="siamese-networks">
+<h2>Siamese Networks<a class="headerlink" href="#siamese-networks" title="Link to this heading">#</a></h2>
+<p>As Siamese Networks, introduzidas por Yann LeCun e seus colegas em 1993, são uma arquitetura poderosa que pode ser usada tanto em cenários supervisionados quanto em self-supervised learning. No contexto de self-supervision, as Siamese Networks são amplamente utilizadas em técnicas de aprendizado contrastivo, onde a rede aprende a comparar pares de dados. A arquitetura consiste em dois ou mais ramos idênticos (compartilhando pesos) que processam diferentes amostras e geram representações latentes, que são então comparadas para medir similaridade ou dissimilaridade. Em vez de rotular explicitamente cada amostra, o modelo é treinado para maximizar a similaridade entre amostras relacionadas (pares positivos) e minimizar a similaridade entre amostras diferentes (pares negativos). Essa abordagem de auto-supervisão tem sido fundamental para tarefas como detecção de similaridade, reconhecimento facial e até mesmo aprendizado de representações robustas sem a necessidade de rótulos complexos.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/siamese.jpg?raw=true" width=700></center>
+<p>No artigo original sobre Siamese Networks para verificação de assinaturas, o treinamento envolvia o uso de uma rede neural com dois ramos idênticos (compartilhando pesos), que processavam duas entradas (duas assinaturas) para gerar representações latentes. A distância do cosseno (<span class="math notranslate nohighlight">\(d_\text{cos}\)</span>) entre os espaços latentes (<span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span>) era utilizada para medir a similaridade entre essas representações. Durante o treinamento, pares de dados eram apresentados à rede, sendo pares positivos (assinaturas da mesma pessoa) e pares negativos (assinaturas falsas, ou de pessoas diferentes). O objetivo era minimizar a distância do cosseno para pares positivos, garantindo que as representações das assinaturas de uma mesma pessoa fossem semelhantes, e maximizar essa distância para pares negativos, de modo que assinaturas de pessoas diferentes fossem distinguidas claramente. Esse processo permitia à rede aprender a medir a similaridade entre assinaturas com base na orientação dos vetores no espaço latente, sem depender da magnitude dos vetores.</p>
+<div class="math notranslate nohighlight">
+\[
+d_{\text{cos}} = 1 - \frac{A \cdot B}{\|A\| \|B\|}
+\]</div>
+<section id="siamese-networks-modernas">
+<h3>Siamese Networks Modernas<a class="headerlink" href="#siamese-networks-modernas" title="Link to this heading">#</a></h3>
+<p>As redes siamesas modernas são geralmente treinadas utilizando uma função de perda baseada na contrastive loss ou na triplet loss, com o objetivo de aprender representações latentes discriminativas. Durante o treinamento com contrastive loss (<span class="math notranslate nohighlight">\(L\)</span>), a rede recebe pares de exemplos, que podem ser pares positivos (amostras da mesma classe, <span class="math notranslate nohighlight">\(y=1\)</span>) ou pares negativos (amostras de classes diferentes, <span class="math notranslate nohighlight">\(y=0\)</span>). Para os pares positivos, a rede é treinada para minimizar a distância <span class="math notranslate nohighlight">\(D\)</span> entre as representações latentes geradas pelos dois ramos da rede, garantindo que amostras semelhantes sejam mapeadas para pontos próximos no espaço latente. Para os pares negativos, a rede é treinada para maximizar a distância, separando representações de amostras diferentes por uma margem <span class="math notranslate nohighlight">\(m\)</span> mínima.</p>
+<div class="math notranslate nohighlight">
+\[
+L = (1-y) \cdot \frac{1}{2} \cdot D^2 + y \cdot \frac{1}{2} \cdot \text{max}(0, m - D)^2
+\]</div>
+<p>Além da contrastive loss, a triplet loss tem se tornado popular, utilizando conjuntos de três exemplos — uma âncora (<span class="math notranslate nohighlight">\(a\)</span>), um positivo (mesma classe, <span class="math notranslate nohighlight">\(p\)</span>) e um negativo (classe diferente, <span class="math notranslate nohighlight">\(n\)</span>) — para otimizar simultaneamente a proximidade entre o âncora e o positivo e a separação do âncora em relação ao negativo por uma margem <span class="math notranslate nohighlight">\(m\)</span>. Esses métodos têm sido amplamente aplicados em tarefas de verificação e reconhecimento facial, detecção de similaridades e aprendizado de representações robustas e comparáveis.</p>
+<div class="math notranslate nohighlight">
+\[
+L=\text{max}(0, D(a,p) - D(a,n) + m)
+\]</div>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/triplet.jpg?raw=true" width=500></center>
+<p>A triplet loss pode ser mais eficaz em cenários onde as classes são complexas ou têm fronteiras mais difíceis de distinguir. A inclusão de exemplos negativos diretamente no cálculo da perda garante que o modelo seja treinado para maximizar a separação entre diferentes classes, enquanto a contrastive loss pode, em alguns casos, não explorar bem essas relações entre classes. A contrastive loss apenas otimiza dois pontos de cada vez, enquanto a triplet loss garante uma estrutura relativa no espaço latente. Além disso, a triplet loss é projetada para lidar com hard negatives — exemplos negativos que são muito semelhantes à âncora, mas pertencem a uma classe diferente. Esses exemplos são críticos para o aprendizado eficaz de representações discriminativas. A triplet loss garante que esses exemplos sejam usados de forma eficiente no treinamento, enquanto a contrastive loss trata todos os pares negativos da mesma forma, sem distinção entre hard e easy negatives.</p>
+</section>
+</section>
+<section id="tarefas-de-pretexto">
+<h2>Tarefas de Pretexto<a class="headerlink" href="#tarefas-de-pretexto" title="Link to this heading">#</a></h2>
+<p>As tarefas de pretexto em self-supervised learning são estratégias que visam gerar automaticamente rótulos a partir dos próprios dados, eliminando a necessidade de grandes volumes de anotações manuais. Essas tarefas utilizam informações inerentes à estrutura dos dados para criar objetivos intermediários, também conhecidos como pretext tasks, que forçam o modelo a aprender representações úteis. Entre os exemplos mais comuns estão a predição da rotação de uma imagem, o preenchimento de regiões ocultas ou a ordenação de sequências temporais. Ao treinar o modelo para resolver essas tarefas artificiais, espera-se que ele capture características robustas e generalizáveis, que podem ser posteriormente aproveitadas para outras tarefas supervisionadas ou não supervisionadas.</p>
+<section id="ideias-iniciais">
+<h3>Idéias Iniciais<a class="headerlink" href="#ideias-iniciais" title="Link to this heading">#</a></h3>
+<p>As ideias iniciais de self-supervised learning surgiram da necessidade de superar a dependência de grandes quantidades de dados rotulados, que podem ser caros e demorados para se obter. Inspirado por conceitos do aprendizado não supervisionado, o self-supervised learning propõe a criação de tarefas auxiliares onde o próprio dado supervisiona o aprendizado, gerando rótulos a partir de informações intrínsecas aos dados. A motivação por trás dessas abordagens é que, ao explorar padrões e estruturas subjacentes aos dados, o modelo pode aprender representações mais ricas e generalizáveis. Essas primeiras ideias marcaram o início de um campo promissor, que buscava alavancar a abundância de dados não rotulados disponíveis em diversos domínios.</p>
+<p>A tarefa de <strong>jigsaw puzzle</strong> em self-supervised learning envolve dividir uma imagem em várias partes e embaralhá-las, de modo que o modelo seja treinado para rearranjar corretamente essas partes na posição original. Introduzida como uma tarefa de pretexto por Noroozi e Favaro em 2016, essa abordagem força o modelo a entender as relações espaciais e contextuais entre diferentes regiões da imagem. Ao resolver o puzzle, o modelo aprende representações que capturam características locais e globais da imagem, tornando-se capaz de generalizar para tarefas visuais supervisionadas, como detecção de objetos e segmentação.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/jigsaw.JPG?raw=true" width=500></center>
+<p>A colorização de imagens em self-supervised learning é uma tarefa de pretexto onde o modelo é treinado para converter uma imagem em tons de cinza para sua versão colorida. Esse método foi popularizado por Zhang et al.  em 2016. A ideia é que, ao tentar prever as cores corretas para cada pixel da imagem, o modelo seja forçado a aprender representações ricas e semânticas, capturando informações sobre a forma, textura e composição dos objetos na cena. Esse aprendizado implícito ajuda a desenvolver uma compreensão visual profunda que pode ser transferida para outras tarefas supervisionadas, como reconhecimento de objetos e classificação de imagens.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/colorize.JPG?raw=true" width=500></center>
+<p>A <strong>predição de rotação de imagens</strong> é uma tarefa comum em self-supervised learning, onde o modelo é treinado para identificar a rotação aplicada a uma imagem (0°, 90°, 180°, ou 270°). Essa tarefa simples força o modelo a aprender características visuais robustas e discriminativas das imagens, como formas, texturas e orientações, sem a necessidade de rótulos manuais (Gidaris et al., 2018). Ao resolver essa tarefa, o modelo é capaz de capturar representações que podem ser transferidas para outras tarefas supervisionadas, como classificação ou detecção de objetos.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/rotation.JPG?raw=true" width=500></center></section>
+<section id="masked-language-modelling">
+<h3>Masked Language Modelling<a class="headerlink" href="#masked-language-modelling" title="Link to this heading">#</a></h3>
+<p>O masked language modeling (MLM) é uma técnica fundamental em self-supervised learning aplicada ao processamento de linguagem natural (PLN), popularizada pelo modelo BERT (2018). Nesse método, partes de uma sentença são mascaradas aleatoriamente, e o modelo é treinado para prever as palavras ocultas com base no contexto fornecido pelas palavras visíveis. Essa abordagem permite que o modelo capture relações bidirecionais dentro da sequência, compreendendo melhor a semântica e a sintaxe do texto. O MLM é uma tarefa eficaz para o aprendizado de representações linguísticas robustas, que podem ser aplicadas a uma ampla gama de tarefas de PLN supervisionadas, como classificação de texto, tradução e resposta a perguntas.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/bert.jpg?raw=true" width=700></center></section>
+<section id="masked-autoencoders">
+<h3>Masked Autoencoders<a class="headerlink" href="#masked-autoencoders" title="Link to this heading">#</a></h3>
+<p>Masked autoencoders (MAE) são uma técnica aplicada principalmente à área de visão computacional. Nesse método, partes significativas da entrada, como pixels em uma imagem, são mascaradas aleatoriamente, e o modelo é treinado para reconstruir essas regiões ocultas a partir das partes visíveis. Introduzido por He et al. em 2021, o MAE se inspira na ideia do masked language modeling, mas adapta o conceito para domínios visuais. Através dessa tarefa de reconstrução, o modelo aprende representações visuais ricas e eficientes, capazes de capturar tanto detalhes locais quanto estruturas globais, sendo especialmente útil para tarefas supervisionadas subsequentes, como classificação e detecção de objetos.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/masked_autoencoder.JPG?raw=true" width=500></center></section>
+</section>
+<section id="contrastive-learning">
+<h2>Contrastive Learning<a class="headerlink" href="#contrastive-learning" title="Link to this heading">#</a></h2>
+<p>Contrastive learning é uma abordagem poderosa em self-supervised learning que busca aprender representações discriminativas, aproximando exemplos similares e afastando exemplos diferentes no espaço de representação. A ideia central é que, para cada amostra de dados, o modelo deve identificar quais outras amostras são mais parecidas, formando pares positivos (semelhantes) e negativos (diferentes). Métodos como SimCLR e MoCo popularizaram essa técnica, utilizando diferentes formas de gerar amostras positivas e negativas, como augumentações de dados ou o uso de instâncias diferentes. Contrastive learning está intimamente relacionado a Siamese Networks, uma arquitetura que também trabalha com pares de entradas, comparando similaridades entre elas para aprender representações. O aprendizado contrastivo é eficaz porque ensina o modelo a identificar características intrínsecas dos dados, resultando em representações robustas e generalizáveis para uma variedade de tarefas supervisionadas, sem a necessidade de rótulos manuais.</p>
+<section id="simclr">
+<h3>SimCLR<a class="headerlink" href="#simclr" title="Link to this heading">#</a></h3>
+<p>SimCLR (Simple Framework for Contrastive Learning of Visual Representations) é uma abordagem de self-supervised learning apresentada pela equipe do Google Research em 2020, que simplifica o aprendizado contrastivo ao dispensar a necessidade de memória complexa ou redes de professores, como usadas em métodos anteriores. Em SimCLR, uma imagem é transformada por meio de diferentes augmentações (como rotação, corte ou alteração de cores), criando duas versões da mesma imagem. O modelo é então treinado para maximizar a similaridade entre essas duas versões (par positivo), enquanto minimiza a similaridade em relação a outras imagens (pares negativos). SimCLR também introduz o uso de um projection head, uma pequena rede neural que mapeia as representações aprendidas para um espaço latente adequado para o cálculo da perda contrastiva. Através desse processo, o modelo aprende representações visuais generalizáveis que podem ser transferidas para tarefas supervisionadas com excelente desempenho, especialmente em cenários com poucos dados rotulados.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/simclr.JPG?raw=true" width=400></center></section>
+<section id="moco">
+<h3>MoCo<a class="headerlink" href="#moco" title="Link to this heading">#</a></h3>
+<p>MoCo (Momentum Contrast) é uma técnica de self-supervised learning baseada em aprendizado contrastivo, desenvolvida pela equipe da Facebook AI Research e apresentada em 2020. A principal inovação do MoCo é o uso de uma fila dinâmica e um mecanismo de atualização por momentum para construir um banco de memória consistente para as representações de amostras negativas, superando limitações de métodos anteriores, como a necessidade de grandes lotes para o cálculo das perdas contrastivas. MoCo utiliza duas redes neurais: uma rede principal e uma rede auxiliar de momentum, onde a segunda é uma versão suavizada da primeira, atualizada gradualmente com os pesos da rede principal, garantindo maior estabilidade no treinamento. Essa abordagem resulta em representações visuais de alta qualidade que podem ser transferidas eficientemente para tarefas supervisionadas, como classificação e detecção de objetos.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/moco.JPG?raw=true" width=400></center></section>
+<section id="byol">
+<h3>BYOL<a class="headerlink" href="#byol" title="Link to this heading">#</a></h3>
+<p>BYOL (Bootstrap Your Own Latent) é uma abordagem de self-supervised learning introduzida pela equipe do DeepMind em 2020, que se destaca por eliminar a necessidade de pares negativos, comuns em métodos de aprendizado contrastivo como SimCLR e MoCo. BYOL utiliza duas redes neurais, chamadas de online e target networks, onde a online network é treinada para prever a representação da target network. A target network é uma cópia suavizada da online network, atualizada por um mecanismo de momentum. Ao contrário de métodos contrastivos tradicionais, BYOL apenas maximiza a similaridade entre duas versões da mesma imagem, sem comparar com imagens diferentes. Esse processo, chamado de bootstrapping, permite que o modelo aprenda representações ricas sem a necessidade de pares negativos, alcançando resultados de ponta em tarefas de visão computacional, mesmo com poucos dados rotulados.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/byol.JPG?raw=true" width=700></center></section>
+<section id="supervised-contrastive-learning">
+<h3>Supervised Contrastive Learning<a class="headerlink" href="#supervised-contrastive-learning" title="Link to this heading">#</a></h3>
+<p>Supervised Contrastive Learning é uma extensão do aprendizado contrastivo tradicional que aproveita dados rotulados para melhorar o processo de aprendizado de representações. Introduzido pela equipe do Google Research em 2020, esse método aplica a lógica do contraste não apenas entre pares positivos gerados por augmentações de dados, mas também entre exemplos da mesma classe. No supervised contrastive learning, o objetivo é maximizar a similaridade entre amostras que compartilham o mesmo rótulo, enquanto se minimiza a similaridade entre amostras de classes diferentes. Essa abordagem permite que o modelo explore melhor as relações entre as categorias nos dados, resultando em representações mais discriminativas e robustas. Além disso, ele proporciona ganhos de desempenho em comparação com os métodos tradicionais supervisionados, como o uso da entropia cruzada para classificação, especialmente em cenários de classificação com múltiplas classes e em datasets com grande diversidade.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/scl.JPG?raw=true" width=500></center></section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercicios">
+<h1>Exercícios<a class="headerlink" href="#exercicios" title="Link to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>Discuta sobre como abordagens como GAN conseguem fazer tarefas de geração de imagens e transformação de dados.</p></li>
+<li><p>Discuta como pré-treino utilizando self-supervised learning é capaz de melhorar resultados de modelos supervisionados.</p></li>
+<li><p>Encontre aplicações recentes de como self-supervised learning vem sendo utilizado em aplicações práticas.</p></li>
+</ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="consideracoes-finais">
+<h1>Considerações Finais<a class="headerlink" href="#consideracoes-finais" title="Link to this heading">#</a></h1>
+<p>Nesta aula, abordamos paradigmas diferentes para treino de redes neurais artificiais. Ao invés de utilizar dados anotados, utilizamos os próprios dados de diversas formas diferentes para realizar o que chamamos de treino auto-supervisionado.</p>
+<section id="proxima-aula">
+<h2>Próxima Aula<a class="headerlink" href="#proxima-aula" title="Link to this heading">#</a></h2>
+<p>Na próxima aula, continuaremos vendo paradigmas avançados de aprendizagem, como:</p>
+<ul class="simple">
+<li><p>Multi-task Learning</p></li>
+<li><p>Multi-modal Learning</p></li>
+<li><p>Joint Embedding</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="referencias">
+<h1>Referências<a class="headerlink" href="#referencias" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Rumelhart, D. E., Hinton, G. E., &amp; Williams, R. J. (1986). Learning internal representations by error propagation. Parallel distributed processing, explorations in the microstructure of cognition.</p></li>
+<li><p>Vincent, P., Larochelle, H., Bengio, Y., &amp; Manzagol, P. A. (2008, July). Extracting and composing robust features with denoising autoencoders. In Proceedings of the 25th international conference on Machine learning (pp. 1096-1103).</p></li>
+<li><p>Hinton, G. E., &amp; Salakhutdinov, R. R. (2006). Reducing the dimensionality of data with neural networks. science, 313(5786), 504-507.</p></li>
+<li><p>Kingma, D. P. (2013). Auto-encoding variational bayes. arXiv preprint arXiv:1312.6114.</p></li>
+<li><p>Goodfellow, I., Pouget-Abadie, J., Mirza, M., Xu, B., Warde-Farley, D., Ozair, S., … &amp; Bengio, Y. (2014). Generative adversarial nets. Advances in neural information processing systems, 27.</p></li>
+<li><p>Karras, T., Laine, S., &amp; Aila, T. (2019). A style-based generator architecture for generative adversarial networks. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (pp. 4401-4410).</p></li>
+<li><p>Zhu, J. Y., Park, T., Isola, P., &amp; Efros, A. A. (2017). Unpaired image-to-image translation using cycle-consistent adversarial networks. In Proceedings of the IEEE international conference on computer vision (pp. 2223-2232).</p></li>
+<li><p>Bromley, J., Guyon, I., LeCun, Y., Säckinger, E., &amp; Shah, R. (1993). Signature verification using a” siamese” time delay neural network. Advances in neural information processing systems, 6.</p></li>
+<li><p>Noroozi, M., &amp; Favaro, P. (2016, September). Unsupervised learning of visual representations by solving jigsaw puzzles. In European conference on computer vision (pp. 69-84). Cham: Springer International Publishing.</p></li>
+<li><p>Zhang, R., Isola, P., &amp; Efros, A. A. (2016). Colorful image colorization. In Computer Vision–ECCV 2016: 14th European Conference, Amsterdam, The Netherlands, October 11-14, 2016, Proceedings, Part III 14 (pp. 649-666). Springer International Publishing.</p></li>
+<li><p>Gidaris, S., Singh, P., &amp; Komodakis, N. (2018). Unsupervised representation learning by predicting image rotations. arXiv preprint arXiv:1803.07728.</p></li>
+<li><p>Devlin, J. (2018). Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805.</p></li>
+<li><p>He, K., Chen, X., Xie, S., Li, Y., Dollár, P., &amp; Girshick, R. (2022). Masked autoencoders are scalable vision learners. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (pp. 16000-16009).</p></li>
+<li><p>Chen, T., Kornblith, S., Norouzi, M., &amp; Hinton, G. (2020, November). A simple framework for contrastive learning of visual representations. In International conference on machine learning (pp. 1597-1607). PMLR.</p></li>
+<li><p>He, K., Fan, H., Wu, Y., Xie, S., &amp; Girshick, R. (2020). Momentum contrast for unsupervised visual representation learning. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (pp. 9729-9738).</p></li>
+<li><p>Grill, J. B., Strub, F., Altché, F., Tallec, C., Richemond, P., Buchatskaya, E., … &amp; Valko, M. (2020). Bootstrap your own latent-a new approach to self-supervised learning. Advances in neural information processing systems, 33, 21271-21284.</p></li>
+<li><p>Khosla, P., Teterwak, P., Wang, C., Sarna, A., Tian, Y., Isola, P., … &amp; Krishnan, D. (2020). Supervised contrastive learning. Advances in neural information processing systems, 33, 18661-18673.</p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Paradigmas Avançados de Aprendizagem</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#self-supervised-learning">Self-Supervised Learning</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autoencoders">Autoencoders</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autoencoder-classico">Autoencoder Clássico</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#variantes-de-autoencoder">Variantes de Autoencoder</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-autoencoders">Variational Autoencoders</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-adversarial-networks">Generative Adversarial Networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gan-classico">GAN Clássico</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stylegan">StyleGAN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cyclegan">CycleGAN</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-de-reconstrucao-e-geracao-de-dados-com-mnist">Exemplo de Reconstrução e Geração de Dados com MNIST</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#siamese-networks">Siamese Networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#siamese-networks-modernas">Siamese Networks Modernas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tarefas-de-pretexto">Tarefas de Pretexto</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ideias-iniciais">Idéias Iniciais</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#masked-language-modelling">Masked Language Modelling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#masked-autoencoders">Masked Autoencoders</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contrastive-learning">Contrastive Learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simclr">SimCLR</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moco">MoCo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#byol">BYOL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-contrastive-learning">Supervised Contrastive Learning</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consideracoes-finais">Considerações Finais</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proxima-aula">Próxima Aula</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referências</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

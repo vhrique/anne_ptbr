@@ -1,0 +1,585 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Novas Fronteiras em Arquiteturas de Redes Neurais &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '08a_Novas_Fronteiras';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F08a_Novas_Fronteiras.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/08a_Novas_Fronteiras.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Novas Fronteiras em Arquiteturas de Redes Neurais</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Novas Fronteiras em Arquiteturas de Redes Neurais</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combinacao-de-modelos-com-mixture-of-experts">Combinação de Modelos com Mixture of Experts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#novas-redes-neurais-deep-equilibrium-models">Novas Redes Neurais - Deep Equilibrium Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avancando-modelagem-de-sequencias-com-state-space-models">Avançando Modelagem de Sequências com State-space Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trabalhando-com-grafos-usando-graph-neural-networks">Trabalhando com Grafos usando Graph Neural Networks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trabalhando-com-nuvem-de-pontos-utilizando-pointnet">Trabalhando com Nuvem de Pontos utilizando PointNet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gerando-imagens-com-diffusion">Gerando Imagens com Diffusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gerando-ambientes-3d-com-neural-radiance-fields-e-3d-gaussian-splatting">Gerando Ambientes 3D com Neural Radiance Fields e 3D Gaussian Splatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aprendendo-pesos-de-redes-neurais-com-hypernetworks">Aprendendo Pesos de Redes Neurais com HyperNetworks</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consideracoes-finais">Considerações Finais</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referências</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><a href="https://colab.research.google.com/github/vhrique/anne_ptbr/blob/main/08a_Novas_Fronteiras.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="novas-fronteiras-em-arquiteturas-de-redes-neurais">
+<h1>Novas Fronteiras em Arquiteturas de Redes Neurais<a class="headerlink" href="#novas-fronteiras-em-arquiteturas-de-redes-neurais" title="Link to this heading">#</a></h1>
+<p>As novas fronteiras em arquiteturas de redes neurais refletem uma série de avanços que estão moldando o futuro da inteligência artificial. Tecnologias como o Mixture of Experts permitem que redes complexas sejam divididas em módulos especializados, otimizando a eficiência e o desempenho em tarefas diversificadas. As Deep Equilibrium Networks representam uma mudança de paradigma ao estabilizar o modelo em um ponto de equilíbrio, superando a necessidade de empilhamento de camadas profundas. Graph Neural Networks continuam a expandir suas aplicações em domínios complexos como bioinformática e redes sociais, lidando com dados estruturados e não-euclidianos. O PointNet abriu novas possibilidades no processamento de dados 3D, oferecendo uma maneira eficiente de trabalhar com nuvens de pontos, enquanto os Diffusion Models trazem avanços significativos na geração de dados realistas. NeRFs estão revolucionando a síntese de cenas 3D detalhadas a partir de imagens 2D, e as Hypernetworks introduzem uma nova flexibilidade, permitindo que uma rede neural configure os parâmetros de outra. Essas arquiteturas, juntas, representam o avanço contínuo e a exploração de novas abordagens no campo das redes neurais, trazendo soluções cada vez mais sofisticadas para desafios contemporâneos.</p>
+<section id="combinacao-de-modelos-com-mixture-of-experts">
+<h2>Combinação de Modelos com Mixture of Experts<a class="headerlink" href="#combinacao-de-modelos-com-mixture-of-experts" title="Link to this heading">#</a></h2>
+<p>O Mixture of Experts (MoE) é uma arquitetura que busca aumentar a eficiência e a capacidade de redes neurais ao dividir o aprendizado em módulos especializados. Em vez de uma única rede realizar todas as tarefas, o MoE utiliza múltiplos ‘especialistas’ (sub-redes), onde cada especialista é responsável por processar diferentes partes dos dados ou subtarefas. Um mecanismo de roteamento aprende a selecionar quais especialistas devem ser ativados para cada entrada, promovendo uma utilização eficiente dos recursos da rede e reduzindo o consumo computacional, especialmente em redes muito grandes. Essa abordagem permite que o modelo lide melhor com tarefas diversificadas, pois cada especialista pode focar em uma subtarefa específica, promovendo maior capacidade de generalização e melhor desempenho. O Mixture of Experts tem mostrado grande potencial em grandes modelos distribuídos, como em sistemas de processamento de linguagem natural e visão computacional, destacando-se por sua escalabilidade.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/moe.png?raw=true" width=500></center>
+<p>O conceito de Mixture of Experts (MoE) foi introduzido por Jacobs et al. no início dos anos 90 como uma técnica de modelagem onde múltiplos especialistas, representados por sub-redes, colaboram para resolver diferentes partes de uma tarefa, com um “gating network” responsável por escolher qual especialista deve ser ativado para cada entrada. Originalmente, o foco estava em melhorar a performance em tarefas de aprendizado supervisionado, especialmente na classificação de dados complexos. Recentemente, o MoE ressurgiu com grande força em modelos de larga escala, especialmente em Processamento de Linguagem Natural (PLN) e Visão Computacional. Arquiteturas como a GPT-3 (Brown et al., 2020) e outras redes gigantescas têm utilizado variações do MoE para reduzir a carga computacional, mantendo um alto desempenho, ao ativar seletivamente apenas partes da rede para cada entrada, ao invés de processar todas as informações em todos os parâmetros. Isso permite a escalabilidade em modelos com trilhões de parâmetros, viabilizando a construção de redes neurais cada vez maiores e mais eficientes.</p>
+</section>
+<section id="novas-redes-neurais-deep-equilibrium-models">
+<h2>Novas Redes Neurais - Deep Equilibrium Models<a class="headerlink" href="#novas-redes-neurais-deep-equilibrium-models" title="Link to this heading">#</a></h2>
+<p>As Deep Equilibrium Models (DEQs) representam uma abordagem inovadora em redes neurais, onde a profundidade explícita das camadas é substituída por um modelo que busca um ponto de equilíbrio. Introduzidas por Bai et al. em 2019, as DEQs eliminam a necessidade de empilhar várias camadas sequenciais, como nas arquiteturas tradicionais, e, em vez disso, iteram o mesmo conjunto de funções até que o modelo alcance um estado de equilíbrio, ou seja, até que as ativações das camadas estabilizem. Esse ponto de equilíbrio é tratado como a saída da rede. Essa característica oferece várias vantagens, como a redução do uso de memória durante o treinamento, pois a retropropagação é realizada diretamente sobre o estado de equilíbrio. Além disso, o modelo consegue atingir maior expressividade sem aumentar a complexidade de profundidade, permitindo que DEQs sejam escaláveis e eficientes, especialmente em tarefas de sequência longa, como em modelos de séries temporais e processamento de linguagem natural.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/deq.png?raw=true"></center></section>
+<section id="avancando-modelagem-de-sequencias-com-state-space-models">
+<h2>Avançando Modelagem de Sequências com State-space Models<a class="headerlink" href="#avancando-modelagem-de-sequencias-com-state-space-models" title="Link to this heading">#</a></h2>
+<p>Os State-Space Models (SSMs) são uma classe de modelos matemáticos que descrevem sistemas dinâmicos em termos de variáveis de estado e equações que governam sua evolução ao longo do tempo. No contexto de redes neurais, os SSMs têm sido adaptados para capturar a dinâmica temporal em dados sequenciais de forma mais eficiente, especialmente quando comparados a redes recorrentes tradicionais como LSTMs e GRUs. Esses modelos conseguem modelar a dependência de longo prazo em séries temporais ao utilizar representações em espaço de estados, onde a informação do passado é mantida em um vetor de estado que evolui de acordo com uma equação de transição. Recentemente, avanços como o modelo Mamba (Gu &amp; Dao, 2023) têm impulsionado o uso de SSMs no aprendizado profundo, combinando essas representações com mecanismos modernos de aprendizado para otimizar a captura de padrões temporais de forma escalável e eficiente. O Mamba é um exemplo notável que integra SSMs com técnicas avançadas de processamento para melhorar a performance em tarefas complexas, como previsões de séries temporais e aprendizado de longo prazo, mostrando o potencial renovado desses modelos no campo das redes neurais.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/mamba.jpg?raw=true"></center></section>
+<section id="trabalhando-com-grafos-usando-graph-neural-networks">
+<h2>Trabalhando com Grafos usando Graph Neural Networks<a class="headerlink" href="#trabalhando-com-grafos-usando-graph-neural-networks" title="Link to this heading">#</a></h2>
+<p>As Graph Neural Networks (GNNs) são uma poderosa classe de redes neurais projetadas para lidar com dados que têm uma estrutura de grafo, como redes sociais, moléculas químicas e sistemas de recomendação. Ao contrário das redes neurais tradicionais, que operam em dados estruturados como sequências ou grades, as GNNs são capazes de capturar relações complexas entre nós conectados por arestas, permitindo que a rede aprenda representações ricas das interações entre os elementos de um grafo. Introduzidas inicialmente por Scarselli et al. em 2009, as GNNs evoluíram rapidamente com o desenvolvimento de variações modernas como Graph Convolutional Networks (GCNs - ver Zang et al., 2019) e Graph Attention Networks (GATs - Veličković et al, 2017), que aplicam convoluções ou mecanismos de atenção sobre as conexões do grafo. Isso possibilita que as GNNs capturem dependências de longo alcance entre nós, tornando-as extremamente eficazes para tarefas como classificação de nós, predição de links e geração de grafos. Hoje, as GNNs são amplamente utilizadas em diversas áreas, como biologia computacional, química quântica, e redes de conhecimento, demonstrando seu valor em modelar dados estruturados complexos.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/gnn.png?raw=true"></center></section>
+<section id="trabalhando-com-nuvem-de-pontos-utilizando-pointnet">
+<h2>Trabalhando com Nuvem de Pontos utilizando PointNet<a class="headerlink" href="#trabalhando-com-nuvem-de-pontos-utilizando-pointnet" title="Link to this heading">#</a></h2>
+<p>O PointNet é uma arquitetura inovadora projetada para processar diretamente dados 3D em forma de nuvem de pontos, rompendo com a abordagem tradicional de transformar esses dados em grades volumétricas ou projeções em imagens. Introduzido por Qi et al. em 2017, o PointNet utiliza uma rede neural que processa individualmente cada ponto da nuvem, seguido de uma operação de agregação simétrica, como max pooling, que captura as características globais da nuvem. Essa estratégia garante a invariância à permutação dos pontos, uma característica essencial para lidar com dados 3D, onde a ordem dos pontos não deve afetar a representação final. Além disso, ao focar diretamente nos pontos em si, o PointNet consegue ser eficiente e escalável, permitindo sua aplicação em tarefas como classificação de objetos 3D, segmentação de cenas e detecção de partes. A simplicidade e eficácia dessa arquitetura impulsionaram novos avanços na área de visão computacional 3D, abrindo caminho para o desenvolvimento de modelos ainda mais complexos e robustos para lidar com ambientes tridimensionais.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/pointnet.png?raw=true"></center></section>
+<section id="gerando-imagens-com-diffusion">
+<h2>Gerando Imagens com Diffusion<a class="headerlink" href="#gerando-imagens-com-diffusion" title="Link to this heading">#</a></h2>
+<p>Os Diffusion Models (Ho et al., 2020) são uma classe emergente de modelos generativos que têm ganhado destaque recentemente por sua capacidade de gerar dados de alta qualidade, como imagens, sons e outros tipos de informações complexas. Esses modelos operam ao aprender como reverter um processo de difusão gradual, onde os dados são corrompidos com ruído de forma incremental até se tornarem puro ruído. Durante o treinamento, o modelo aprende a restaurar os dados originais a partir de diferentes níveis de ruído, permitindo que ele gere amostras realistas ao reverter esse processo passo a passo. Introduzidos inicialmente no contexto de aprendizado não supervisionado, os Diffusion Models têm demonstrado uma performance impressionante em comparação com outras abordagens generativas, como GANs e VAEs, especialmente em tarefas que exigem alta fidelidade e detalhamento, como síntese de imagens. Recentemente, variações desses modelos têm sido exploradas em diversas aplicações, mostrando grande potencial em áreas como geração de conteúdo visual e simulações físicas.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/diffusion.png?raw=true"></center></section>
+<section id="gerando-ambientes-3d-com-neural-radiance-fields-e-3d-gaussian-splatting">
+<h2>Gerando Ambientes 3D com Neural Radiance Fields e 3D Gaussian Splatting<a class="headerlink" href="#gerando-ambientes-3d-com-neural-radiance-fields-e-3d-gaussian-splatting" title="Link to this heading">#</a></h2>
+<p>Neural Radiance Fields (NeRF) é uma técnica revolucionária de síntese de cenas 3D que gera imagens foto-realistas a partir de um conjunto de imagens 2D capturadas de diferentes ângulos. Introduzido por Mildenhall et al. em 2020, o NeRF utiliza uma rede neural para modelar a densidade volumétrica e a emissão de luz de cada ponto em um espaço tridimensional contínuo. Ao treinar a rede com imagens e suas respectivas posições de câmera, o NeRF aprende a reconstruir o campo de radiação da cena, permitindo renderizações precisas de novas perspectivas que não estavam presentes no conjunto de treinamento. Essa abordagem é notável por sua eficiência e pela capacidade de gerar detalhes finos, como texturas e variações de iluminação, sem a necessidade de um grande número de parâmetros ou transformações complexas de dados 3D. O NeRF tem sido amplamente aplicado em áreas como realidade virtual, captura de ambientes reais e geração de ativos para jogos, destacando-se como uma das principais inovações em reconstrução de cenas tridimensionais.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/nerf.png?raw=true"></center>
+<p>O 3D Gaussian Splatting (Kerbl et al., 2023) é uma técnica inovadora para reconstrução e renderização de cenas tridimensionais que modela a geometria e a aparência de uma cena utilizando uma distribuição de Gaussians no espaço 3D. Ao contrário de métodos tradicionais, como o NeRF, que usa redes neurais para mapear a emissão de luz e densidade volumétrica, o 3D Gaussian Splatting representa a cena como uma nuvem de pontos, onde cada ponto tem uma distribuição Gaussiana associada que define sua posição, forma, e propriedades de cor e transparência. Essas Gaussians podem ser projetadas diretamente nas imagens durante o processo de renderização, criando uma representação contínua e eficiente da cena. Essa abordagem permite renderizações rápidas e de alta qualidade, com menos custos computacionais, especialmente em comparação com métodos baseados em redes profundas. Além disso, o 3D Gaussian Splatting se destaca pela flexibilidade, sendo capaz de capturar detalhes finos da cena com alta precisão, o que o torna adequado para aplicações em gráficos 3D, realidade aumentada, e efeitos visuais em tempo real.</p>
+</section>
+<section id="aprendendo-pesos-de-redes-neurais-com-hypernetworks">
+<h2>Aprendendo Pesos de Redes Neurais com HyperNetworks<a class="headerlink" href="#aprendendo-pesos-de-redes-neurais-com-hypernetworks" title="Link to this heading">#</a></h2>
+<p>As Hypernetworks são uma abordagem inovadora em redes neurais, onde uma rede neural gera os parâmetros de outra rede, em vez de usar pesos fixos aprendidos diretamente a partir dos dados. Popularizada por Ha et al. em 2016, e com idéias similares apresentadas por Schmidhuber em 1992, essa arquitetura oferece maior flexibilidade e capacidade de adaptação, permitindo que a rede principal (chamada de target network) seja parametrizada por uma rede externa (a hypernetwork). Esse processo facilita a criação de modelos mais eficientes, especialmente em cenários com múltiplas tarefas ou dados com diferentes características, pois a hypernetwork pode ajustar dinamicamente os parâmetros da target network conforme necessário. As Hypernetworks têm sido exploradas em várias áreas, como aprendizado de poucas amostras, adaptação rápida a novos domínios e otimização de redes com grande número de parâmetros, oferecendo um novo nível de personalização e generalização em redes neurais. Esse paradigma tem mostrado grande potencial em arquiteturas modernas e na pesquisa sobre como otimizar redes para diferentes contextos sem a necessidade de treinar múltiplos modelos separados.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="consideracoes-finais">
+<h1>Considerações Finais<a class="headerlink" href="#consideracoes-finais" title="Link to this heading">#</a></h1>
+<p>Como vimos, as arquiteturas emergentes em redes neurais estão expandindo as fronteiras do que é possível no campo da inteligência artificial. Modelos como Mixture of Experts, Deep Equilibrium Networks, Graph Neural Networks, PointNet, Diffusion Models, NeRFs e Hypernetworks não apenas representam avanços em eficiência computacional e escalabilidade, mas também trazem soluções inovadoras para problemas complexos em diferentes domínios, como processamento de linguagem, visão computacional e modelagem tridimensional. Essas arquiteturas são o reflexo de um movimento contínuo para superar as limitações das redes neurais tradicionais, abrindo caminho para aplicações cada vez mais sofisticadas e exigentes. Ao explorar essas novas fronteiras, pesquisadores e profissionais têm a oportunidade de não só melhorar o estado da arte em IA, mas também transformar a maneira como a tecnologia é aplicada no mundo real.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="referencias">
+<h1>Referências<a class="headerlink" href="#referencias" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Jacobs, R. A., Jordan, M. I., Nowlan, S. J., &amp; Hinton, G. E. (1991). Adaptive mixtures of local experts. Neural computation, 3(1), 79-87.</p></li>
+<li><p>Brown, T. B. (2020). Language models are few-shot learners. arXiv preprint arXiv:2005.14165.</p></li>
+<li><p>Bai, S., Kolter, J. Z., &amp; Koltun, V. (2019). Deep equilibrium models. Advances in neural information processing systems, 32.</p></li>
+<li><p>Gu, A., &amp; Dao, T. (2023). Mamba: Linear-time sequence modeling with selective state spaces. arXiv preprint arXiv:2312.00752.</p></li>
+<li><p>Scarselli, F., Gori, M., Tsoi, A. C., Hagenbuchner, M., &amp; Monfardini, G. (2008). The graph neural network model. IEEE transactions on neural networks, 20(1), 61-80.</p></li>
+<li><p>Zhang, S., Tong, H., Xu, J., &amp; Maciejewski, R. (2019). Graph convolutional networks: a comprehensive review. Computational Social Networks, 6(1), 1-23.</p></li>
+<li><p>Veličković, P., Cucurull, G., Casanova, A., Romero, A., Lio, P., &amp; Bengio, Y. (2017). Graph attention networks. arXiv preprint arXiv:1710.10903.</p></li>
+<li><p>Qi, C. R., Su, H., Mo, K., &amp; Guibas, L. J. (2017). Pointnet: Deep learning on point sets for 3d classification and segmentation. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 652-660).</p></li>
+<li><p>Qi, C. R., Yi, L., Su, H., &amp; Guibas, L. J. (2017). Pointnet++: Deep hierarchical feature learning on point sets in a metric space. Advances in neural information processing systems, 30.</p></li>
+<li><p>Ho, J., Jain, A., &amp; Abbeel, P. (2020). Denoising diffusion probabilistic models. Advances in neural information processing systems, 33, 6840-6851.</p></li>
+<li><p>Mildenhall, B., Srinivasan, P. P., Tancik, M., Barron, J. T., Ramamoorthi, R., &amp; Ng, R. (2020). Nerf: representing scenes as neural radiance fields for view synthesis (2020). arXiv preprint arXiv:2003.08934.</p></li>
+<li><p>Kerbl, B., Kopanas, G., Leimkühler, T., &amp; Drettakis, G. (2023). 3D Gaussian Splatting for Real-Time Radiance Field Rendering. ACM Trans. Graph., 42(4), 139-1.</p></li>
+<li><p>Ha, D., Dai, A., &amp; Le, Q. V. (2016). Hypernetworks. arXiv preprint arXiv:1609.09106.</p></li>
+<li><p>Schmidhuber, J. (1992). Learning to control fast-weight memories: An alternative to dynamic recurrent networks. Neural Computation, 4(1), 131-139.</p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Novas Fronteiras em Arquiteturas de Redes Neurais</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combinacao-de-modelos-com-mixture-of-experts">Combinação de Modelos com Mixture of Experts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#novas-redes-neurais-deep-equilibrium-models">Novas Redes Neurais - Deep Equilibrium Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avancando-modelagem-de-sequencias-com-state-space-models">Avançando Modelagem de Sequências com State-space Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trabalhando-com-grafos-usando-graph-neural-networks">Trabalhando com Grafos usando Graph Neural Networks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trabalhando-com-nuvem-de-pontos-utilizando-pointnet">Trabalhando com Nuvem de Pontos utilizando PointNet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gerando-imagens-com-diffusion">Gerando Imagens com Diffusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gerando-ambientes-3d-com-neural-radiance-fields-e-3d-gaussian-splatting">Gerando Ambientes 3D com Neural Radiance Fields e 3D Gaussian Splatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aprendendo-pesos-de-redes-neurais-com-hypernetworks">Aprendendo Pesos de Redes Neurais com HyperNetworks</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consideracoes-finais">Considerações Finais</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referências</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

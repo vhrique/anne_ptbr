@@ -1,0 +1,709 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Introdução a Aspectos Práticos &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '07_Aspectos_Praticos';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F07_Aspectos_Praticos.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/07_Aspectos_Praticos.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introdução a Aspectos Práticos</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introdução a Aspectos Práticos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#paradigmas-de-aprendizagem-com-dados-limitados">Paradigmas de Aprendizagem com Dados Limitados</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-learning">Transfer Learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#few-shot-learning">Few-shot Learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zero-shot-learning">Zero-shot Learning</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#reducao-de-modelos">Redução de Modelos</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prunning">Prunning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantization">Quantization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-distillation">Model Distillation</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#generalizacao-de-dominio">Generalização de Domínio</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-domain-adaptation">Supervised Domain Adaptation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsupervised-domain-adaptation">Unsupervised Domain Adaptation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-time-adaptation">Test-time Adaptation</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#receita-para-treinar-redes-neurais-artificiais">Receita para Treinar Redes Neurais Artificiais</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analise-exploratoria-de-dados">Análise Exploratória de Dados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#criar-uma-arquitetura-inicial">Criar uma Arquitetura Inicial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avaliar-modelo">Avaliar Modelo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overfit">Overfit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regularizacao">Regularização</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refinar">Refinar</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consideracoes-finais">Considerações Finais</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referências</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><a href="https://colab.research.google.com/github/vhrique/anne_ptbr/blob/main/07_Aspectos_Praticos.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="introducao-a-aspectos-praticos">
+<h1>Introdução a Aspectos Práticos<a class="headerlink" href="#introducao-a-aspectos-praticos" title="Link to this heading">#</a></h1>
+<p>Aspectos práticos em redes neurais envolvem a aplicação eficiente e adaptável dessas arquiteturas em diferentes cenários. Um dos principais desafios está nos paradigmas de aprendizagem com dados limitados, onde técnicas como few-shot learning e zero-shot learning permitem que redes neurais generalizem bem com poucas ou nenhuma amostra de treinamento. Além disso, a redução de modelos, através de métodos como pruning e quantização, é essencial para otimizar o desempenho e a viabilidade de implantação em dispositivos com recursos limitados. Outro ponto crucial é a domain adaptation, que visa ajustar modelos treinados em um domínio para que se adaptem a novos contextos sem precisar de grandes volumes de dados rotulados. Por fim, dicas para o treinamento eficiente de redes neurais Esta aula trata sobre estes assuntos, incluindo uma seção final com dicas para criação de redes neurais artificiais.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="paradigmas-de-aprendizagem-com-dados-limitados">
+<h1>Paradigmas de Aprendizagem com Dados Limitados<a class="headerlink" href="#paradigmas-de-aprendizagem-com-dados-limitados" title="Link to this heading">#</a></h1>
+<p>Os paradigmas de aprendizagem com dados limitados são fundamentais para lidar com a escassez de dados rotulados. O transfer learning permite que modelos pré-treinados em grandes conjuntos de dados sejam adaptados a novas tarefas com menos dados, enquanto o few-shot learning utiliza poucas amostras para treinar modelos que conseguem generalizar bem. Já o zero-shot learning possibilita que modelos reconheçam classes inéditas sem amostras diretas, baseando-se em descrições ou relações semânticas. Essas abordagens otimizam o uso de dados reduzidos, acelerando o aprendizado e melhorando a adaptação dos modelos.</p>
+<section id="transfer-learning">
+<h2>Transfer Learning<a class="headerlink" href="#transfer-learning" title="Link to this heading">#</a></h2>
+<p>Transfer learning é uma técnica poderosa em redes neurais que permite reutilizar o conhecimento adquirido por um modelo pré-treinado em uma tarefa de origem para resolver uma tarefa diferente, geralmente com menos dados disponíveis. Ao invés de treinar um modelo do zero, o transfer learning aproveita as camadas iniciais de um modelo, que capturam características genéricas dos dados, e ajusta as camadas finais para a nova tarefa. Isso resulta em uma aceleração do processo de treinamento e, frequentemente, em uma melhoria no desempenho, especialmente em cenários onde o volume de dados rotulados é limitado. É amplamente utilizado em áreas como visão computacional e processamento de linguagem natural, onde redes pré-treinadas em grandes bases de dados podem ser adaptadas para aplicações mais específicas e especializadas.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/transfer_learning.jpg?raw=true" width=400></center>
+<p>O transfer learning teve aplicações pioneiras em diferentes áreas, começando com aprendizado por reforço nos anos 90, onde Lorien Pratt introduziu a ideia de transferência entre tarefas relacionadas. No processamento de linguagem natural, o word2vec (2013) trouxe uma abordagem importante ao pré-treinar representações de palavras que podiam ser adaptadas a diferentes tarefas linguísticas. Já em visão computacional, o AlexNet (2012) marcou um grande avanço ao ser pré-treinado no ImageNet e posteriormente refinado para resolver problemas específicos com menos dados, consolidando o uso de transfer learning em redes neurais profundas.</p>
+</section>
+<section id="few-shot-learning">
+<h2>Few-shot Learning<a class="headerlink" href="#few-shot-learning" title="Link to this heading">#</a></h2>
+<p>Few-shot learning é uma abordagem de aprendizado que permite que modelos generalizem bem a partir de um número extremamente reduzido de amostras de treinamento (Li et al., 2016). Em vez de depender de grandes volumes de dados, como na aprendizagem tradicional, o few-shot learning utiliza técnicas avançadas, como redes siamesas e prototípicas, para aprender a diferença entre classes a partir de poucos exemplos. O objetivo é ensinar o modelo a identificar padrões e características gerais que possam ser aplicados a novas amostras com pouca informação. Essa técnica tem sido especialmente útil em áreas como reconhecimento de imagens, onde rotular grandes quantidades de dados é caro ou inviável.</p>
+</section>
+<section id="zero-shot-learning">
+<h2>Zero-shot Learning<a class="headerlink" href="#zero-shot-learning" title="Link to this heading">#</a></h2>
+<p>O primeiro trabalho marcante sobre zero-shot learning foi “Zero-Shot Learning with Semantic Output Codes” (Palatucci et al.) publicado em 2009. Neste estudo, os autores apresentaram uma abordagem para reconhecimento de objetos em categorias para as quais o modelo não tinha exemplos diretos durante o treinamento. O método utiliza descrições semânticas das classes conhecidas para fazer inferências sobre novas classes, permitindo que o modelo reconheça objetos sem ter visto exemplos específicos dessas classes anteriormente. Esse trabalho introduziu o conceito de zero-shot learning ao explorar como características semânticas podem ser utilizadas para generalizar além das classes rotuladas, marcando o início de uma nova linha de pesquisa em aprendizagem de máquina.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="reducao-de-modelos">
+<h1>Redução de Modelos<a class="headerlink" href="#reducao-de-modelos" title="Link to this heading">#</a></h1>
+<p>A redução de modelos, ou model compression, é uma técnica utilizada para otimizar redes neurais, diminuindo seu tamanho e complexidade sem sacrificar significativamente o desempenho. Métodos como pruning, quantização e knowledge distillation são comumente empregados para reduzir a quantidade de parâmetros e operações no modelo, tornando-o mais eficiente em termos de armazenamento e tempo de inferência. Pruning remove conexões ou neurônios irrelevantes, enquanto a quantização reduz a precisão dos números utilizados, como passando de 32 bits para 8 bits, para diminuir o uso de memória. Já o knowledge distillation envolve treinar um modelo menor (aluno) a partir das previsões de um modelo maior (professor), transferindo seu conhecimento de maneira compacta. Essas técnicas são particularmente valiosas para a implementação de redes neurais em dispositivos com recursos limitados, como celulares ou sistemas embarcados.</p>
+<section id="prunning">
+<h2>Prunning<a class="headerlink" href="#prunning" title="Link to this heading">#</a></h2>
+<p>O conceito de pruning em redes neurais foi introduzido pela primeira vez no paper “Optimal Brain Damage” (LeCun et al., 1990). Neste trabalho seminal, os autores propuseram uma técnica para reduzir a complexidade de redes neurais removendo pesos que tivessem pouca influência sobre o desempenho geral do modelo. A abordagem se baseava na ideia de eliminar conexões irrelevantes ou com pequena contribuição para a função de perda, visando simplificar a rede sem comprometer significativamente sua precisão. Esse trabalho abriu caminho para uma série de técnicas de pruning que se tornaram fundamentais para a compressão de modelos e o desenvolvimento de redes neurais mais eficientes.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/model_prunning.jpg?raw=true" width=400></center>
+</section>
+<section id="quantization">
+<h2>Quantization<a class="headerlink" href="#quantization" title="Link to this heading">#</a></h2>
+<p>A quantization é uma técnica essencial na computação de deep learning que busca reduzir a precisão numérica dos parâmetros de uma rede neural, como pesos e ativações, para representações de menor bit-depth, como 8-bit, sem comprometer significativamente o desempenho do modelo. Ela permite a execução mais eficiente em termos de memória e poder de processamento, sendo amplamente aplicada em dispositivos de borda e inferência em tempo real. Um paper seminal nessa área é “Quantizing Deep Convolutional Networks for Efficient Inference: A Whitepaper” (Jacob et al., 2018), que explora a quantização de redes profundas com foco em eficiência computacional.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/model_quantization.jpg?raw=true" width=500></center>
+</section>
+<section id="model-distillation">
+<h2>Model Distillation<a class="headerlink" href="#model-distillation" title="Link to this heading">#</a></h2>
+<p>Model distillation é uma técnica em aprendizado de máquina utilizada para transferir o conhecimento de um modelo grande e complexo, geralmente chamado de teacher model, para um modelo menor e mais eficiente, conhecido como student model. A ideia central é que o modelo grande pode capturar padrões mais sutis nos dados, e o modelo menor aprende a replicar esse comportamento ao ser treinado para imitar as saídas ou as distribuições de probabilidade produzidas pelo modelo maior. Isso é útil para reduzir a complexidade computacional e o tamanho dos modelos, tornando-os mais adequados para execução em dispositivos com recursos limitados, sem perder muita precisão. O trabalho seminal na área é “Distilling the Knowledge in a Neural Network” (Hinton et al., 2015), que introduz a técnica e explora como o student model pode alcançar desempenho comparável ao teacher model com uma arquitetura mais compacta.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/knowledge_distillation.jpg?raw=true" width=400></center></section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="generalizacao-de-dominio">
+<h1>Generalização de Domínio<a class="headerlink" href="#generalizacao-de-dominio" title="Link to this heading">#</a></h1>
+<p>A generalização de domínio é uma área de pesquisa em aprendizado de máquina que busca desenvolver modelos capazes de generalizar bem para novos domínios, ou seja, dados que possuem distribuições diferentes das usadas no treinamento. Em muitos casos, os modelos de aprendizado de máquina podem superestimar sua capacidade de adaptação, apresentando desempenho ruim quando expostos a dados com variações não vistas anteriormente, como mudanças de iluminação, ângulo ou contexto em tarefas de visão computacional. A generalização de domínio visa mitigar esse problema, criando métodos que garantam robustez em ambientes diversos sem a necessidade de grandes volumes de dados rotulados em cada novo domínio.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/domain_adaptation.jpg?raw=true" width=400></center>
+<section id="supervised-domain-adaptation">
+<h2>Supervised Domain Adaptation<a class="headerlink" href="#supervised-domain-adaptation" title="Link to this heading">#</a></h2>
+<p>Supervised domain adaptation é uma técnica em aprendizado de máquina que visa adaptar um modelo treinado em um domínio de origem (source domain) para funcionar bem em um domínio de destino (target domain), onde ambos os domínios possuem rótulos disponíveis. A principal diferença entre o domínio de origem e o de destino está nas distribuições dos dados, que podem variar significativamente. A abordagem supervisionada permite que o modelo use rótulos no domínio de destino para ajustar suas previsões e melhorar seu desempenho ao longo do tempo. O objetivo é minimizar a discrepância entre os domínios, fazendo com que o modelo aproveite melhor as informações do domínio de origem para ser mais eficaz no domínio de destino.</p>
+</section>
+<section id="unsupervised-domain-adaptation">
+<h2>Unsupervised Domain Adaptation<a class="headerlink" href="#unsupervised-domain-adaptation" title="Link to this heading">#</a></h2>
+<p>Unsupervised domain adaptation é uma técnica em aprendizado de máquina que visa adaptar um modelo treinado em um domínio de origem (source domain) para realizar boas previsões em um domínio de destino (target domain) sem a necessidade de rótulos no domínio de destino. A principal dificuldade está na diferença nas distribuições entre os dois domínios, o que pode causar uma queda significativa no desempenho do modelo se ele não for adaptado. Para superar essa discrepância, técnicas de unsupervised domain adaptation buscam alinhar as representações dos dados dos dois domínios de maneira a torná-las mais semelhantes, usando abordagens como o aprendizado adversarial, mapeamento de características invariantes ou regularização baseada em discrepâncias.</p>
+</section>
+<section id="test-time-adaptation">
+<h2>Test-time Adaptation<a class="headerlink" href="#test-time-adaptation" title="Link to this heading">#</a></h2>
+<p>Test-time adaptation é uma abordagem emergente em aprendizado de máquina que busca adaptar o modelo durante o tempo de teste, ao invés de depender apenas do treinamento prévio. A ideia é ajustar o modelo de forma contínua enquanto ele processa novos dados, especialmente em cenários onde as condições de distribuição dos dados mudam dinamicamente, como em sistemas autônomos ou aplicações de visão computacional em tempo real. O objetivo é permitir que o modelo ajuste suas representações e parâmetros com base nos dados de entrada no momento da inferência, mesmo sem rótulos disponíveis, utilizando técnicas como auto-supervisão ou entropia mínima para otimizar sua performance em tempo de execução. Um trabalho relevante nessa área é “Tent: Fully Test-Time Adaptation by Entropy Minimization” (Wang et al., 2020), que propõe um método de adaptação utilizando a minimização da entropia das previsões durante o teste para melhorar a robustez do modelo em novos ambientes.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="receita-para-treinar-redes-neurais-artificiais">
+<h1>Receita para Treinar Redes Neurais Artificiais<a class="headerlink" href="#receita-para-treinar-redes-neurais-artificiais" title="Link to this heading">#</a></h1>
+<p>Andrej Karpathy, em seu famoso post “A Recipe for Training Neural Networks”, compartilha uma abordagem prática e eficiente para treinar redes neurais artificiais. Ele destaca que o sucesso no treinamento depende de uma combinação cuidadosa de boas práticas. A receita inclui começar com arquiteturas simples e testar rapidamente a performance do modelo antes de complicá-lo. Ele recomenda ajustar o aprendizado de maneira incremental, focando em entender o comportamento do modelo com overfitting e underfitting. Entre as dicas valiosas, Karpathy enfatiza o uso de visualizações para compreender o comportamento da rede, a importância de usar lotes de dados adequados, e a prática de sempre monitorar as métricas de performance.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/training_diagram.jpg?raw=true" width=700></center><section id="analise-exploratoria-de-dados">
+<h2>Análise Exploratória de Dados<a class="headerlink" href="#analise-exploratoria-de-dados" title="Link to this heading">#</a></h2>
+<p>A análise exploratória de dados (EDA) é uma etapa fundamental no desenvolvimento de modelos de machine learning, conforme destacado no tópico “Become One with the Data”, de Andrej Karpathy. O objetivo da EDA é obter uma compreensão profunda dos dados antes de construir qualquer modelo. Isso inclui a visualização de distribuições, detecção de outliers, análise de correlações e identificação de padrões ou anomalias que possam afetar o desempenho do modelo. Karpathy enfatiza que passar tempo com os dados, analisando suas características e peculiaridades, é crucial para tomar decisões informadas sobre pré-processamento, engenharia de features e seleção de algoritmos. Em resumo, a EDA permite que o pesquisador se familiarize com o comportamento dos dados, maximizando as chances de sucesso do modelo final.</p>
+</section>
+<section id="criar-uma-arquitetura-inicial">
+<h2>Criar uma Arquitetura Inicial<a class="headerlink" href="#criar-uma-arquitetura-inicial" title="Link to this heading">#</a></h2>
+<p>Ao criar uma arquitetura inicial para redes neurais, é importante adotar uma abordagem estruturada que facilite o processo de treinamento e depuração. O uso de boas práticas, desde a escolha de padrões arquiteturais até a normalização dos dados, ajuda a garantir que o modelo aprenda de maneira eficaz. Além disso, a realização de testes em conjuntos de dados reduzidos pode fornecer uma visão clara de como o modelo está se comportando e ajudar na identificação precoce de falhas.</p>
+<ul class="simple">
+<li><p>Iniciar com padrões (arquiteturas e otimizadores): Utilize arquiteturas consagradas como MLPs ou CNNs, e otimizadores como Adam ou SGD, que são confiáveis e amplamente utilizados.</p></li>
+<li><p>Normalizar dados: Assegure-se de que os dados estejam normalizados, garantindo que as variáveis de entrada estejam em escalas semelhantes, facilitando o aprendizado.</p></li>
+<li><p>Uso de conjuntos reduzidos (para overfit): Teste o modelo em um conjunto de dados pequeno para verificar se ele consegue overfit. Isso ajuda a garantir que o modelo e a função de perda estão funcionando corretamente.</p></li>
+<li><p>Diagnóstico de falhas no treino: Se o modelo não consegue overfit em um conjunto pequeno, pode haver problemas na arquitetura, nos hiperparâmetros ou na implementação, e isso requer uma investigação mais detalhada.</p></li>
+</ul>
+</section>
+<section id="avaliar-modelo">
+<h2>Avaliar Modelo<a class="headerlink" href="#avaliar-modelo" title="Link to this heading">#</a></h2>
+<p>A avaliação de modelo é uma etapa crucial no desenvolvimento de redes neurais, pois permite verificar se o modelo está aprendendo adequadamente e se generaliza bem para novos dados. Além de medir a acurácia ou outras métricas de desempenho, a análise detalhada dos erros cometidos pelo modelo é fundamental para identificar áreas de melhoria e ajustar os hiperparâmetros ou a arquitetura. As curvas de aprendizagem também são ferramentas valiosas, pois mostram como o desempenho do modelo evolui ao longo do tempo durante o treinamento e ajudam a detectar problemas como overfitting ou underfitting.</p>
+<p>Aqui estão alguns itens importantes para a análise de erros e curvas de aprendizagem:</p>
+<ul class="simple">
+<li><p>Identificar erros sistemáticos: Verifique se o modelo está cometendo erros semelhantes em determinados tipos de exemplos. Isso pode indicar a necessidade de melhorar a representação dos dados ou ajustar o pré-processamento.</p></li>
+<li><p>Comparar performance de treino e validação: Analisar a diferença entre as curvas de erro no conjunto de treino e no de validação ajuda a identificar overfitting (quando o erro de validação é muito maior que o de treino) ou underfitting (quando ambos os erros são altos).</p></li>
+<li><p>Monitorar a convergência: Acompanhe as curvas de aprendizado para garantir que o modelo está convergindo corretamente. Caso a perda não esteja diminuindo, pode ser necessário ajustar a taxa de aprendizado ou rever a arquitetura.</p></li>
+<li><p>Ajustar com base nos erros: Use os insights dos erros para ajustar a arquitetura, os hiperparâmetros ou até o pré-processamento dos dados, sempre com o objetivo de melhorar o desempenho do modelo.</p></li>
+</ul>
+</section>
+<section id="overfit">
+<h2>Overfit<a class="headerlink" href="#overfit" title="Link to this heading">#</a></h2>
+<p>Garantir que o modelo consiga overfit no conjunto de treino é uma etapa crítica para verificar se ele tem a capacidade de aprender os padrões, mesmo que de forma exagerada. Para isso, algumas abordagens podem ser seguidas, como simplificar o problema e ajustar os parâmetros da rede. Caso o modelo não consiga overfit, pode haver problemas na arquitetura ou na implementação.</p>
+<p>Abaixo temos um gráfico padrão representando underfitting, onde o erro do modelo é muito alto no conjunto de treino.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/underfit_learning_curve.jpg?raw=true" width=400></center>
+<p>Aqui estão alguns pontos importantes a serem observados para melhorar esta situação:</p>
+<ul class="simple">
+<li><p>Aumentar a capacidade do modelo: Adicione mais neurônios ou camadas à rede para garantir que ela tenha capacidade suficiente para aprender.</p></li>
+<li><p>Reduzir regularização: Desative técnicas como dropout e weight decay, que impedem o overfitting, para facilitar a memorização.</p></li>
+<li><p>Testar a função de perda: Certifique-se de que a função de perda está bem configurada e que o modelo consegue otimizar seu valor no conjunto de treino.</p></li>
+</ul>
+<p>Temos abaixo outra situação, comumente relacionada a taxa de aprendizados muito altos para o problema.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/high_learning_rate_learning_curve.jpg?raw=true" width=400></center>
+<p>Para esta situação, deve-se:</p>
+<ul class="simple">
+<li><p>Ajustar a taxa de aprendizado: Verifique se a taxa de aprendizado está adequada, já que uma taxa muito alta pode impedir o modelo de aprender corretamente.</p></li>
+</ul>
+<p>Finalmente, temos abaixo outra situação onde ocorre underfitting. Porém, para tal situação, pode-se continuar o treinamento ou acelerar o processo com taxas de aprendizados maiores.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/continue_learning_curve.jpg?raw=true" width=400></center>
+</section>
+<section id="regularizacao">
+<h2>Regularização<a class="headerlink" href="#regularizacao" title="Link to this heading">#</a></h2>
+<p>Após conseguir uma perda baixa no conjunto de treino, deve-se realizar a regularização. A regularização é fundamental para evitar que o modelo overfit aos dados de treino, permitindo uma melhor generalização para dados novos. A curva de aprendizado ótima deve-se chegar a baixos valores no conjunto de treino e validação, conforme abaixo.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/good_learning_curve.jpg?raw=true" width=400></center>
+<p>Porém, quando terminarmos a etapa de overfitting, geralmente estamos com uma curva de aprendizagem similar às que temos abaixo, com valores baixos no conjunto de treino e altos no conjunto de validação.</p>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/overfit_learning_curve.jpg?raw=true" width=400></center>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/validation_stop_overfitting_learning_curve.jpg?raw=true" width=400></center>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/overfit_increasing_learning_curve.jpg?raw=true" width=400></center>
+<p>Existem diversas técnicas que podem ser aplicadas em diferentes etapas do treinamento para alcançar este resultado. A seguir, uma ordem recomendada de abordagens para regularização:</p>
+<ul class="simple">
+<li><p>Adicionar mais dados: A maneira mais eficaz de melhorar a generalização é aumentar o tamanho do conjunto de dados com mais exemplos reais, sempre que possível.</p></li>
+<li><p>Data augmentation: Se não for possível coletar mais dados, utilize técnicas de aumento de dados, como rotações, escalas ou distorções, para criar variações nos exemplos de treino.</p></li>
+<li><p>Normalização de representações: Use batch normalization ou layer normalization para estabilizar o aprendizado, acelerar a convergência e melhorar a generalização do modelo.</p></li>
+<li><p>Redução do batch size: Diminuir o tamanho do batch pode introduzir mais ruído no treinamento, ajudando o modelo a escapar de mínimos locais e generalizar melhor.</p></li>
+<li><p>Dropout e regularização de parâmetros: Aplique dropout ou técnicas de regularização como weight decay para evitar que o modelo dependa muito de combinações específicas de parâmetros.</p></li>
+<li><p>Label smoothing: Use label smoothing para suavizar as probabilidades de saída, reduzindo a confiança excessiva do modelo nas previsões e melhorando a generalização.</p></li>
+<li><p>Early stopping: Monitore o erro de validação e pare o treinamento antes que o modelo comece a overfit, quando o erro de validação aumenta enquanto o erro de treino diminui.</p></li>
+<li><p>Modificação de tamanho de modelo: Se o overfitting persistir, considere reduzir o número de neurônios ou camadas da rede para evitar que o modelo tenha capacidade excessiva de memorização.</p></li>
+</ul>
+</section>
+<section id="refinar">
+<h2>Refinar<a class="headerlink" href="#refinar" title="Link to this heading">#</a></h2>
+<p>O refinamento de redes neurais é um processo contínuo de ajuste fino que busca otimizar o desempenho do modelo após a fase inicial de treinamento. Isso envolve ajustes precisos dos hiperparâmetros e o uso de técnicas avançadas para melhorar a estabilidade e a convergência do modelo. Refinar redes neurais é essencial para alcançar um bom equilíbrio entre desempenho e eficiência, garantindo que o modelo atinja seu potencial máximo em termos de precisão e generalização.</p>
+<p>Aqui estão algumas abordagens para o refinamento:</p>
+<ul class="simple">
+<li><p>Ajuste de hiperparâmetros: Experimente diferentes valores para hiperparâmetros importantes, como taxa de aprendizado, tamanho do batch, número de camadas e unidades por camada, para encontrar a combinação que melhora o desempenho do modelo.</p></li>
+<li><p>Schedule de learning rate: Use um learning rate schedule que diminua a taxa de aprendizado ao longo do tempo. Técnicas como step decay ou cosine annealing ajudam a estabilizar o treinamento e encontrar um mínimo mais preciso.</p></li>
+<li><p>Exponential Moving Average (EMA): Mantenha uma média exponencial dos pesos do modelo durante o treinamento. Essa técnica ajuda a suavizar as atualizações e pode melhorar a robustez do modelo, especialmente quando usado em conjunto com learning rate schedules.</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="consideracoes-finais">
+<h1>Considerações Finais<a class="headerlink" href="#consideracoes-finais" title="Link to this heading">#</a></h1>
+<p>Nesta aula, abordamos aspectos mais práticos que costumamos encontrar ao criar redes neurais artificiais. Neste contexto, o objetivo desta aula é entender tais situações para saber como devemos proceder para melhorar os resultados de nossos modelos.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="referencias">
+<h1>Referências<a class="headerlink" href="#referencias" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Pratt, L. Y., Mostow, J., &amp; Kamm, C. A. (1991, July). Direct transfer of learned information among neural networks. In Proceedings of the ninth National conference on Artificial intelligence-Volume 2 (pp. 584-589).</p></li>
+<li><p>Mikolov, T. (2013). Efficient estimation of word representations in vector space. arXiv preprint arXiv:1301.3781.</p></li>
+<li><p>Fei-Fei, L., Fergus, R., &amp; Perona, P. (2006). One-shot learning of object categories. IEEE transactions on pattern analysis and machine intelligence, 28(4), 594-611.</p></li>
+<li><p>Palatucci, M., Pomerleau, D., Hinton, G. E., &amp; Mitchell, T. M. (2009). Zero-shot learning with semantic output codes. Advances in neural information processing systems, 22.</p></li>
+<li><p>LeCun, Y., Denker, J., &amp; Solla, S. (1989). Optimal brain damage. Advances in neural information processing systems, 2.</p></li>
+<li><p>Krishnamoorthi, R. (2018). Quantizing deep convolutional networks for efficient inference: A whitepaper. arXiv preprint arXiv:1806.08342.</p></li>
+<li><p>Hinton, G. (2015). Distilling the Knowledge in a Neural Network. arXiv preprint arXiv:1503.02531.</p></li>
+<li><p>Wang, D., Shelhamer, E., Liu, S., Olshausen, B., &amp; Darrell, T. (2020). Tent: Fully test-time adaptation by entropy minimization. arXiv preprint arXiv:2006.10726.</p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introdução a Aspectos Práticos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#paradigmas-de-aprendizagem-com-dados-limitados">Paradigmas de Aprendizagem com Dados Limitados</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-learning">Transfer Learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#few-shot-learning">Few-shot Learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zero-shot-learning">Zero-shot Learning</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#reducao-de-modelos">Redução de Modelos</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prunning">Prunning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantization">Quantization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-distillation">Model Distillation</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#generalizacao-de-dominio">Generalização de Domínio</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-domain-adaptation">Supervised Domain Adaptation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsupervised-domain-adaptation">Unsupervised Domain Adaptation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-time-adaptation">Test-time Adaptation</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#receita-para-treinar-redes-neurais-artificiais">Receita para Treinar Redes Neurais Artificiais</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analise-exploratoria-de-dados">Análise Exploratória de Dados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#criar-uma-arquitetura-inicial">Criar uma Arquitetura Inicial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avaliar-modelo">Avaliar Modelo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overfit">Overfit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regularizacao">Regularização</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refinar">Refinar</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consideracoes-finais">Considerações Finais</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referências</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
