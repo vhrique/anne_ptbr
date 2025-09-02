@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Pacotes Utilizados nesta Aula &#8212; Engenharia de Redes Neurais Artificiais</title>
+    <title>Paradigmas de Aprendizagem &#8212; Engenharia de Redes Neurais Artificiais</title>
   
   
   
@@ -184,8 +184,7 @@
 
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pacotes Utilizados nesta Aula</a></li>
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Paradigmas de Aprendizagem</a></li>
 
 
 
@@ -263,7 +262,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+      <li><a href="https://github.com/vhrique/anne_ptbr" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -280,7 +279,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F02_Paradigmas_Aprendizagem.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/vhrique/anne_ptbr/issues/new?title=Issue%20on%20page%20%2F02_Paradigmas_Aprendizagem.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -394,7 +393,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Pacotes Utilizados nesta Aula</h1>
+    <h1>Paradigmas de Aprendizagem</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -404,8 +403,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Pacotes Utilizados nesta Aula</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#paradigmas-de-aprendizagem">Paradigmas de Aprendizagem</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Paradigmas de Aprendizagem</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aprendizagem-supervisionada">Aprendizagem Supervisionada</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-de-classificacao">Problemas de Classificação</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classificacao-binaria">Classificação Binária</a></li>
@@ -469,27 +467,10 @@ document.write(`
                 <article class="bd-article">
                   
   <p><a href="https://colab.research.google.com/github/vhrique/anne_ptbr/blob/main/02_Paradigmas_Aprendizagem.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<section class="tex2jax_ignore mathjax_ignore" id="pacotes-utilizados-nesta-aula">
-<h1>Pacotes Utilizados nesta Aula<a class="headerlink" href="#pacotes-utilizados-nesta-aula" title="Link to this heading">#</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">torch</span>
-
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span><span class="p">,</span> <span class="n">load_diabetes</span>
-<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span><span class="p">,</span> <span class="n">TensorDataset</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 <section class="tex2jax_ignore mathjax_ignore" id="paradigmas-de-aprendizagem">
 <h1>Paradigmas de Aprendizagem<a class="headerlink" href="#paradigmas-de-aprendizagem" title="Link to this heading">#</a></h1>
 <p>Os paradigmas de aprendizagem em redes neurais artificiais (RNAs) são baseados em diferentes maneiras de treinar um modelo e interagir com os dados.
-De forma geral, existem três paradigmas principais: aprendizagem supervisionada, aprendizagem não supervisionada e aprendizagem por reforço.
+De forma geral, existem três paradigmas principais, comuns à área de aprendizagem de máquina: aprendizagem supervisionada, aprendizagem não supervisionada e aprendizagem por reforço.
 Cada um desses paradigmas possui métodos distintos de treinar modelos, com base na disponibilidade e tipo de dados, bem como no objetivo final da tarefa.</p>
 <p>Na aprendizagem supervisionada, o modelo aprende a partir de dados rotulados, tentando prever uma saída correta com base em entradas específicas.</p>
 <center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/supervised.jpg?raw=true" width="500"></center>
@@ -539,6 +520,19 @@ Desta vez, trabalharemos com um dataset famoso, o Iris Dataset de Fisher (1936).
 <p>Obs: Ainda não estamos levando em consideração um conjunto de validação, onde podemos controlar o treinamento e realizar <em>early stopping</em>. Veremos isto no futuro.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span><span class="p">,</span> <span class="n">TensorDataset</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
@@ -569,7 +563,7 @@ Desta vez, trabalharemos com um dataset famoso, o Iris Dataset de Fisher (1936).
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8a40d7e2dd227b6ee88298c46dee6997e9e629bbeeda36a781bee67283b8474a.png" src="_images/8a40d7e2dd227b6ee88298c46dee6997e9e629bbeeda36a781bee67283b8474a.png" />
+<img alt="_images/cb1f49b9c60db6d6ddee331195964d429dd88c216b314dd70e77e0a735e43c4b.png" src="_images/cb1f49b9c60db6d6ddee331195964d429dd88c216b314dd70e77e0a735e43c4b.png" />
 </div>
 </div>
 <p>Preparamos o modelo e a rotina de treinamento conforme os materiais da <a class="reference external" href="https://github.com/vhrique/anne2024/blob/main/01a_Fundamentos_de_Pytorch.ipynb">Aula 01.A: Fundamentos de Pytorch</a>.</p>
@@ -635,11 +629,18 @@ Desta vez, trabalharemos com um dataset famoso, o Iris Dataset de Fisher (1936).
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2b21813cac04abc7840309467f79f653dfb8a150fa2c7c4b34905901955fd894.png" src="_images/2b21813cac04abc7840309467f79f653dfb8a150fa2c7c4b34905901955fd894.png" />
+<img alt="_images/5316b3ac8577c378f6ae180552e2a43fbdda9e2f512015a1f52517c10213416c.png" src="_images/5316b3ac8577c378f6ae180552e2a43fbdda9e2f512015a1f52517c10213416c.png" />
 </div>
 </div>
 <p>Finalizado o treino, vamos analisar o resultado.
 Abaixo temos métricas de avaliação de classificação mostrando os resultados para o conjunto de treino. Relembrando, ao avaliar o erro no conjunto de treino, estamos realizando ressubstituição. Vemos nisto uma acurácia alta, de 99%. Também conseguimos verificar a precisão (<em>precision</em>) e a sensibilidade (<em>recall</em>) para cada classe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
@@ -658,20 +659,20 @@ Abaixo temos métricas de avaliação de classificação mostrando os resultados
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
 
-      setosa       1.00      1.00      1.00        41
-  versicolor       1.00      0.98      0.99        42
-   virginica       0.97      1.00      0.99        37
+      setosa       1.00      1.00      1.00        38
+  versicolor       0.98      0.98      0.98        45
+   virginica       0.97      0.97      0.97        37
 
-    accuracy                           0.99       120
-   macro avg       0.99      0.99      0.99       120
-weighted avg       0.99      0.99      0.99       120
+    accuracy                           0.98       120
+   macro avg       0.98      0.98      0.98       120
+weighted avg       0.98      0.98      0.98       120
 </pre></div>
 </div>
 </div>
 </div>
 <p>Perceba que, ao avaliar a saída, utilizamos o método <em>argmax</em>. O objetivo disto é detectar a classe cuja saída possui maior ativação.</p>
-<p>Em seguida, realizamos a avaliação da classificação no conjunto de teste, onde temos amostras que o modelo não viu durante o treino. Aqui, vemos uma acurácia mais baixa, de 97%. Esta diferença entre o conjunto de treino e teste é comum, e é um indicativo da capacidade de generalização do modelo. Nosso objetivo final é generalizar. Portanto, buscamos a maior acurácia possível no conjunto de testes.</p>
-<p>Caso criemos um modelo muito complexo e treinemos por muito tempo, corremos um grande risco de realizar <em>overfitting</em> no conjunto de treino. Nesta situação, a capacidade preditiva no conjunto de treino é muito alta. Porém, isto vem com um custo de uma capacidade preditiva mais baixa no conjunto de testes.</p>
+<p>Em seguida, realizamos a avaliação da classificação no conjunto de teste, onde temos amostras que o modelo não viu durante o treino. Aqui, vemos uma acurácia mais baixa, de 98%. Esta diferença entre o conjunto de treino e teste é comum, e é um indicativo da capacidade de generalização do modelo. Nosso objetivo final é generalizar. Portanto, buscamos a maior acurácia possível no conjunto de testes.</p>
+<p>Caso criemos um modelo muito complexo e treinemos por muito tempo, corremos um grande risco de realizar <em>overfitting</em> no conjunto de treino. Nesta situação, a capacidade preditiva no conjunto de treino é muito alta. Porém, isto pode vir com um custo de uma capacidade preditiva mais baixa no conjunto de testes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
@@ -690,12 +691,12 @@ weighted avg       0.99      0.99      0.99       120
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
 
-      setosa       1.00      1.00      1.00         9
-  versicolor       0.89      1.00      0.94         8
-   virginica       1.00      0.92      0.96        13
+      setosa       1.00      1.00      1.00        12
+  versicolor       1.00      0.80      0.89         5
+   virginica       0.93      1.00      0.96        13
 
     accuracy                           0.97        30
-   macro avg       0.96      0.97      0.97        30
+   macro avg       0.98      0.93      0.95        30
 weighted avg       0.97      0.97      0.97        30
 </pre></div>
 </div>
@@ -711,24 +712,7 @@ Ao contrário da classificação, onde as saídas são discretas, a regressão l
 <p>Vejamos um exemplo relacionado à detecção de diabetes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[ -73.7852,   69.0042,  116.0520,  ...,   -2.8812,   36.4935,
-         -263.7801],
-        [  71.6257,  -62.6633,  -51.0130,  ...,   50.6761,   58.6055,
-          602.3143],
-        [  98.0641,   69.0042,   14.8005,  ...,   65.6722,   40.2223,
-           31.0606],
-        ...,
-        [   9.9362,  -62.6633,  -76.3259,  ...,  -56.4385,   -9.9623,
-         -171.6423],
-        [ -73.7852,   69.0042,  126.1772,  ...,  -29.6598,  -34.1344,
-          -24.2220],
-        [  62.8130,  -62.6633,  -51.0130,  ...,  -29.6598,   -1.4608,
-         -245.3525]])
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span><span class="p">,</span> <span class="n">load_diabetes</span>
 </pre></div>
 </div>
 </div>
@@ -831,7 +815,7 @@ Ao contrário da classificação, onde as saídas são discretas, a regressão l
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/95e21308d6a9b1930efd805b33738e06771b7aae7bbbfd8dda465ab946abd0f5.png" src="_images/95e21308d6a9b1930efd805b33738e06771b7aae7bbbfd8dda465ab946abd0f5.png" />
+<img alt="_images/54500ed28f937abfa4d3918372c19b96e3eaddd59f3e4afba74c24e917f95290.png" src="_images/54500ed28f937abfa4d3918372c19b96e3eaddd59f3e4afba74c24e917f95290.png" />
 </div>
 </div>
 <p>Após o treino, analisamos o resultado por resubstituição. Neste exemplo, estamos analisando a raiz do erro quadrático médio (<em>root mean squared error</em>), uma métrica comum em problemas de regressão.</p>
@@ -851,10 +835,10 @@ Ao contrário da classificação, onde as saídas são discretas, a regressão l
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/672896b8d3f94c3854adc7de99b32cd6007e5745d56be28f2bbfa49e2adca461.png" src="_images/672896b8d3f94c3854adc7de99b32cd6007e5745d56be28f2bbfa49e2adca461.png" />
+<img alt="_images/44efb873a212ab730d8d6fed9e0f8058174903a6a8c2ea1b57d66bce5b605e69.png" src="_images/44efb873a212ab730d8d6fed9e0f8058174903a6a8c2ea1b57d66bce5b605e69.png" />
 </div>
 </div>
-<p>Analisamos, por fim, os resultados no conjunto de teste, mostrando um RMSE próximo ao conjunto de treino.</p>
+<p>Analisamos, por fim, os resultados no conjunto de teste, mostrando um RMSE um pouco pior que o do conjunto de treino.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
@@ -870,7 +854,7 @@ Ao contrário da classificação, onde as saídas são discretas, a regressão l
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7ef4cd43b363cb1a897ab70fde3575685077343157424056e205f791a4581430.png" src="_images/7ef4cd43b363cb1a897ab70fde3575685077343157424056e205f791a4581430.png" />
+<img alt="_images/8dc956a6a7e2db784c51828816c85513d5e1bf0924a0baa4cd0b4ea8062e84f2.png" src="_images/8dc956a6a7e2db784c51828816c85513d5e1bf0924a0baa4cd0b4ea8062e84f2.png" />
 </div>
 </div>
 </section>
@@ -1050,7 +1034,7 @@ L = \sum_{i=1}^{N}\text{max}(0,1-y_i.\hat{y}_i)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/977274be1ee03400a0e4071155d888df855078e7b055ac13c1e0d99816003c56.png" src="_images/977274be1ee03400a0e4071155d888df855078e7b055ac13c1e0d99816003c56.png" />
+<img alt="_images/2a5ef2f3e22e0b41c27a30204981e35e45e1cf55ed8364c8118d906a3f204c52.png" src="_images/2a5ef2f3e22e0b41c27a30204981e35e45e1cf55ed8364c8118d906a3f204c52.png" />
 </div>
 </div>
 </section>
@@ -1092,7 +1076,7 @@ O quadrado das diferenças garante que erros grandes tenham um impacto maior no 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6d98665478edbca6671fe650bc821ba7ea60b370414836cb223f8bcc778b5963.png" src="_images/6d98665478edbca6671fe650bc821ba7ea60b370414836cb223f8bcc778b5963.png" />
+<img alt="_images/33abec078ba8daf791f0fa9a7fb8149785d5356cc226255da639555a5a44e5f3.png" src="_images/33abec078ba8daf791f0fa9a7fb8149785d5356cc226255da639555a5a44e5f3.png" />
 </div>
 </div>
 </section>
@@ -1111,7 +1095,7 @@ Sua fórmula é:</p>
 <p>Abaixo vemos sua utilização em pytorch e sua saída.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">errors</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">errors</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">101</span><span class="p">)</span>
 <span class="n">zeros</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span>
 
 <span class="n">criterion</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">L1Loss</span><span class="p">()</span>
@@ -1128,7 +1112,7 @@ Sua fórmula é:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/3f441bcfee50408290cf548aa27aeede2e040e3d0b1be4e3b7f9979e90b1a7da.png" src="_images/3f441bcfee50408290cf548aa27aeede2e040e3d0b1be4e3b7f9979e90b1a7da.png" />
+<img alt="_images/7fc0d6758936d83077ab65384453df6377af24da106c40fe307453afae87852e.png" src="_images/7fc0d6758936d83077ab65384453df6377af24da106c40fe307453afae87852e.png" />
 </div>
 </div>
 </section>
@@ -1161,7 +1145,7 @@ Isso faz com que seja uma função intermediária que lida bem tanto com ruídos
 <p>A Huber Loss é amplamente utilizada em problemas de regressão onde há a presença de outliers nos dados, pois oferece um equilíbrio entre ser suave para erros pequenos e robusta para grandes erros. Além disso, é preferida em aplicações de machine learning onde o MSE tende a ser excessivamente influenciado por grandes outliers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">errors</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">errors</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">101</span><span class="p">)</span>
 <span class="n">zeros</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">delta</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]:</span>
@@ -1179,25 +1163,25 @@ Isso faz com que seja uma função intermediária que lida bem tanto com ruídos
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/13a5bd9e449d3dcaf6d647cf51296d36c240d66551b0a2b2fd224521b55cb479.png" src="_images/13a5bd9e449d3dcaf6d647cf51296d36c240d66551b0a2b2fd224521b55cb479.png" />
+<img alt="_images/d7f2ed42aa75096db750dccc0644114c870b78d4bc6c2e04c12a19a726d81e4c.png" src="_images/d7f2ed42aa75096db750dccc0644114c870b78d4bc6c2e04c12a19a726d81e4c.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="outras-funcoes-de-perda">
 <h2>Outras Funções de Perda<a class="headerlink" href="#outras-funcoes-de-perda" title="Link to this heading">#</a></h2>
-<p>A KL Divergence é utilizada para medir a diferença entre duas distribuições de probabilidade, sendo particularmente útil em modelos probabilísticos, como variational autoencoders (VAEs).
+<p>A <strong>KL Divergence</strong> é utilizada para medir a diferença entre duas distribuições de probabilidade, sendo particularmente útil em modelos probabilísticos, como variational autoencoders (VAEs).
 Ela não é propriamente uma função de perda no sentido tradicional, mas é amplamente usada para regularizar a distribuição de saída de um modelo para que seja similar a uma distribuição-alvo.</p>
-<p>A Cosine Similarity Loss mede o ângulo entre dois vetores, sendo usada para comparar a similaridade entre vetores em vez de medir a diferença absoluta.
+<p>A <strong>Cosine Similarity Loss</strong> mede o ângulo entre dois vetores, sendo usada para comparar a similaridade entre vetores em vez de medir a diferença absoluta.
 Isso é especialmente útil em problemas de aprendizado de representações, como em redes neurais siamesas e embedding learning.</p>
-<p>A Focal Loss foi introduzida para tratar o problema de desbalanceamento de classes, em que algumas classes são muito mais representadas que outras.
+<p>A <strong>Focal Loss</strong> foi introduzida para tratar o problema de desbalanceamento de classes, em que algumas classes são muito mais representadas que outras.
 Ela é uma modificação da entropia cruzada que coloca mais peso nas amostras difíceis (ou seja, aquelas que são classificadas de forma incorreta).</p>
-<p>Também chamada de Huber Loss, mas com uma implementação ligeiramente diferente, a Smooth L1 Loss é amplamente utilizada em redes neurais para detecção de objetos. Ela é mais robusta a outliers do que a MSE e mais estável do que o MAE.</p>
-<p>A Dice Loss é uma função de perda comumente usada em problemas de segmentação de imagens, especialmente em áreas médicas, onde é necessário calcular a sobreposição entre a área predita e a área verdadeira.
+<p>Também chamada de <strong>Huber Loss</strong>, mas com uma implementação ligeiramente diferente, a <strong>Smooth L1 Loss</strong> é amplamente utilizada em redes neurais para detecção de objetos. Ela é mais robusta a outliers do que a MSE e mais estável do que o MAE.</p>
+<p>A <strong>Dice Loss</strong> é uma função de perda comumente usada em problemas de segmentação de imagens, especialmente em áreas médicas, onde é necessário calcular a sobreposição entre a área predita e a área verdadeira.
 É derivada do coeficiente de Dice, que mede a similaridade entre dois conjuntos.</p>
-<p>A Triplet Loss é usada para aprendizado de embeddings e aprendizado métrico, particularmente em redes siamesas.
+<p>A <strong>Triplet Loss</strong> é usada para aprendizado de embeddings e aprendizado métrico, particularmente em redes siamesas.
 A função de perda incentiva a rede a reduzir a distância entre embeddings de amostras semelhantes (o ancor e o positivo) e aumentar a distância entre o ancor e amostras dissimilares (o negativo).</p>
-<p>A Wing Loss é uma função de perda desenhada especificamente para problemas de detecção de landmarks faciais, onde pequenos erros precisam ser suavemente penalizados, mas grandes erros devem ser penalizados de forma mais forte.</p>
+<p>A <strong>Wing Loss</strong> é uma função de perda desenhada especificamente para problemas de detecção de landmarks faciais, onde pequenos erros precisam ser suavemente penalizados, mas grandes erros devem ser penalizados de forma mais forte.</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="algoritmos-de-otimizacao">
@@ -1278,18 +1262,18 @@ Esse algoritmo é um dos mais populares atualmente, pois oferece uma convergênc
 <section id="outros-algoritmos">
 <h2>Outros Algoritmos<a class="headerlink" href="#outros-algoritmos" title="Link to this heading">#</a></h2>
 <p>Além dos algoritmos clássicos que discutimos (Gradiente Descendente, Momentum, RMSProp e ADAM), existem outros algoritmos de otimização relevantes que, dependendo do problema e das características da rede neural, podem oferecer vantagens em termos de desempenho ou convergência.</p>
-<p>O AdaGrad é um dos primeiros algoritmos de otimização adaptativos, introduzido antes do RMSProp.
+<p>O <strong>AdaGrad</strong> é um dos primeiros algoritmos de otimização adaptativos, introduzido antes do RMSProp.
 Ele ajusta a taxa de aprendizado para cada parâmetro de forma individual, com base nas atualizações anteriores.
 Isso significa que parâmetros raramente atualizados têm uma taxa de aprendizado maior, enquanto aqueles que já foram ajustados várias vezes têm a taxa de aprendizado reduzida.
 Embora seja útil em problemas esparsos, como no processamento de linguagem natural, onde algumas features são raras, AdaGrad pode sofrer de um decaimento excessivo da taxa de aprendizado, o que leva a convergência mais lenta em muitos casos.</p>
-<p>O AdaDelta é uma variação do AdaGrad, projetada para corrigir o problema de decaimento da taxa de aprendizado.
+<p>O <strong>AdaDelta</strong> é uma variação do AdaGrad, projetada para corrigir o problema de decaimento da taxa de aprendizado.
 Em vez de acumular todas as atualizações anteriores, como o AdaGrad, o AdaDelta mantém uma janela deslizante de atualizações recentes, limitando o impacto de atualizações passadas muito distantes.
 Isso mantém a adaptabilidade da taxa de aprendizado sem que ela diminua drasticamente ao longo do tempo.
 Assim como o RMSProp, AdaDelta é muito utilizado em redes profundas e outros problemas complexos.</p>
-<p>O Nadam é uma combinação de ADAM com o conceito de Nesterov Momentum.
+<p>O <strong>Nadam</strong> é uma combinação de ADAM com o conceito de Nesterov Momentum.
 A diferença em relação ao Momentum clássico é que, no Nesterov Momentum, o cálculo do gradiente é realizado com uma “visão antecipada” da direção para onde os pesos estão se movendo, o que pode acelerar o processo de convergência.
 O Nadam aplica essa ideia no contexto do ADAM, resultando em um algoritmo que pode ser ligeiramente mais eficiente e estável do que o ADAM em certos cenários.</p>
-<p>O AMSGrad é uma modificação do ADAM que tenta resolver um problema de convergência observada no ADAM original, especialmente em situações onde a função de perda não é convexa.
+<p>O <strong>AMSGrad</strong> é uma modificação do ADAM que tenta resolver um problema de convergência observada no ADAM original, especialmente em situações onde a função de perda não é convexa.
 No ADAM, os parâmetros de aprendizado podem não convergir para o ótimo global em algumas situações.
 O AMSGrad corrige isso, garantindo que as médias móveis dos gradientes só decaiam, o que melhora a convergência em alguns problemas.</p>
 </section>
@@ -1414,8 +1398,7 @@ A interação entre esses componentes define o sucesso e a eficácia de um model
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Pacotes Utilizados nesta Aula</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#paradigmas-de-aprendizagem">Paradigmas de Aprendizagem</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Paradigmas de Aprendizagem</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aprendizagem-supervisionada">Aprendizagem Supervisionada</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-de-classificacao">Problemas de Classificação</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classificacao-binaria">Classificação Binária</a></li>

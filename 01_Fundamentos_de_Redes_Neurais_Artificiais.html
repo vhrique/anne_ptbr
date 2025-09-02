@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '01_Fundamentos_de_Redes_Neurais_Artificiais';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Arquiteturas Especializadas em Visão Computacional" href="03_CNN.html" />
+    <link rel="next" title="Paradigmas de Aprendizagem" href="02_Paradigmas_Aprendizagem.html" />
     <link rel="prev" title="Introdução" href="00_Introducao.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -175,7 +175,8 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentos</span></p>
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Fundamentos de Redes Neurais Artificiais</a></li>
 
 
@@ -183,7 +184,26 @@
 
 
 
+<li class="toctree-l1"><a class="reference internal" href="02_Paradigmas_Aprendizagem.html">Paradigmas de Aprendizagem</a></li>
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Arquiteturas Especializadas</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="03_CNN.html">Arquiteturas Especializadas em Visão Computacional</a></li>
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anexos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01a_Fundamentos_de_Pytorch.html">Pacotes Utilizados</a></li>
 
 
 
@@ -242,7 +262,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+      <li><a href="https://github.com/vhrique/anne_ptbr" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -259,7 +279,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_Fundamentos_de_Redes_Neurais_Artificiais.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/vhrique/anne_ptbr/issues/new?title=Issue%20on%20page%20%2F01_Fundamentos_de_Redes_Neurais_Artificiais.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -425,8 +445,8 @@ document.write(`
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="perceptron">
 <h1><em>Perceptron</em><a class="headerlink" href="#perceptron" title="Link to this heading">#</a></h1>
-<p>O <em>Perceptron</em> é uma representação matemática simplificada de neurônios, que foi publicada por Rosenblatt em 1958 [1].
-Este modelo aprende a realizar tarefas ao ajustar parâmetros internos de forma análoga a como conexões sinápticas são reforçadas por meio da aprendizagem Hebbiana, proposta em 1949 [2].</p>
+<p>O <em>Perceptron</em> é uma representação matemática simplificada de neurônios, que foi publicada por Rosenblatt em 1958.
+Este modelo aprende a realizar tarefas ao ajustar parâmetros internos de forma análoga a como conexões sinápticas são reforçadas por meio da aprendizagem Hebbiana, proposta em 1949.</p>
 <center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/perceptron.jpg?raw=true" width="500"></center>
 <p>No caso, as entradas do <em>perceptron</em> fazem o papel dos dentritos, recebendo sinais que são então multiplicado por pesos, similar às forças de conexões sinápticas, e soma todos os valores.
 Quando este valor passa de um determinado limiar, o perceptron irá ativar sua saída de forma análoga a como o neurônio irá disparar um impulso elétrico por seu axônio.</p>
@@ -749,7 +769,7 @@ Da mesma forma que com o <em>perceptron</em>, realizamos o treino no método <em
 </section>
 <section id="backpropagation">
 <h2>Backpropagation<a class="headerlink" href="#backpropagation" title="Link to this heading">#</a></h2>
-<p>A criação do algoritmo de <em>bakpropagation</em> em 1986 foi um marco decisivo na área de inteligência artificial [3]. Antes disso, havia muita dificuldade em treinar redes neurais com mais camadas para resolver problemas não-lineares.
+<p>A criação do algoritmo de <em>bakpropagation</em> em 1986 foi um marco decisivo na área de inteligência artificial. Antes disso, havia muita dificuldade em treinar redes neurais com mais camadas para resolver problemas não-lineares.
 O algoritmo de <em>backpropagaation</em> consegue, a partir da regra da cadeia, propagar os gradientes relacionados aos erros de classificação de uma camada a outra, o que permite o treino de modelos com múltiplas camadas utilizando algoritmos de otimização por gradiente descendente.</p>
 <p>O algoritmo funciona da seguinte forma:</p>
 <ol class="arabic simple">
@@ -803,9 +823,9 @@ Também estudamos como estes modelos aprendem, com um foco importante no algorit
 <section class="tex2jax_ignore mathjax_ignore" id="referencias">
 <h1>Referências<a class="headerlink" href="#referencias" title="Link to this heading">#</a></h1>
 <ul class="simple">
-<li><p>[1] Rosenblatt, F. (1958). The perceptron: a probabilistic model for information storage and organization in the brain. Psychological review, 65(6), 386.</p></li>
-<li><p>[2] Hebb, D. O. (1949). The organization of behavior: A neuropsychological theory. Psychology press.</p></li>
-<li><p>[3] Rumelhart, D. E., Hinton, G. E., &amp; Williams, R. J. (1986). Learning representations by back-propagating errors. nature, 323(6088), 533-536.</p></li>
+<li><p>Rosenblatt, F. (1958). The perceptron: a probabilistic model for information storage and organization in the brain. Psychological review, 65(6), 386.</p></li>
+<li><p>Hebb, D. O. (1949). The organization of behavior: A neuropsychological theory. Psychology press.</p></li>
+<li><p>Rumelhart, D. E., Hinton, G. E., &amp; Williams, R. J. (1986). Learning representations by back-propagating errors. nature, 323(6088), 533-536.</p></li>
 </ul>
 </section>
 
@@ -849,11 +869,11 @@ Também estudamos como estes modelos aprendem, com um foco importante no algorit
       </div>
     </a>
     <a class="right-next"
-       href="03_CNN.html"
+       href="02_Paradigmas_Aprendizagem.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Arquiteturas Especializadas em Visão Computacional</p>
+        <p class="prev-next-title">Paradigmas de Aprendizagem</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
