@@ -191,6 +191,7 @@
 
 
 
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Arquiteturas Especializadas</span></p>
 <ul class="nav bd-sidenav">
@@ -414,7 +415,6 @@ document.write(`
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aprendizagem-supervisionada">Aprendizagem Supervisionada</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classificacao">Classificação</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-de-classificacao">Exemplo de Classificação</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classificacao-multiclasse">Classificação Multiclasse</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#categorical-cross-entropy">Categorical Cross-Entropy</a></li>
 </ul>
@@ -431,14 +431,15 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-entropy-como-funcao-de-perda-em-redes-neurais">Cross-Entropy como Função de Perda em Redes Neurais</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-de-regressao">Problemas de Regressão</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-de-perda-para-regressao">Funções de Perda para Regressão</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-squared-error">Mean Squared Error</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-absolute-error">Mean Absolute Error</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#huber-loss">Huber Loss</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressao">Regressão</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-de-perda-para-regressao">Funções de Perda para Regressão</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-squared-error">Mean Squared Error</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-absolute-error">Mean Absolute Error</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#huber-loss">Huber Loss</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outras-funcoes-de-perda">Outras Funções de Perda</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmos-de-otimizacao">Algoritmos de Otimização</a><ul class="visible nav section-nav flex-column">
@@ -449,6 +450,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outros-algoritmos">Outros Algoritmos</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#outros-paradigmas-de-aprendizagem-e-funcoes-de-perda">Outros Paradigmas de Aprendizagem e Funções de Perda</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consideracoes-finais">Considerações Finais</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proxima-aula">Próxima Aula</a></li>
@@ -518,8 +520,6 @@ Esse paradigma é amplamente aplicado em tarefas de classificação e regressão
 <p>Na classificação, o modelo aprende a categorizar entradas em uma ou mais classes.
 Um exemplo clássico é o Iris Dataset de Fisher (1936), onde tamanhos de pétala e sépala são utilizados para classificar entre três tipos diferentes de flor Iris.
 Com isto, o modelo aprende a identificar padrões que distinguem uma classe de outra.</p>
-<section id="exemplo-de-classificacao">
-<h3>Exemplo de Classificação<a class="headerlink" href="#exemplo-de-classificacao" title="Link to this heading">#</a></h3>
 <p>Vejamos um exemplo de classificação simples no dataset mencionado.</p>
 <p>Para uma melhor avaliação do modelo, vamos utilizar validação cruzada. Utilizaremos uma técnica chamada de <em>Holdout Cross-validation</em>, que separa os dados de treino e teste de forma aleatória.</p>
 <p>Obs: Ainda não estamos levando em consideração um conjunto de validação, onde podemos controlar o treinamento e realizar <em>early stopping</em>.
@@ -711,7 +711,6 @@ weighted avg       0.97      0.97      0.97        30
 </div>
 </div>
 <p>Neste problema, trabalhamos com uim exemplo de classificação multiclasse. Porém,temos outros tipos. As três principais categorias de classificação são classificação multiclasse, classificação binária e classificação multilabel. Cada uma tem suas próprias características e desafios.</p>
-</section>
 <section id="classificacao-multiclasse">
 <h3>Classificação Multiclasse<a class="headerlink" href="#classificacao-multiclasse" title="Link to this heading">#</a></h3>
 <p>Na classificação multiclasse, o modelo precisa classificar as entradas em mais de duas classes mutuamente exclusivas.
@@ -906,8 +905,8 @@ H(P,Q) = - \sum_{i=1}^{C}P(i).log(Q(i))
 Quando <span class="math notranslate nohighlight">\(P(i)\)</span> é 1 (ou seja, a classe <span class="math notranslate nohighlight">\(𝑖\)</span> é a correta), a entropia cruzada penaliza o modelo se a probabilidade <span class="math notranslate nohighlight">\(𝑄(i)\)</span> não estiver próxima de 1.</p>
 </section>
 </section>
-<section id="problemas-de-regressao">
-<h2>Problemas de Regressão<a class="headerlink" href="#problemas-de-regressao" title="Link to this heading">#</a></h2>
+<section id="regressao">
+<h2>Regressão<a class="headerlink" href="#regressao" title="Link to this heading">#</a></h2>
 <p>Na regressão, o objetivo é prever um valor contínuo.
 Por exemplo, em problemas de previsão de temperatura, o modelo aprende a mapear uma série de variáveis (como pressão e umidade) para prever a temperatura futura.
 Ao contrário da classificação, onde as saídas são discretas, a regressão lida com variáveis contínuas.</p>
@@ -1060,12 +1059,11 @@ Ao contrário da classificação, onde as saídas são discretas, a regressão l
 <img alt="_images/8dc956a6a7e2db784c51828816c85513d5e1bf0924a0baa4cd0b4ea8062e84f2.png" src="_images/8dc956a6a7e2db784c51828816c85513d5e1bf0924a0baa4cd0b4ea8062e84f2.png" />
 </div>
 </div>
-</section>
 <section id="funcoes-de-perda-para-regressao">
-<h2>Funções de Perda para Regressão<a class="headerlink" href="#funcoes-de-perda-para-regressao" title="Link to this heading">#</a></h2>
+<h3>Funções de Perda para Regressão<a class="headerlink" href="#funcoes-de-perda-para-regressao" title="Link to this heading">#</a></h3>
 <p>Diferente da classificação, problemas de regressão buscam medir o erro entre os valores diretamente. Dependendo do nosso objetivo, podemos calcular este erro de diferentes formas.</p>
 <section id="mean-squared-error">
-<h3>Mean Squared Error<a class="headerlink" href="#mean-squared-error" title="Link to this heading">#</a></h3>
+<h4>Mean Squared Error<a class="headerlink" href="#mean-squared-error" title="Link to this heading">#</a></h4>
 <p>O MSE, presente no exemplo anterior, é amplamente usado em problemas de regressão, onde o objetivo é prever valores contínuos.
 Ele mede a diferença média entre as predições do modelo e os valores reais, elevando ao quadrado essas diferenças para garantir que erros positivos e negativos não se cancelem.
 A fórmula é:</p>
@@ -1104,7 +1102,7 @@ O quadrado das diferenças garante que erros grandes tenham um impacto maior no 
 </div>
 </section>
 <section id="mean-absolute-error">
-<h3>Mean Absolute Error<a class="headerlink" href="#mean-absolute-error" title="Link to this heading">#</a></h3>
+<h4>Mean Absolute Error<a class="headerlink" href="#mean-absolute-error" title="Link to this heading">#</a></h4>
 <p>O MAE é outra função de perda usada para problemas de regressão, mas, ao contrário do MSE, mede a diferença absoluta média entre os valores previstos e os valores reais.
 Sua fórmula é:</p>
 <div class="math notranslate nohighlight">
@@ -1140,7 +1138,7 @@ Sua fórmula é:</p>
 </div>
 </section>
 <section id="huber-loss">
-<h3>Huber Loss<a class="headerlink" href="#huber-loss" title="Link to this heading">#</a></h3>
+<h4>Huber Loss<a class="headerlink" href="#huber-loss" title="Link to this heading">#</a></h4>
 <p>A Huber Loss é uma função de perda que combina as vantagens do Erro Quadrático Médio (MSE) e do Erro Absoluto Médio (MAE), oferecendo uma abordagem robusta para problemas de regressão, especialmente na presença de outliers.
 Ela foi projetada para tratar grandes erros de forma mais eficiente do que o MSE, que é altamente sensível a outliers, enquanto mantém a simplicidade do MAE em regiões de pequenos erros.
 A fórmula da Huber Loss é definida de forma diferente para erros pequenos e grandes:</p>
@@ -1191,21 +1189,6 @@ Isso faz com que seja uma função intermediária que lida bem tanto com ruídos
 </div>
 </section>
 </section>
-<section id="outras-funcoes-de-perda">
-<h2>Outras Funções de Perda<a class="headerlink" href="#outras-funcoes-de-perda" title="Link to this heading">#</a></h2>
-<p>Além das funções de perda detalhadas anteriormente para classificação e regressão, temos diversos outros exemplos, amplamente utilizados na indústria e na academia.</p>
-<p>A <strong>KL Divergence</strong> é utilizada para medir a diferença entre duas distribuições de probabilidade, sendo particularmente útil em modelos probabilísticos, como variational autoencoders (VAEs).
-Ela não é propriamente uma função de perda no sentido tradicional, mas é amplamente usada para regularizar a distribuição de saída de um modelo para que seja similar a uma distribuição-alvo.</p>
-<p>A <strong>Cosine Similarity Loss</strong> mede o ângulo entre dois vetores, sendo usada para comparar a similaridade entre vetores em vez de medir a diferença absoluta.
-Isso é especialmente útil em problemas de aprendizado de representações, como em redes neurais siamesas e embedding learning.</p>
-<p>A <strong>Focal Loss</strong> foi introduzida para tratar o problema de desbalanceamento de classes, em que algumas classes são muito mais representadas que outras.
-Ela é uma modificação da entropia cruzada que coloca mais peso nas amostras difíceis (ou seja, aquelas que são classificadas de forma incorreta).</p>
-<p>Também chamada de <strong>Huber Loss</strong>, mas com uma implementação ligeiramente diferente, a <strong>Smooth L1 Loss</strong> é amplamente utilizada em redes neurais para detecção de objetos. Ela é mais robusta a outliers do que a MSE e mais estável do que o MAE.</p>
-<p>A <strong>Dice Loss</strong> é uma função de perda comumente usada em problemas de segmentação de imagens, especialmente em áreas médicas, onde é necessário calcular a sobreposição entre a área predita e a área verdadeira.
-É derivada do coeficiente de Dice, que mede a similaridade entre dois conjuntos.</p>
-<p>A <strong>Triplet Loss</strong> é usada para aprendizado de embeddings e aprendizado métrico, particularmente em redes siamesas.
-A função de perda incentiva a rede a reduzir a distância entre embeddings de amostras semelhantes (o ancor e o positivo) e aumentar a distância entre o ancor e amostras dissimilares (o negativo).</p>
-<p>A <strong>Wing Loss</strong> é uma função de perda desenhada especificamente para problemas de detecção de landmarks faciais, onde pequenos erros precisam ser suavemente penalizados, mas grandes erros devem ser penalizados de forma mais forte.</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="algoritmos-de-otimizacao">
@@ -1301,6 +1284,22 @@ O Nadam aplica essa ideia no contexto do ADAM, resultando em um algoritmo que po
 No ADAM, os parâmetros de aprendizado podem não convergir para o ótimo global em algumas situações.
 O AMSGrad corrige isso, garantindo que as médias móveis dos gradientes só decaiam, o que melhora a convergência em alguns problemas.</p>
 </section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="outros-paradigmas-de-aprendizagem-e-funcoes-de-perda">
+<h1>Outros Paradigmas de Aprendizagem e Funções de Perda<a class="headerlink" href="#outros-paradigmas-de-aprendizagem-e-funcoes-de-perda" title="Link to this heading">#</a></h1>
+<p>Além das funções de perda detalhadas anteriormente para classificação e regressão, temos diversos outros exemplos, amplamente utilizados na indústria e na academia.</p>
+<p>A <strong>KL Divergence</strong> é utilizada para medir a diferença entre duas distribuições de probabilidade, sendo particularmente útil em modelos probabilísticos, como variational autoencoders (VAEs).
+Ela não é propriamente uma função de perda no sentido tradicional, mas é amplamente usada para regularizar a distribuição de saída de um modelo para que seja similar a uma distribuição-alvo.</p>
+<p>A <strong>Cosine Similarity Loss</strong> mede o ângulo entre dois vetores, sendo usada para comparar a similaridade entre vetores em vez de medir a diferença absoluta.
+Isso é especialmente útil em problemas de aprendizado de representações, como em redes neurais siamesas e embedding learning.</p>
+<p>A <strong>Focal Loss</strong> foi introduzida para tratar o problema de desbalanceamento de classes, em que algumas classes são muito mais representadas que outras.
+Ela é uma modificação da entropia cruzada que coloca mais peso nas amostras difíceis (ou seja, aquelas que são classificadas de forma incorreta).</p>
+<p>Também chamada de <strong>Huber Loss</strong>, mas com uma implementação ligeiramente diferente, a <strong>Smooth L1 Loss</strong> é amplamente utilizada em redes neurais para detecção de objetos. Ela é mais robusta a outliers do que a MSE e mais estável do que o MAE.</p>
+<p>A <strong>Dice Loss</strong> é uma função de perda comumente usada em problemas de segmentação de imagens, especialmente em áreas médicas, onde é necessário calcular a sobreposição entre a área predita e a área verdadeira.
+É derivada do coeficiente de Dice, que mede a similaridade entre dois conjuntos.</p>
+<p>A <strong>Triplet Loss</strong> é usada para aprendizado de embeddings e aprendizado métrico, particularmente em redes siamesas.
+A função de perda incentiva a rede a reduzir a distância entre embeddings de amostras semelhantes (o ancor e o positivo) e aumentar a distância entre o ancor e amostras dissimilares (o negativo).</p>
+<p>A <strong>Wing Loss</strong> é uma função de perda desenhada especificamente para problemas de detecção de landmarks faciais, onde pequenos erros precisam ser suavemente penalizados, mas grandes erros devem ser penalizados de forma mais forte.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="exercicios">
 <h1>Exercícios<a class="headerlink" href="#exercicios" title="Link to this heading">#</a></h1>
@@ -1410,7 +1409,6 @@ O AMSGrad corrige isso, garantindo que as médias móveis dos gradientes só dec
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aprendizagem-supervisionada">Aprendizagem Supervisionada</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classificacao">Classificação</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-de-classificacao">Exemplo de Classificação</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classificacao-multiclasse">Classificação Multiclasse</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#categorical-cross-entropy">Categorical Cross-Entropy</a></li>
 </ul>
@@ -1427,14 +1425,15 @@ O AMSGrad corrige isso, garantindo que as médias móveis dos gradientes só dec
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-entropy-como-funcao-de-perda-em-redes-neurais">Cross-Entropy como Função de Perda em Redes Neurais</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-de-regressao">Problemas de Regressão</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-de-perda-para-regressao">Funções de Perda para Regressão</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-squared-error">Mean Squared Error</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-absolute-error">Mean Absolute Error</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#huber-loss">Huber Loss</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressao">Regressão</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-de-perda-para-regressao">Funções de Perda para Regressão</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-squared-error">Mean Squared Error</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-absolute-error">Mean Absolute Error</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#huber-loss">Huber Loss</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outras-funcoes-de-perda">Outras Funções de Perda</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmos-de-otimizacao">Algoritmos de Otimização</a><ul class="visible nav section-nav flex-column">
@@ -1445,6 +1444,7 @@ O AMSGrad corrige isso, garantindo que as médias móveis dos gradientes só dec
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outros-algoritmos">Outros Algoritmos</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#outros-paradigmas-de-aprendizagem-e-funcoes-de-perda">Outros Paradigmas de Aprendizagem e Funções de Perda</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consideracoes-finais">Considerações Finais</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proxima-aula">Próxima Aula</a></li>
