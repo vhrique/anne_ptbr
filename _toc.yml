@@ -3,7 +3,15 @@
 
 format: jb-book
 root: 00_Introducao
-chapters:
-- file: 01_Fundamentos_de_Redes_Neurais_Artificiais
-- file: 02_Paradigmas_de_Aprendizagem
-- file: 03_CNN
+parts:
+  - caption: Fundamentos
+    chapters:
+    - file: 01_Fundamentos_de_Redes_Neurais_Artificiais
+    - file: 02_Paradigmas_de_Aprendizagem
+  - caption: Arquiteturas Especializadas
+    chapters:
+    - file: 03_CNN
+  - caption: Anexos
+    chapters:
+    - file: 01a_Fundamentos_de_Pytorch
+
