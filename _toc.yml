@@ -7,7 +7,7 @@ parts:
   - caption: Fundamentos
     chapters:
     - file: 01_Fundamentos_de_Redes_Neurais_Artificiais
-    - file: 02_Paradigmas_de_Aprendizagem
+    - file: 02_Paradigmas_Aprendizagem
   - caption: Arquiteturas Especializadas
     chapters:
     - file: 03_CNN
