@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Ferramentas Utilizadas Nesta Aula &#8212; Engenharia de Redes Neurais Artificiais</title>
+    <title>Fundamentos de Redes Neurais Artificiais &#8212; Engenharia de Redes Neurais Artificiais</title>
   
   
   
@@ -176,7 +176,7 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ferramentas Utilizadas Nesta Aula</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Fundamentos de Redes Neurais Artificiais</a></li>
 
 
 
@@ -373,7 +373,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Ferramentas Utilizadas Nesta Aula</h1>
+    <h1>Fundamentos de Redes Neurais Artificiais</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -383,7 +383,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Ferramentas Utilizadas Nesta Aula</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Fundamentos de Redes Neurais Artificiais</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#perceptron"><em>Perceptron</em></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#codigo-do-perceptron-em-python">Código do <em>Perceptron</em> em Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-de-aplicacao-problema-linear">Exemplo de Aplicação - Problema Linear</a></li>
@@ -419,36 +419,14 @@ document.write(`
                 <article class="bd-article">
                   
   <p><a href="https://colab.research.google.com/github/vhrique/anne_ptbr/blob/main/01_Fundamentos_de_Redes_Neurais_Artificiais.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<section class="tex2jax_ignore mathjax_ignore" id="ferramentas-utilizadas-nesta-aula">
-<h1>Ferramentas Utilizadas Nesta Aula<a class="headerlink" href="#ferramentas-utilizadas-nesta-aula" title="Link to this heading">#</a></h1>
-<ul class="simple">
-<li><p>Numpy: Pacote com funções para realizar cálculos vetoriais e matriciais</p></li>
-<li><p>Pyplot: Pacote com funções para criar gráficos</p></li>
-<li><p>Scikit-Learn: Pacote com algoritmos de Machine Learning e ferramentas auxiliares</p>
-<ul>
-<li><p>classification_report: Função que cria relatório com métricas de classificação</p></li>
-<li><p>ConfusionMatrixDisplay: Classe que auxilia a criar o gráfico da matriz de confusão</p></li>
-<li><p>make_classification: Função que cria um problema simples de classificação</p></li>
-<li><p>make_moons: Função que cria um problema não-linear de classificação</p></li>
-</ul>
-</li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">ConfusionMatrixDisplay</span>
-<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_classification</span><span class="p">,</span> <span class="n">make_moons</span>
-</pre></div>
-</div>
-</div>
-</div>
+<section class="tex2jax_ignore mathjax_ignore" id="fundamentos-de-redes-neurais-artificiais">
+<h1>Fundamentos de Redes Neurais Artificiais<a class="headerlink" href="#fundamentos-de-redes-neurais-artificiais" title="Link to this heading">#</a></h1>
+<p>Neste capítulo, apresentaremos conceitos fundamentais sobre Redes Neurais Artificiais, incluindo o <em>perceptron</em> e o <em>perceptron</em> multicamadas.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="perceptron">
 <h1><em>Perceptron</em><a class="headerlink" href="#perceptron" title="Link to this heading">#</a></h1>
-<p>O <em>Perceptron</em> é uma representação matemática simplificada de neurônios, que foi publicada por Rosenblatt em 1949.
-Este modelo aprende a realizar tarefas ao ajustar parâmetros internos de forma análoga a como conexões sinápticas são reforçadas por meio da aprendizagem Hebbiana (1949).</p>
+<p>O <em>Perceptron</em> é uma representação matemática simplificada de neurônios, que foi publicada por Rosenblatt em 1958 [1].
+Este modelo aprende a realizar tarefas ao ajustar parâmetros internos de forma análoga a como conexões sinápticas são reforçadas por meio da aprendizagem Hebbiana, proposta em 1949 [2].</p>
 <center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/perceptron.jpg?raw=true" width="500"></center>
 <p>No caso, as entradas do <em>perceptron</em> fazem o papel dos dentritos, recebendo sinais que são então multiplicado por pesos, similar às forças de conexões sinápticas, e soma todos os valores.
 Quando este valor passa de um determinado limiar, o perceptron irá ativar sua saída de forma análoga a como o neurônio irá disparar um impulso elétrico por seu axônio.</p>
@@ -457,6 +435,13 @@ Quando este valor passa de um determinado limiar, o perceptron irá ativar sua s
 <section id="codigo-do-perceptron-em-python">
 <h2>Código do <em>Perceptron</em> em Python<a class="headerlink" href="#codigo-do-perceptron-em-python" title="Link to this heading">#</a></h2>
 <p>Vejamos abaixo uma implementação do <em>perceptron</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Perceptron</span><span class="p">:</span>
@@ -507,6 +492,14 @@ A partir de valores iniciais aleatórios (ou não) em <span class="math notransl
 <p>Definimos um problema linear como aquele que pode ser separado por meio de uma única reta (ou hyperplano, quando falamos de dimensões maiores).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_classification</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_classification</span><span class="p">(</span>
     <span class="n">n_samples</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">n_features</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
     <span class="n">n_informative</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_redundant</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_repeated</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
@@ -523,7 +516,7 @@ A partir de valores iniciais aleatórios (ou não) em <span class="math notransl
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2365fa12fbe2d9cc458d81afd505be18009e7717b94862dc1fae74284380a55d.png" src="_images/2365fa12fbe2d9cc458d81afd505be18009e7717b94862dc1fae74284380a55d.png" />
+<img alt="_images/8a5a7fa1475585b04eed94c209c7ef005f01b597e6207720802bf4581967b550.png" src="_images/8a5a7fa1475585b04eed94c209c7ef005f01b597e6207720802bf4581967b550.png" />
 </div>
 </div>
 <p>Criamos então o <em>perceptron</em>, cujo tamanho é definido como o número de variáveis do problema.</p>
@@ -573,13 +566,20 @@ Percebe-se que a borda de decisão é uma reta, conforme já mencionado.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/645814eb27c9b53222f9d77bc411a06ef196aa1325c27a982d6355ea0859e2ce.png" src="_images/645814eb27c9b53222f9d77bc411a06ef196aa1325c27a982d6355ea0859e2ce.png" />
+<img alt="_images/577e3d32430a7602c571fce1fae6d5e57a49458f10e32ae48b1d3de0dd57817f.png" src="_images/577e3d32430a7602c571fce1fae6d5e57a49458f10e32ae48b1d3de0dd57817f.png" />
 </div>
 </div>
 </section>
 <section id="limitacao-problemas-nao-lineares">
 <h2>Limitação: Problemas Não-Lineares<a class="headerlink" href="#limitacao-problemas-nao-lineares" title="Link to this heading">#</a></h2>
 <p>Se aplicarmos o <em>perceptron</em> em um problema não-linear, isto é, um problema cuja separação dos dados não segue uma linha reta, vemos que este modelo não consegue separar corretamente a maior parte dos exemplos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_moons</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_moons</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
@@ -594,7 +594,7 @@ Percebe-se que a borda de decisão é uma reta, conforme já mencionado.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/bb166b9456c8600b446dc88790fed5f56cee0f7f14eb57d1f610720710fa3986.png" src="_images/bb166b9456c8600b446dc88790fed5f56cee0f7f14eb57d1f610720710fa3986.png" />
+<img alt="_images/5f634b27016952c94f14d8cf693db85a3145f9e95cb80da3a799a583109b710f.png" src="_images/5f634b27016952c94f14d8cf693db85a3145f9e95cb80da3a799a583109b710f.png" />
 </div>
 </div>
 <p>Portanto, vemos uma importante limitação dos <em>perceptrons</em>.
@@ -681,7 +681,7 @@ Da mesma forma que com o <em>perceptron</em>, realizamos o treino no método <em
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/96e4e7f25edd433c5695b53ddcef6fc04a732c6a7ec492afa97bc64535cd4f87.png" src="_images/96e4e7f25edd433c5695b53ddcef6fc04a732c6a7ec492afa97bc64535cd4f87.png" />
+<img alt="_images/5116254e5cf5338c9eb2549ce77e0876736ace0ee4f7e595053de7fe60c0184c.png" src="_images/5116254e5cf5338c9eb2549ce77e0876736ace0ee4f7e595053de7fe60c0184c.png" />
 </div>
 </div>
 </section>
@@ -717,7 +717,7 @@ Da mesma forma que com o <em>perceptron</em>, realizamos o treino no método <em
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ab0f3699d6ce9e77684a5bb0f059420dc19b5a984f0df0c2e3036129e7b39ffb.png" src="_images/ab0f3699d6ce9e77684a5bb0f059420dc19b5a984f0df0c2e3036129e7b39ffb.png" />
+<img alt="_images/933109bef2f6332d436b821eac31fadc3ce1f7ed4e14b92dcb7d664c37e41f0a.png" src="_images/933109bef2f6332d436b821eac31fadc3ce1f7ed4e14b92dcb7d664c37e41f0a.png" />
 </div>
 </div>
 <p>Conseguimos verificar que cada <em>perceptron</em> da camada oculta cria uma borda de classificação linear, cada uma em uma região diferente. Ao juntarmos estas bordas no <em>perceptron</em> da camada de saída, temos a saída com borda não-linear.</p>
@@ -743,13 +743,13 @@ Da mesma forma que com o <em>perceptron</em>, realizamos o treino no método <em
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b2a2782a82239456507d618417b93e4c872f0b6631c985bab8095a812208536c.png" src="_images/b2a2782a82239456507d618417b93e4c872f0b6631c985bab8095a812208536c.png" />
+<img alt="_images/b37793fe7027c73bac8455828cd82a773c396d08729cd09fc9e41f2b41f0ac2e.png" src="_images/b37793fe7027c73bac8455828cd82a773c396d08729cd09fc9e41f2b41f0ac2e.png" />
 </div>
 </div>
 </section>
 <section id="backpropagation">
 <h2>Backpropagation<a class="headerlink" href="#backpropagation" title="Link to this heading">#</a></h2>
-<p>A criação do algoritmo de <em>bakpropagation</em> em 1986 foi um marco decisivo na área de inteligência artificial. Antes disso, havia muita dificuldade em treinar redes neurais com mais camadas para resolver problemas não-lineares.
+<p>A criação do algoritmo de <em>bakpropagation</em> em 1986 foi um marco decisivo na área de inteligência artificial [3]. Antes disso, havia muita dificuldade em treinar redes neurais com mais camadas para resolver problemas não-lineares.
 O algoritmo de <em>backpropagaation</em> consegue, a partir da regra da cadeia, propagar os gradientes relacionados aos erros de classificação de uma camada a outra, o que permite o treino de modelos com múltiplas camadas utilizando algoritmos de otimização por gradiente descendente.</p>
 <p>O algoritmo funciona da seguinte forma:</p>
 <ol class="arabic simple">
@@ -803,10 +803,9 @@ Também estudamos como estes modelos aprendem, com um foco importante no algorit
 <section class="tex2jax_ignore mathjax_ignore" id="referencias">
 <h1>Referências<a class="headerlink" href="#referencias" title="Link to this heading">#</a></h1>
 <ul class="simple">
-<li><p>Rosenblatt, F. (1958). The perceptron: a probabilistic model for information storage and organization in the brain. Psychological review, 65(6), 386.</p></li>
-<li><p>Hebb, D. O. (1949). The organization of behavior: A neuropsychological theory. Psychology press.</p></li>
-<li><p>Rumelhart, D. E., Hinton, G. E., &amp; Williams, R. J. (1986). Learning representations by back-propagating errors. nature, 323(6088), 533-536.</p></li>
-<li><p>Goodfellow, I., Bengio, Y., &amp; Courville, A. (2017). Deep learning (Vol. 1). Cambridge, MA, USA: MIT press.</p></li>
+<li><p>[1] Rosenblatt, F. (1958). The perceptron: a probabilistic model for information storage and organization in the brain. Psychological review, 65(6), 386.</p></li>
+<li><p>[2] Hebb, D. O. (1949). The organization of behavior: A neuropsychological theory. Psychology press.</p></li>
+<li><p>[3] Rumelhart, D. E., Hinton, G. E., &amp; Williams, R. J. (1986). Learning representations by back-propagating errors. nature, 323(6088), 533-536.</p></li>
 </ul>
 </section>
 
@@ -874,7 +873,7 @@ Também estudamos como estes modelos aprendem, com um foco importante no algorit
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Ferramentas Utilizadas Nesta Aula</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Fundamentos de Redes Neurais Artificiais</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#perceptron"><em>Perceptron</em></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#codigo-do-perceptron-em-python">Código do <em>Perceptron</em> em Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-de-aplicacao-problema-linear">Exemplo de Aplicação - Problema Linear</a></li>
