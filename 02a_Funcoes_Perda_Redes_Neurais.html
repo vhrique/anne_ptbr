@@ -1,0 +1,1341 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Funções de Perda em Redes Neurais Artificiais &#8212; Engenharia de Redes Neurais Artificiais</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '02a_Funcoes_Perda_Redes_Neurais';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Algoritmos de Otimização para Redes Neurais Artificiais" href="02b_Otimizacao_Redes_Neurais.html" />
+    <link rel="prev" title="Representação de Redes Neurais Artificiais" href="01b_Representacao_Redes_Neurais_Artificiais.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="00_Introducao.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Engenharia de Redes Neurais Artificiais</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00_Introducao.html">
+                    Introdução
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentos</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01a_Fundamentos_Aprendizagem.html">Fundamentos de Aprendizagem</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="01b_Representacao_Redes_Neurais_Artificiais.html">Representação de Redes Neurais Artificiais</a></li>
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Funções de Perda em Redes Neurais Artificiais</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="02b_Otimizacao_Redes_Neurais.html">Algoritmos de Otimização para Redes Neurais Artificiais</a></li>
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Arquiteturas Especializadas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="03_CNN.html">Arquiteturas Especializadas em Visão Computacional</a></li>
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anexos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01a_Fundamentos_de_Pytorch.html">Pacotes Utilizados</a></li>
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/vhrique/anne_ptbr" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/vhrique/anne_ptbr/issues/new?title=Issue%20on%20page%20%2F02a_Funcoes_Perda_Redes_Neurais.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/02a_Funcoes_Perda_Redes_Neurais.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Funções de Perda em Redes Neurais Artificiais</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Funções de Perda em Redes Neurais Artificiais</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classificacao">Classificação</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-entropy-como-funcao-de-perda-em-redes-neurais">Cross-Entropy como Função de Perda em Redes Neurais</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multilabel-binary-cross-entropy">Multilabel Binary Cross-Entropy</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classificacao-multiclasse">Classificação Multiclasse</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#categorical-cross-entropy">Categorical Cross-Entropy</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classificacao-binaria">Classificação Binária</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-cross-entropy">Binary Cross-Entropy</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#margin-hinge">Margin (Hinge)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classificacao-multilabel">Classificação Multilabel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-de-classificacao">Exemplo de Classificação</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressao">Regressão</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-squared-error">Mean Squared Error</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-absolute-error">Mean Absolute Error</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#huber-loss">Huber Loss</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-para-regressao">Exemplo para Regressão</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outras-funcoes-de-perda">Outras Funções de Perda</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consideracoes-finais">Considerações Finais</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proximo-capitulo">Próximo Capítulo</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referências</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><a href="https://colab.research.google.com/github/vhrique/anne_ptbr/blob/main/02a_Funcoes_Perda_Redes_Neurais.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="funcoes-de-perda-em-redes-neurais-artificiais">
+<h1>Funções de Perda em Redes Neurais Artificiais<a class="headerlink" href="#funcoes-de-perda-em-redes-neurais-artificiais" title="Link to this heading">#</a></h1>
+<p>Entre os paradigmas de aprendizagem mais relevantes está a aprendizagem supervisionada, que será o foco desta aula.</p>
+<p>Na aprendizagem supervisionada, o modelo é treinado utilizando um conjunto de dados rotulados, ou seja, para cada entrada, há uma saída esperada conhecida.
+O objetivo do modelo é aprender uma função que mapeia as entradas para as saídas corretas, generalizando esse conhecimento para prever novas amostras.
+Esse paradigma é amplamente aplicado em tarefas de classificação e regressão.</p>
+<p>Dependendo do tipo de tarefa, diferentes funções de perda podem ser utilizadas.
+Vejamos algumas destas funções a partir de dois exemplos, um de classificação e outro de regressão.</p>
+<section id="classificacao">
+<h2>Classificação<a class="headerlink" href="#classificacao" title="Link to this heading">#</a></h2>
+<p>Na classificação, o modelo aprende a categorizar entradas em uma ou mais classes.
+Um exemplo clássico é o Iris Dataset de Fisher (1936), onde tamanhos de pétala e sépala são utilizados para classificar entre três tipos diferentes de flor Iris.
+Com isto, o modelo aprende a identificar padrões que distinguem uma classe de outra.</p>
+<p>Para tarefas de classificação, costumamos utilizar funções de perda com base em entropia cruzada, que nos ajudam a calcular erros em saídas categóricas.</p>
+<section id="cross-entropy-como-funcao-de-perda-em-redes-neurais">
+<h3>Cross-Entropy como Função de Perda em Redes Neurais<a class="headerlink" href="#cross-entropy-como-funcao-de-perda-em-redes-neurais" title="Link to this heading">#</a></h3>
+<p>A entropia cruzada (cross-entropy) tem suas origens na teoria da informação, desenvolvida por Claude Shannon na década de 1940.
+A ideia central da teoria da informação é quantificar a quantidade de informação ou incerteza presente em um conjunto de dados, e a entropia é uma medida dessa incerteza.
+A entropia de Shannon mede o grau de imprevisibilidade de um sistema de eventos, sendo usada para descrever a incerteza associada a uma distribuição de probabilidades.</p>
+<p>A fórmula da entropia de Shannon é dada por:</p>
+<div class="math notranslate nohighlight">
+\[
+H(P) = - \sum_{i=1}^{C}P(i).log(P(i))
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">probabilities</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span><span class="mf">0.999</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">entropy</span> <span class="o">=</span> <span class="p">[(</span><span class="o">-</span><span class="n">prob</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">prob</span><span class="p">))</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">prob</span><span class="p">)</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">prob</span><span class="p">))</span> <span class="k">for</span> <span class="n">prob</span> <span class="ow">in</span> <span class="n">probabilities</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">probabilities</span><span class="p">,</span> <span class="n">entropy</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Entropy&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Probability&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/911f0175d6833aa8fa35c6803c88aeaa49b14deb6093f7eefd2c79a3d0832895.png" src="_images/911f0175d6833aa8fa35c6803c88aeaa49b14deb6093f7eefd2c79a3d0832895.png" />
+</div>
+</div>
+<p>No contexto de redes neurais, a entropia cruzada é uma medida da divergência entre duas distribuições de probabilidade: a distribuição verdadeira dos rótulos (a saída correta) e a distribuição prevista pelo modelo.
+No caso de uma rede neural, <span class="math notranslate nohighlight">\(P\)</span> é a distribuição verdadeira dos rótulos (normalmente representada por um vetor one-hot) e <span class="math notranslate nohighlight">\(Q\)</span> é a distribuição de probabilidade prevista pelo modelo.</p>
+<p>A fórmula da entropia cruzada é dada por:</p>
+<div class="math notranslate nohighlight">
+\[
+H(P,Q) = - \sum_{i=1}^{C}P(i).log(Q(i))
+\]</div>
+<p>Onde:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P(i)\)</span>, ou <span class="math notranslate nohighlight">\(y_i\)</span> é a probabilidade verdadeira para a classe <span class="math notranslate nohighlight">\(i\)</span> (em problemas de classificação, geralmente usamos  0 ou 1).</p></li>
+<li><p><span class="math notranslate nohighlight">\(Q(i)\)</span>, ou <span class="math notranslate nohighlight">\(\hat{y}_i\)</span>, é a probabilidade prevista pelo modelo para a classe <span class="math notranslate nohighlight">\(i\)</span>.</p></li>
+</ul>
+<p>A entropia cruzada mede o quão bem o modelo está capturando a distribuição verdadeira dos rótulos.
+Quando <span class="math notranslate nohighlight">\(P(i)\)</span> é 1 (ou seja, a classe <span class="math notranslate nohighlight">\(𝑖\)</span> é a correta), a entropia cruzada penaliza o modelo se a probabilidade <span class="math notranslate nohighlight">\(𝑄(i)\)</span> não estiver próxima de 1.</p>
+<section id="multilabel-binary-cross-entropy">
+<h4>Multilabel Binary Cross-Entropy<a class="headerlink" href="#multilabel-binary-cross-entropy" title="Link to this heading">#</a></h4>
+<p>Em problemas de classificação multilabel, onde uma entrada pode pertencer a mais de uma classe, a Multilabel Binary Cross-Entropy é utilizada.
+É basicamente a BCE aplicada a cada rótulo individualmente.
+A fórmula é semelhante à da BCE, mas ajustada para várias saídas simultâneas.</p>
+<ul class="simple">
+<li><p>Vantagem: Adequada para problemas onde uma entrada pertence a múltiplas classes.</p></li>
+<li><p>Desvantagem: Pode se tornar ineficiente com um grande número de classes.</p></li>
+</ul>
+</section>
+</section>
+<section id="classificacao-multiclasse">
+<h3>Classificação Multiclasse<a class="headerlink" href="#classificacao-multiclasse" title="Link to this heading">#</a></h3>
+<p>Na classificação multiclasse, o modelo precisa classificar as entradas em mais de duas classes mutuamente exclusivas.
+Um exemplo clássico é a classificação de imagens de dígitos escritos à mão, onde cada dígito (0 a 9) é uma classe diferente.
+Nesse caso, o modelo produz uma única saída que corresponde a uma das classes.
+A função de ativação comumente usada para multiclasse é a <em>softmax</em>, que normaliza as saídas para que elas somem 1, permitindo a interpretação dessas saídas como probabilidades.
+A função de perda mais comum é a Categorical Cross-Entropy (entropia cruzada categórica).</p>
+<section id="categorical-cross-entropy">
+<h4>Categorical Cross-Entropy<a class="headerlink" href="#categorical-cross-entropy" title="Link to this heading">#</a></h4>
+<p>A Entropia Cruzada Categórica é usada em problemas de classificação multiclasse, onde o objetivo é prever uma entre várias classes mutuamente exclusivas.
+A fórmula é:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{CCE} = - \frac{1}{N}\sum_{i=1}^{N}\sum_{j=1}^{C}y_{ij}.log(\hat{y}_{ij})
+\]</div>
+<p>Aqui, <span class="math notranslate nohighlight">\(C\)</span> é o número de classes, <span class="math notranslate nohighlight">\(y_{ij}\)</span> é o valor real (geralmente um vetor one-hot) e <span class="math notranslate nohighlight">\(\hat{y}_{ij}\)</span> é a probabilidade prevista para a classe <span class="math notranslate nohighlight">\(j\)</span>.
+A <em>softmax</em> é usada como função de ativação na saída, convertendo as predições em probabilidades.</p>
+<ul class="simple">
+<li><p>Vantagem: Adequada para problemas com várias classes exclusivas.</p></li>
+<li><p>Desvantagem: Não lida bem com situações em que uma instância pode pertencer a múltiplas classes.</p></li>
+</ul>
+<p>Chamamos esta função em Pytorch da seguinte forma:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">criterion</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="classificacao-binaria">
+<h3>Classificação Binária<a class="headerlink" href="#classificacao-binaria" title="Link to this heading">#</a></h3>
+<p>Na classificação binária, o modelo tem que decidir entre duas classes possíveis.
+Por exemplo, um modelo pode classificar e-mails como “spam” ou “não spam”. As saídas são representadas por um único valor, geralmente 0 ou 1, onde 0 pode significar “classe negativa” e 1 “classe positiva”.
+A função de ativação mais comum usada para esse tipo de problema é a sigmoide, que gera uma probabilidade entre 0 e 1.
+A função de perda mais utilizada é a Binary Cross-Entropy (BCE).
+Porém, também pode ser utilizadas outras funções.</p>
+<section id="binary-cross-entropy">
+<h4>Binary Cross-Entropy<a class="headerlink" href="#binary-cross-entropy" title="Link to this heading">#</a></h4>
+<p>A Binary Cross-Entropy (BCE) é comumente usada em problemas de classificação binária, onde o objetivo é prever se uma amostra pertence a uma de duas classes.
+Essa função mede a diferença entre a probabilidade prevista e o valor real, penalizando fortemente predições erradas. A fórmula é:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{BCE} = - \frac{1}{N}\sum_{i=1}^{N}\left[y_i.log(\hat{y}_i) + (1 - y_i).log(1-\hat{y}_i)\right]
+\]</div>
+<p>Aqui, <span class="math notranslate nohighlight">\(y_i\)</span> é o valor real (0 ou 1) e <span class="math notranslate nohighlight">\(\hat{y}_i\)</span> é a probabilidade prevista.
+O objetivo é minimizar essa diferença, fazendo com que a probabilidade prevista se aproxime do valor real.</p>
+<ul class="simple">
+<li><p>Vantagem: Funciona muito bem com problemas binários, lidando com probabilidades.</p></li>
+<li><p>Desvantagem: Pode ser mais sensível a problemas de balanço de classes.</p></li>
+</ul>
+<p>A célula abaixo mostra como utilizar esta função de perda, além de plotar o resultado desta função para diferentes saídas <span class="math notranslate nohighlight">\(\hat{y}_i\)</span> e valores reais <span class="math notranslate nohighlight">\(y_i\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">probabilities</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.99</span><span class="p">,</span><span class="mi">99</span><span class="p">)</span>
+<span class="n">ones</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">probabilities</span><span class="p">)</span>
+<span class="n">zeros</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">probabilities</span><span class="p">)</span>
+
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">BCELoss</span><span class="p">()</span>
+
+<span class="n">positive</span> <span class="o">=</span> <span class="p">[</span><span class="n">criterion</span><span class="p">(</span><span class="n">probabilities</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">ones</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ones</span><span class="p">))]</span>
+<span class="n">negative</span> <span class="o">=</span> <span class="p">[</span><span class="n">criterion</span><span class="p">(</span><span class="n">probabilities</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">zeros</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zeros</span><span class="p">))]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">probabilities</span><span class="p">,</span> <span class="n">positive</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">probabilities</span><span class="p">,</span> <span class="n">negative</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;y = 1&#39;</span><span class="p">,</span> <span class="s1">&#39;y = 0&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Binary Cross-entropy Loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Probability&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2fc7870a38058c1cc237915bfcf16dd1bac3f66dcdad57fb80f88d102b7b81b1.png" src="_images/2fc7870a38058c1cc237915bfcf16dd1bac3f66dcdad57fb80f88d102b7b81b1.png" />
+</div>
+</div>
+</section>
+<section id="margin-hinge">
+<h4>Margin (Hinge)<a class="headerlink" href="#margin-hinge" title="Link to this heading">#</a></h4>
+<p>O Hinge Loss é usado com máquinas de vetores de suporte (SVMs), mas também pode ser aplicado em redes neurais para problemas de classificação binária.
+Ele força o modelo a maximizar a margem entre as classes, penalizando erros de classificação de forma mais agressiva.</p>
+<p>A fórmula para um problema binário é:</p>
+<div class="math notranslate nohighlight">
+\[
+L = \sum_{i=1}^{N}\text{max}(0,1-y_i.\hat{y}_i)
+\]</div>
+<p>Aqui, <span class="math notranslate nohighlight">\(y_i\)</span> são os rótulos reais (+1 ou -1), <span class="math notranslate nohighlight">\(\hat{y}_{i}\)</span> e são as predições do modelo.</p>
+<ul class="simple">
+<li><p>Vantagem: Eficaz em maximizar a separação entre as classes.</p></li>
+<li><p>Desvantagem: Principalmente usado em SVMs e menos comum em redes neurais.</p></li>
+</ul>
+<p>É importante notar que a saída do modelo, neste caso, não é uma probabilidade. Portanto, não utilizamos a função sigmóide na camada de saída. Temos a saída pura do neurônio, a qual chamamos de <em>logit</em>.</p>
+<p>Abaixo mostramos como utilizar esta função e seu resultado para diferentes saídas <span class="math notranslate nohighlight">\(\hat{y}_i\)</span> e valores reais <span class="math notranslate nohighlight">\(y_i\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hinge_loss</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+    <span class="c1"># Hinge loss expects targets to be -1 or 1, so adjust accordingly if necessary</span>
+    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">output</span> <span class="o">*</span> <span class="n">target</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">outputs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">positives</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">outputs</span><span class="p">)</span>
+<span class="n">negatives</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">outputs</span><span class="p">)</span>
+
+<span class="n">positive</span> <span class="o">=</span> <span class="p">[</span><span class="n">hinge_loss</span><span class="p">(</span><span class="n">outputs</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">positives</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">positives</span><span class="p">))]</span>
+<span class="n">negative</span> <span class="o">=</span> <span class="p">[</span><span class="n">hinge_loss</span><span class="p">(</span><span class="n">outputs</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">negatives</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">negatives</span><span class="p">))]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">positive</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">negative</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Hinge Loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Output&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;y = 1&#39;</span><span class="p">,</span> <span class="s1">&#39;y = -1&#39;</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2a5ef2f3e22e0b41c27a30204981e35e45e1cf55ed8364c8118d906a3f204c52.png" src="_images/2a5ef2f3e22e0b41c27a30204981e35e45e1cf55ed8364c8118d906a3f204c52.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="classificacao-multilabel">
+<h3>Classificação Multilabel<a class="headerlink" href="#classificacao-multilabel" title="Link to this heading">#</a></h3>
+<p>Na classificação multilabel, cada entrada pode pertencer simultaneamente a várias classes, ou seja, as classes não são mutuamente exclusivas.
+Por exemplo, um sistema de recomendação de filmes pode classificar um filme tanto como “comédia” quanto “drama”, ou uma imagem pode conter vários objetos diferentes, como “gato”, “carro” e “árvore”.
+Nesse caso, o modelo produz várias saídas, uma para cada possível classe, e cada saída é tratada como um problema de classificação binária (ou seja, uma classe pode estar presente ou não).
+Aqui, a sigmoide é usada em cada saída, com a função de perda Binary Cross-Entropy aplicada individualmente para cada classe.</p>
+</section>
+<section id="exemplo-de-classificacao">
+<h3>Exemplo de Classificação<a class="headerlink" href="#exemplo-de-classificacao" title="Link to this heading">#</a></h3>
+<p>Neste exemplo, vamos classificar flores Iris.
+Para isto, vamos utilizar como representação um <em>perceptron</em> multicamadas, treinado com o algoritmo de otimização de <strong>gradiente descendente</strong> para minimizar a função de perda de entropia cruzada categórica.</p>
+<p>Para uma melhor avaliação do modelo, vamos utilizar validação cruzada. Utilizaremos uma técnica chamada de <em>Holdout Cross-validation</em>, que separa os dados de treino e teste de forma aleatória.</p>
+<p>Obs: Ainda não estamos levando em consideração um conjunto de validação, onde podemos controlar o treinamento e realizar <em>early stopping</em>.
+Veremos isto no futuro.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span><span class="p">,</span> <span class="n">TensorDataset</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">)</span>
+
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">TensorDataset</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">train_dataloader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">)</span>
+
+<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">TensorDataset</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="n">test_dataloader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">test_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">y</span> <span class="o">==</span> <span class="n">target</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">y</span> <span class="o">==</span> <span class="n">target</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">target_names</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Iris Dataset&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/cb1f49b9c60db6d6ddee331195964d429dd88c216b314dd70e77e0a735e43c4b.png" src="_images/cb1f49b9c60db6d6ddee331195964d429dd88c216b314dd70e77e0a735e43c4b.png" />
+</div>
+</div>
+<p>Preparamos o modelo e a rotina de treinamento conforme os materiais da <a class="reference external" href="https://github.com/vhrique/anne2024/blob/main/01a_Fundamentos_de_Pytorch.ipynb">Aula 01.A: Fundamentos de Pytorch</a>.</p>
+<p>Porém, modificamos o modelo para ter quatro entradas e três saídas, conforme o problema que iremos resolver, que possui quatro atributos e três classes.</p>
+<p>Para trabalhar com um problema de múltiplas classes, utilizaremos outra função de perda.
+No lugar da entropia cruzada binária, focada em problemas de classificação binária, utilizaremos a entropia cruzada categórica.
+Além disso, usaremos um algoritmo famoso de otimização, o <strong>gradiente descendente</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MLP</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">MLP</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hidden_layer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output_layer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_size</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">functional</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hidden_layer</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_layer</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">MLP</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_epochs</span> <span class="o">=</span> <span class="mi">10_000</span>
+<span class="n">loss_logs</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>
+
+    <span class="c1"># Start epoch loss</span>
+    <span class="n">running_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="k">for</span> <span class="n">b</span><span class="p">,</span> <span class="p">(</span><span class="n">X_batch</span><span class="p">,</span> <span class="n">y_batch</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">train_dataloader</span><span class="p">):</span>
+
+        <span class="c1"># Forward pass</span>
+        <span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">X_batch</span><span class="p">)</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">y_batch</span><span class="p">)</span>
+
+        <span class="c1"># Backward pass and optimization</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+        <span class="c1"># Update running loss</span>
+        <span class="n">running_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+
+    <span class="c1"># Update epoch loss</span>
+    <span class="n">loss_logs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">running_loss</span><span class="o">/</span><span class="n">b</span><span class="p">)</span>
+
+<span class="c1"># Plot loss</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">loss_logs</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d11910a2dc30f61f067832ceee2335525535a949178e77f06bdd20da72213212.png" src="_images/d11910a2dc30f61f067832ceee2335525535a949178e77f06bdd20da72213212.png" />
+</div>
+</div>
+<p>Finalizado o treino, vamos analisar o resultado.
+Abaixo temos métricas de avaliação de classificação mostrando os resultados para o conjunto de treino. Relembrando, ao avaliar o erro no conjunto de treino, estamos realizando ressubstituição. Vemos nisto uma acurácia alta, de 98%. Também conseguimos verificar a precisão (<em>precision</em>) e a sensibilidade (<em>recall</em>) para cada classe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span>
+    <span class="n">classification_report</span><span class="p">(</span>
+        <span class="n">y_train</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span>
+        <span class="n">outputs</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+        <span class="n">target_names</span><span class="o">=</span><span class="n">iris</span><span class="o">.</span><span class="n">target_names</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
+
+      setosa       1.00      1.00      1.00        37
+  versicolor       0.97      0.97      0.97        40
+   virginica       0.98      0.98      0.98        43
+
+    accuracy                           0.98       120
+   macro avg       0.98      0.98      0.98       120
+weighted avg       0.98      0.98      0.98       120
+</pre></div>
+</div>
+</div>
+</div>
+<p>Perceba que, ao avaliar a saída, utilizamos o método <em>argmax</em>. O objetivo disto é detectar a classe cuja saída possui maior ativação.</p>
+<p>Em seguida, realizamos a avaliação da classificação no conjunto de teste, onde temos amostras que o modelo não viu durante o treino. Aqui, vemos uma acurácia mais baixa, de 98%. Esta diferença entre o conjunto de treino e teste é comum, e é um indicativo da capacidade de generalização do modelo. Nosso objetivo final é generalizar. Portanto, buscamos a maior acurácia possível no conjunto de testes.</p>
+<p>Caso criemos um modelo muito complexo e treinemos por muito tempo, corremos um grande risco de realizar <em>overfitting</em> no conjunto de treino. Nesta situação, a capacidade preditiva no conjunto de treino é muito alta. Porém, isto pode vir com um custo de uma capacidade preditiva mais baixa no conjunto de testes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span>
+    <span class="n">classification_report</span><span class="p">(</span>
+        <span class="n">y_test</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span>
+        <span class="n">outputs</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+        <span class="n">target_names</span><span class="o">=</span><span class="n">iris</span><span class="o">.</span><span class="n">target_names</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
+
+      setosa       1.00      1.00      1.00        13
+  versicolor       1.00      0.90      0.95        10
+   virginica       0.88      1.00      0.93         7
+
+    accuracy                           0.97        30
+   macro avg       0.96      0.97      0.96        30
+weighted avg       0.97      0.97      0.97        30
+</pre></div>
+</div>
+</div>
+</div>
+<p>Neste problema, trabalhamos com uim exemplo de classificação multiclasse. Porém,temos outros tipos. As três principais categorias de classificação são classificação multiclasse, classificação binária e classificação multilabel. Cada uma tem suas próprias características e desafios.</p>
+</section>
+</section>
+<section id="regressao">
+<h2>Regressão<a class="headerlink" href="#regressao" title="Link to this heading">#</a></h2>
+<p>Na regressão, o objetivo é prever um valor contínuo.
+Por exemplo, em problemas de previsão de temperatura, o modelo aprende a mapear uma série de variáveis (como pressão e umidade) para prever a temperatura futura.</p>
+<p>Ao contrário da classificação, onde as saídas são discretas, a regressão lida com variáveis contínuas.
+Portanto, problemas de regressão buscam medir o erro entre os valores diretamente.
+Dependendo do nosso objetivo, podemos calcular este erro de diferentes formas.</p>
+<section id="mean-squared-error">
+<h3>Mean Squared Error<a class="headerlink" href="#mean-squared-error" title="Link to this heading">#</a></h3>
+<p>O MSE, presente no exemplo anterior, é amplamente usado em problemas de regressão, onde o objetivo é prever valores contínuos.
+Ele mede a diferença média entre as predições do modelo e os valores reais, elevando ao quadrado essas diferenças para garantir que erros positivos e negativos não se cancelem.
+A fórmula é:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{MSE} = \frac{1}{N}\sum_{i=1}^N(y_i - \hat{y}_i)^2
+\]</div>
+<p>onde <span class="math notranslate nohighlight">\(y_i\)</span> é o valor real e <span class="math notranslate nohighlight">\(\hat{y}_i\)</span> é a predição do modelo.
+O quadrado das diferenças garante que erros grandes tenham um impacto maior no valor final.</p>
+<ul class="simple">
+<li><p>Vantagem: Simples de calcular e amplifica grandes erros.</p></li>
+<li><p>Desvantagem: Sensível a outliers, já que erros grandes têm um impacto desproporcional.</p></li>
+</ul>
+<p>Abaixo vemos como utilizar esta função em pytorch e seu resultado.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">errors</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">zeros</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span>
+
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
+
+<span class="n">mse</span> <span class="o">=</span> <span class="p">[</span><span class="n">criterion</span><span class="p">(</span><span class="n">errors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">zeros</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">errors</span><span class="p">))]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">errors</span><span class="p">,</span> <span class="n">mse</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;MSE Loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Error&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/33abec078ba8daf791f0fa9a7fb8149785d5356cc226255da639555a5a44e5f3.png" src="_images/33abec078ba8daf791f0fa9a7fb8149785d5356cc226255da639555a5a44e5f3.png" />
+</div>
+</div>
+</section>
+<section id="mean-absolute-error">
+<h3>Mean Absolute Error<a class="headerlink" href="#mean-absolute-error" title="Link to this heading">#</a></h3>
+<p>O MAE é outra função de perda usada para problemas de regressão, mas, ao contrário do MSE, mede a diferença absoluta média entre os valores previstos e os valores reais.
+Sua fórmula é:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{MSE} = \frac{1}{N}\sum_{i=1}^N \left|y_i - \hat{y}_i \right|
+\]</div>
+<ul class="simple">
+<li><p>Vantagem: Mais robusto a outliers do que o MSE.</p></li>
+<li><p>Desvantagem: Não diferencia grandes e pequenos erros da mesma forma que o MSE.</p></li>
+</ul>
+<p>Abaixo vemos sua utilização em pytorch e sua saída.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">errors</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">101</span><span class="p">)</span>
+<span class="n">zeros</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span>
+
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">L1Loss</span><span class="p">()</span>
+
+<span class="n">mae</span> <span class="o">=</span> <span class="p">[</span><span class="n">criterion</span><span class="p">(</span><span class="n">errors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">zeros</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">errors</span><span class="p">))]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">errors</span><span class="p">,</span> <span class="n">mae</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;MAE (L1) Loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Error&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7fc0d6758936d83077ab65384453df6377af24da106c40fe307453afae87852e.png" src="_images/7fc0d6758936d83077ab65384453df6377af24da106c40fe307453afae87852e.png" />
+</div>
+</div>
+</section>
+<section id="huber-loss">
+<h3>Huber Loss<a class="headerlink" href="#huber-loss" title="Link to this heading">#</a></h3>
+<p>A Huber Loss é uma função de perda que combina as vantagens do Erro Quadrático Médio (MSE) e do Erro Absoluto Médio (MAE), oferecendo uma abordagem robusta para problemas de regressão, especialmente na presença de outliers.
+Ela foi projetada para tratar grandes erros de forma mais eficiente do que o MSE, que é altamente sensível a outliers, enquanto mantém a simplicidade do MAE em regiões de pequenos erros.
+A fórmula da Huber Loss é definida de forma diferente para erros pequenos e grandes:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+L_{\delta}(y_i, \hat{y}_i) =
+\begin{cases}
+\frac{1}{2}(y_i - \hat{y}_i)^2 &amp; \text{se } |y_i - \hat{y}_i| \leq \delta \\
+\delta \cdot (|y_i - \hat{y}_i| - \frac{1}{2} \delta) &amp; \text{se } |y_i - \hat{y}_i| &gt; \delta
+\end{cases}
+\end{split}\]</div>
+<p>onde <span class="math notranslate nohighlight">\(y_i\)</span> é o valor real, <span class="math notranslate nohighlight">\(\hat{y}_i\)</span> é a previsão do modelo e <span class="math notranslate nohighlight">\(\delta\)</span> é um parâmetro que define o limite entre erros pequenos e grandes.</p>
+<p>A Huber Loss funciona de forma suave em relação a pequenos erros, como o MSE, mas trata erros grandes de maneira mais robusta, como o MAE.
+Isso faz com que seja uma função intermediária que lida bem tanto com ruídos pequenos quanto com outliers, sendo especialmente útil em problemas de regressão.</p>
+<p>Vantagens:</p>
+<ul class="simple">
+<li><p>Robustez a outliers: Quando há grandes erros ou outliers, a Huber Loss não amplifica esses erros tanto quanto o MSE, evitando que um pequeno número de outliers distorça significativamente o modelo.</p></li>
+<li><p>Suavidade em pequenos erros: Para erros pequenos, a Huber Loss se comporta como o MSE, permitindo que a função de perda seja diferenciável e suave, o que facilita a otimização.</p></li>
+</ul>
+<p>Desvantagens:</p>
+<ul class="simple">
+<li><p>Escolha de <span class="math notranslate nohighlight">\(\delta\)</span>: O valor de
+<span class="math notranslate nohighlight">\(\delta\)</span> deve ser escolhido cuidadosamente, pois um valor mal ajustado pode levar a um comportamento inadequado da função de perda. Sefor muito pequeno, o modelo se comportará quase como o MAE, e se for muito grande, se aproximará do MSE, perdendo as vantagens da robustez</p></li>
+</ul>
+<p>A Huber Loss é amplamente utilizada em problemas de regressão onde há a presença de outliers nos dados, pois oferece um equilíbrio entre ser suave para erros pequenos e robusta para grandes erros. Além disso, é preferida em aplicações de machine learning onde o MSE tende a ser excessivamente influenciado por grandes outliers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">errors</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">101</span><span class="p">)</span>
+<span class="n">zeros</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">delta</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]:</span>
+    <span class="n">criterion</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">HuberLoss</span><span class="p">(</span><span class="n">delta</span><span class="o">=</span><span class="n">delta</span><span class="p">)</span>
+    <span class="n">huber</span> <span class="o">=</span> <span class="p">[</span><span class="n">criterion</span><span class="p">(</span><span class="n">errors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">zeros</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">errors</span><span class="p">))]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">errors</span><span class="p">,</span> <span class="n">huber</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Huber Loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Error&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;delta = 0.5&#39;</span><span class="p">,</span> <span class="s1">&#39;delta = 1&#39;</span><span class="p">,</span> <span class="s1">&#39;delta = 2&#39;</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d7f2ed42aa75096db750dccc0644114c870b78d4bc6c2e04c12a19a726d81e4c.png" src="_images/d7f2ed42aa75096db750dccc0644114c870b78d4bc6c2e04c12a19a726d81e4c.png" />
+</div>
+</div>
+</section>
+<section id="exemplo-para-regressao">
+<h3>Exemplo para Regressão<a class="headerlink" href="#exemplo-para-regressao" title="Link to this heading">#</a></h3>
+<p>Vejamos um exemplo relacionado à detecção de diabetes.
+Aqui, também utilizaremos um <em>perceptron</em> multicamadas.
+Diferente do exemplo anterior, temos apenas o número de saídas e a função de perda utilizada, com foco em regressão. Para acelerar o treinamento, também utilizaremos um algoritmo de otimização mais avançado.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span><span class="p">,</span> <span class="n">load_diabetes</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">diabetes</span> <span class="o">=</span> <span class="n">load_diabetes</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">diabetes</span><span class="o">.</span><span class="n">data</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">diabetes</span><span class="o">.</span><span class="n">target</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+
+<span class="n">x_mean</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">y_mean</span> <span class="o">=</span> <span class="n">y_train</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">x_std</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">y_std</span> <span class="o">=</span> <span class="n">y_train</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">X_train</span> <span class="o">=</span> <span class="p">(</span><span class="n">X_train</span> <span class="o">-</span> <span class="n">x_mean</span><span class="p">)</span><span class="o">/</span><span class="n">x_std</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="p">(</span><span class="n">y_train</span> <span class="o">-</span> <span class="n">y_mean</span><span class="p">)</span><span class="o">/</span><span class="n">y_std</span>
+
+<span class="n">X_test</span> <span class="o">=</span> <span class="p">(</span><span class="n">X_test</span> <span class="o">-</span> <span class="n">x_mean</span><span class="p">)</span><span class="o">/</span><span class="n">x_std</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="p">(</span><span class="n">y_test</span> <span class="o">-</span> <span class="n">y_mean</span><span class="p">)</span><span class="o">/</span><span class="n">y_std</span>
+
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">TensorDataset</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">train_dataloader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">TensorDataset</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="n">test_dataloader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">test_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vamos aqui adicionar uma nova camada oculta ao modelo, com o objetivo de extrair mais atributos dos sinais de entrada com a rede neural.</p>
+<p>Ainda para isto, definiremos como função de perda o erro quadrático médio (mean squared error), e usaremos o algoritmo de otimização ADAM.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MLP</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">MLP</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hidden_layer1</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hidden_layer2</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output_layer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_size</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">functional</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hidden_layer1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">functional</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hidden_layer2</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_layer</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">MLP</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_epochs</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">loss_logs</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>
+
+    <span class="c1"># Start epoch loss</span>
+    <span class="n">running_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="k">for</span> <span class="n">b</span><span class="p">,</span> <span class="p">(</span><span class="n">X_batch</span><span class="p">,</span> <span class="n">y_batch</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">train_dataloader</span><span class="p">):</span>
+
+        <span class="c1"># Forward pass</span>
+        <span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">X_batch</span><span class="p">)</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">y_batch</span><span class="p">)</span>
+
+        <span class="c1"># Backward pass and optimization</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+        <span class="c1"># Update running loss</span>
+        <span class="n">running_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+
+    <span class="c1"># Update epoch loss</span>
+    <span class="n">loss_logs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">running_loss</span><span class="o">/</span><span class="n">b</span><span class="p">)</span>
+
+<span class="c1"># Plot loss</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">loss_logs</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/54500ed28f937abfa4d3918372c19b96e3eaddd59f3e4afba74c24e917f95290.png" src="_images/54500ed28f937abfa4d3918372c19b96e3eaddd59f3e4afba74c24e917f95290.png" />
+</div>
+</div>
+<p>Após o treino, analisamos o resultado por resubstituição. Neste exemplo, estamos analisando a raiz do erro quadrático médio (<em>root mean squared error</em>), uma métrica comum em problemas de regressão.</p>
+<p>Também plotamos o gráfico de regressão, que indica qual a previsão do modelo no eixo vertical para os valores esperados no eixo horizontal. Quanto melhor as previsões, mais próximos da linha diagonal preta estarão os pontos azuis das amostras.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+    <span class="n">y_train_real</span> <span class="o">=</span> <span class="n">y_train</span> <span class="o">*</span> <span class="n">y_std</span> <span class="o">+</span> <span class="n">y_mean</span>
+    <span class="n">outputs_real</span> <span class="o">=</span> <span class="n">outputs</span> <span class="o">*</span> <span class="n">y_std</span> <span class="o">+</span> <span class="n">y_mean</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_train_real</span><span class="p">,</span> <span class="n">outputs_real</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y_train_real</span><span class="p">,</span> <span class="n">y_train_real</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;RMSE = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">criterion</span><span class="p">(</span><span class="n">outputs_real</span><span class="p">,</span><span class="w"> </span><span class="n">y_train_real</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">())</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/44efb873a212ab730d8d6fed9e0f8058174903a6a8c2ea1b57d66bce5b605e69.png" src="_images/44efb873a212ab730d8d6fed9e0f8058174903a6a8c2ea1b57d66bce5b605e69.png" />
+</div>
+</div>
+<p>Analisamos, por fim, os resultados no conjunto de teste, mostrando um RMSE um pouco pior que o do conjunto de treino.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+    <span class="n">y_test_real</span> <span class="o">=</span> <span class="n">y_test</span> <span class="o">*</span> <span class="n">y_std</span> <span class="o">+</span> <span class="n">y_mean</span>
+    <span class="n">outputs_real</span> <span class="o">=</span> <span class="n">outputs</span> <span class="o">*</span> <span class="n">y_std</span> <span class="o">+</span> <span class="n">y_mean</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_test_real</span><span class="p">,</span> <span class="n">outputs_real</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y_test_real</span><span class="p">,</span> <span class="n">y_test_real</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;RMSE = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">criterion</span><span class="p">(</span><span class="n">outputs_real</span><span class="p">,</span><span class="w"> </span><span class="n">y_test_real</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">())</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/8dc956a6a7e2db784c51828816c85513d5e1bf0924a0baa4cd0b4ea8062e84f2.png" src="_images/8dc956a6a7e2db784c51828816c85513d5e1bf0924a0baa4cd0b4ea8062e84f2.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="outras-funcoes-de-perda">
+<h2>Outras Funções de Perda<a class="headerlink" href="#outras-funcoes-de-perda" title="Link to this heading">#</a></h2>
+<p>Além das funções de perda detalhadas anteriormente para classificação e regressão, temos diversos outros exemplos, amplamente utilizados na indústria e na academia.</p>
+<p>A <strong>KL Divergence</strong> é utilizada para medir a diferença entre duas distribuições de probabilidade, sendo particularmente útil em modelos probabilísticos, como variational autoencoders (VAEs).
+Ela não é propriamente uma função de perda no sentido tradicional, mas é amplamente usada para regularizar a distribuição de saída de um modelo para que seja similar a uma distribuição-alvo.</p>
+<p>A <strong>Cosine Similarity Loss</strong> mede o ângulo entre dois vetores, sendo usada para comparar a similaridade entre vetores em vez de medir a diferença absoluta.
+Isso é especialmente útil em problemas de aprendizado de representações, como em redes neurais siamesas e embedding learning.</p>
+<p>A <strong>Focal Loss</strong> foi introduzida para tratar o problema de desbalanceamento de classes, em que algumas classes são muito mais representadas que outras.
+Ela é uma modificação da entropia cruzada que coloca mais peso nas amostras difíceis (ou seja, aquelas que são classificadas de forma incorreta).</p>
+<p>Também chamada de <strong>Huber Loss</strong>, mas com uma implementação ligeiramente diferente, a <strong>Smooth L1 Loss</strong> é amplamente utilizada em redes neurais para detecção de objetos. Ela é mais robusta a outliers do que a MSE e mais estável do que o MAE.</p>
+<p>A <strong>Dice Loss</strong> é uma função de perda comumente usada em problemas de segmentação de imagens, especialmente em áreas médicas, onde é necessário calcular a sobreposição entre a área predita e a área verdadeira.
+É derivada do coeficiente de Dice, que mede a similaridade entre dois conjuntos.</p>
+<p>A <strong>Triplet Loss</strong> é usada para aprendizado de embeddings e aprendizado métrico, particularmente em redes siamesas.
+A função de perda incentiva a rede a reduzir a distância entre embeddings de amostras semelhantes (o ancor e o positivo) e aumentar a distância entre o ancor e amostras dissimilares (o negativo).</p>
+<p>A <strong>Wing Loss</strong> é uma função de perda desenhada especificamente para problemas de detecção de landmarks faciais, onde pequenos erros precisam ser suavemente penalizados, mas grandes erros devem ser penalizados de forma mais forte.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercicios">
+<h1>Exercícios<a class="headerlink" href="#exercicios" title="Link to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>Aumente o número de neurônios nos exemplos de classificação e regressão e analise a diferença entre os resultados nos conjuntos de treino e teste. O que ocorreu?</p></li>
+<li><p>Comparar BCELoss e Hinge Loss para o problema linear do Capítulo 01, plotando o resultado. O que é possível verificar de diferença?</p></li>
+</ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="consideracoes-finais">
+<h1>Considerações Finais<a class="headerlink" href="#consideracoes-finais" title="Link to this heading">#</a></h1>
+<p>Neste capítulo, abordamos problemas de regressão e classificação utilizando redes neurais artificiais. Além disso, discutimos diferentes funções de perdas que podemos utilizar quando desenvolvemos nossos modelos.</p>
+<section id="proximo-capitulo">
+<h2>Próximo Capítulo<a class="headerlink" href="#proximo-capitulo" title="Link to this heading">#</a></h2>
+<p>No próximo capítulo, falaremos mais algoritmos de otimização para redes neurais.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="referencias">
+<h1>Referências<a class="headerlink" href="#referencias" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Domingos, P. (2012). A few useful things to know about machine learning. Communications of the ACM, 55(10), 78-87.</p></li>
+<li><p>Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. Annals of eugenics, 7(2), 179-188.</p></li>
+<li><p>Efron, B., Hastie, T., Johnstone, I., &amp; Tibshirani, R. (2004). Least angle regression.</p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="01b_Representacao_Redes_Neurais_Artificiais.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Representação de Redes Neurais Artificiais</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="02b_Otimizacao_Redes_Neurais.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Algoritmos de Otimização para Redes Neurais Artificiais</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Funções de Perda em Redes Neurais Artificiais</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classificacao">Classificação</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-entropy-como-funcao-de-perda-em-redes-neurais">Cross-Entropy como Função de Perda em Redes Neurais</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multilabel-binary-cross-entropy">Multilabel Binary Cross-Entropy</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classificacao-multiclasse">Classificação Multiclasse</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#categorical-cross-entropy">Categorical Cross-Entropy</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classificacao-binaria">Classificação Binária</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-cross-entropy">Binary Cross-Entropy</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#margin-hinge">Margin (Hinge)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classificacao-multilabel">Classificação Multilabel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-de-classificacao">Exemplo de Classificação</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressao">Regressão</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-squared-error">Mean Squared Error</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-absolute-error">Mean Absolute Error</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#huber-loss">Huber Loss</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-para-regressao">Exemplo para Regressão</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outras-funcoes-de-perda">Outras Funções de Perda</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consideracoes-finais">Considerações Finais</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proximo-capitulo">Próximo Capítulo</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referências</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Victor Henrique Alves Ribeiro
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
