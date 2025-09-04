@@ -2,12 +2,17 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: 00_Introducao
+root: 00a_Prefacio
 parts:
+  - caption: Introdução
+    chapters:
+    - file: 00b_Introducao
   - caption: Fundamentos
     chapters:
-    - file: 01_Fundamentos_de_Redes_Neurais_Artificiais
-    - file: 02_Paradigmas_Aprendizagem
+    - file: 01a_Fundamentos_Aprendizagem
+    - file: 01b_Representacao_Redes_Neurais_Artificiais
+    - file: 02a_Funcoes_Perda_Redes_Neurais
+    - file: 02b_Otimizacao_Redes_Neurais
   - caption: Arquiteturas Especializadas
     chapters:
     - file: 03_CNN
