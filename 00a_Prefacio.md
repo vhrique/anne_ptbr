@@ -1,4 +1,4 @@
-# Engenharia de Redes Neurais Artificiais
+# Prefácio
 
 Este livro foi desenvolvido como notas de aula para a disciplina "Engenharia de Redes Neurais Artificiais", do Programa de Pós-Graduação em Engenharia de Produção e Sistemas, da Pontifícia Universidade Católica do Paraná.
 
