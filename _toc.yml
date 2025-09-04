@@ -18,5 +18,6 @@ parts:
     - file: 03_CNN
   - caption: Anexos
     chapters:
-    - file: 01a_Fundamentos_de_Pytorch
+    - file: A01_Fundamentos_de_Pytorch
+    - file: A03_Visao_Computacional
 
