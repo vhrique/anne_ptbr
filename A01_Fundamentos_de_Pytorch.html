@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Pacotes Utilizados &#8212; Engenharia de Redes Neurais Artificiais</title>
+    <title>Fundamentos de Pytorch &#8212; Engenharia de Redes Neurais Artificiais</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -57,9 +57,10 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '01a_Fundamentos_de_Pytorch';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'A01_Fundamentos_de_Pytorch';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Histórico de Redes Neurais Especializadas em Visão Computacional" href="A03_Visao_Computacional.html" />
     <link rel="prev" title="Arquiteturas Especializadas em Visão Computacional" href="03_CNN.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -168,7 +169,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="00a_Prefacio.html">
-                    Engenharia de Redes Neurais Artificiais
+                    Prefácio
                 </a>
             </li>
         </ul>
@@ -205,8 +206,13 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Anexos</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pacotes Utilizados</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Fundamentos de Pytorch</a></li>
 
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="A03_Visao_Computacional.html">Histórico de Redes Neurais Especializadas em Visão Computacional</a></li>
 
 
 
@@ -281,7 +287,7 @@
       
       
       
-      <li><a href="https://github.com/vhrique/anne_ptbr/issues/new?title=Issue%20on%20page%20%2F01a_Fundamentos_de_Pytorch.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/vhrique/anne_ptbr/issues/new?title=Issue%20on%20page%20%2FA01_Fundamentos_de_Pytorch.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -311,7 +317,7 @@
       
       
       
-      <li><a href="_sources/01a_Fundamentos_de_Pytorch.ipynb" target="_blank"
+      <li><a href="_sources/A01_Fundamentos_de_Pytorch.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -395,7 +401,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Pacotes Utilizados</h1>
+    <h1>Fundamentos de Pytorch</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -405,7 +411,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Pacotes Utilizados</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Fundamentos de Pytorch</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pacotes-utilizados">Pacotes Utilizados</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dispositivo">Dispositivo</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variaveis">Variáveis</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes">Operações</a></li>
@@ -429,7 +436,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p><a href="https://colab.research.google.com/github/vhrique/anne2024/blob/main/01a_Fundamentos_de_Pytorch.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+  <p><a href="https://colab.research.google.com/github/vhrique/anne_ptbr/blob/main/A01_Fundamentos_de_Pytorch.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="fundamentos-de-pytorch">
+<h1>Fundamentos de Pytorch<a class="headerlink" href="#fundamentos-de-pytorch" title="Link to this heading">#</a></h1>
+<p>O material abaixo traz breves exemplos de operações em Pytorch.
+Ao final, também realizamos o treinamento de um <em>perceptron</em> multicamadas.</p>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="pacotes-utilizados">
 <h1>Pacotes Utilizados<a class="headerlink" href="#pacotes-utilizados" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
@@ -709,7 +721,7 @@ tensor([[ 5., 11.],
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.4265]], grad_fn=&lt;SigmoidBackward0&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.5567]], grad_fn=&lt;SigmoidBackward0&gt;)
 </pre></div>
 </div>
 </div>
@@ -720,7 +732,7 @@ tensor([[ 5., 11.],
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">criterion</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">BCELoss</span><span class="p">()</span>
-<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">1e-2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -746,7 +758,7 @@ tensor([[ 5., 11.],
 <h2>Treinamento<a class="headerlink" href="#treinamento" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_epochs</span> <span class="o">=</span> <span class="mi">200</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_epochs</span> <span class="o">=</span> <span class="mi">2_000</span>
 <span class="n">loss_logs</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>
@@ -780,7 +792,7 @@ tensor([[ 5., 11.],
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/bdddae02fc7c0dae36db7ddfcba2809a83eb43445c52e1166e8006d9f92c4235.png" src="_images/bdddae02fc7c0dae36db7ddfcba2809a83eb43445c52e1166e8006d9f92c4235.png" />
+<img alt="_images/21d296f8936e797e01dbb6d2f70c8d6f74e83d9957a68b7188927b6c23f6a2d0.png" src="_images/21d296f8936e797e01dbb6d2f70c8d6f74e83d9957a68b7188927b6c23f6a2d0.png" />
 </div>
 </div>
 </section>
@@ -803,12 +815,12 @@ tensor([[ 5., 11.],
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
 
-         0.0       0.84      0.86      0.85       100
-         1.0       0.86      0.84      0.85       100
+         0.0       1.00      1.00      1.00       100
+         1.0       1.00      1.00      1.00       100
 
-    accuracy                           0.85       200
-   macro avg       0.85      0.85      0.85       200
-weighted avg       0.85      0.85      0.85       200
+    accuracy                           1.00       200
+   macro avg       1.00      1.00      1.00       200
+weighted avg       1.00      1.00      1.00       200
 </pre></div>
 </div>
 </div>
@@ -855,6 +867,15 @@ weighted avg       0.85      0.85      0.85       200
         <p class="prev-next-title">Arquiteturas Especializadas em Visão Computacional</p>
       </div>
     </a>
+    <a class="right-next"
+       href="A03_Visao_Computacional.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Histórico de Redes Neurais Especializadas em Visão Computacional</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -871,7 +892,8 @@ weighted avg       0.85      0.85      0.85       200
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Pacotes Utilizados</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Fundamentos de Pytorch</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pacotes-utilizados">Pacotes Utilizados</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dispositivo">Dispositivo</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variaveis">Variáveis</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes">Operações</a></li>

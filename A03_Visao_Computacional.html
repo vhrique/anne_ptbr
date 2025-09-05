@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Arquiteturas Especializadas em Visão Computacional &#8212; Engenharia de Redes Neurais Artificiais</title>
+    <title>Histórico de Redes Neurais Especializadas em Visão Computacional &#8212; Engenharia de Redes Neurais Artificiais</title>
   
   
   
@@ -57,13 +57,10 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '03_CNN';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'A03_Visao_Computacional';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Fundamentos de Pytorch" href="A01_Fundamentos_de_Pytorch.html" />
-    <link rel="prev" title="Algoritmos de Otimização para Redes Neurais Artificiais" href="02b_Otimizacao_Redes_Neurais.html" />
+    <link rel="prev" title="Fundamentos de Pytorch" href="A01_Fundamentos_de_Pytorch.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -199,22 +196,22 @@
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Arquiteturas Especializadas</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Arquiteturas Especializadas em Visão Computacional</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="03_CNN.html">Arquiteturas Especializadas em Visão Computacional</a></li>
 
 
 
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Anexos</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="A01_Fundamentos_de_Pytorch.html">Fundamentos de Pytorch</a></li>
 
 
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="A03_Visao_Computacional.html">Histórico de Redes Neurais Especializadas em Visão Computacional</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Histórico de Redes Neurais Especializadas em Visão Computacional</a></li>
 
 
 
@@ -289,7 +286,7 @@
       
       
       
-      <li><a href="https://github.com/vhrique/anne_ptbr/issues/new?title=Issue%20on%20page%20%2F03_CNN.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/vhrique/anne_ptbr/issues/new?title=Issue%20on%20page%20%2FA03_Visao_Computacional.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -319,7 +316,7 @@
       
       
       
-      <li><a href="_sources/03_CNN.ipynb" target="_blank"
+      <li><a href="_sources/A03_Visao_Computacional.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -403,7 +400,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Arquiteturas Especializadas em Visão Computacional</h1>
+    <h1>Histórico de Redes Neurais Especializadas em Visão Computacional</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -413,36 +410,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Arquiteturas Especializadas em Visão Computacional</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redes-neurais-convolucionais">Redes Neurais Convolucionais</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Histórico de Redes Neurais Especializadas em Visão Computacional</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideias-iniciais">Idéias Iniciais</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lenet-5-1998">LeNet-5 (1998)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alexnet-2012">AlexNet (2012)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relu">ReLU</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-response-normalization">Local Response Normalization</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-augmentation">Data Augmentation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dropout">Dropout</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#descobertas-mais-recentes">Descobertas mais recentes</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vgg-2014">VGG (2014)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inception-googlenet-2014">Inception/GoogleNet (2014)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convolucoes-assimetricas">Convoluções Assimétricas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convolucoes-1x1">Convoluções 1x1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classificadores-auxiliares">Classificadores Auxiliares</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resnet-2015">ResNet (2015)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conexoes-residuais">Conexões Residuais</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-normalization">Batch Normalization</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outras-cnns">Outras CNNs</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacoes">Aplicações</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reconhecimento-de-imagens">Reconhecimento de Imagens</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lenet-5-1998">LeNet-5 (1998)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alexnet-2012">AlexNet (2012)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vgg-2014">VGG (2014)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inception-googlenet-2014">Inception/GoogleNet (2014)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resnet-2015">ResNet (2015)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outras-cnns-para-reconhecimento-de-imagens">Outras CNNs para Reconhecimento de Imagens</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteccao-de-objetos">Detecção de Objetos</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-cnn-2014">R-CNN (2014)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fast-r-cnn-2015">Fast R-CNN (2015)</a></li>
@@ -462,17 +443,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#u-net-2015">U-Net (2015)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deeplab-2015">DeepLab (2015 - …)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mask-r-cnn-2017">Mask R-CNN (2017)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dice-loss-para-segmentacao">Dice Loss para Segmentação</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outras-aplicacoes">Outras Aplicações</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consideracoes-finais">Considerações Finais</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proxima-aula">Próxima Aula</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consideracoes-finais">Considerações Finais</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referências</a></li>
 </ul>
 
@@ -486,37 +461,29 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p><a href="https://colab.research.google.com/github/vhrique/anne_ptbr/blob/main/03_CNN.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section class="tex2jax_ignore mathjax_ignore" id="arquiteturas-especializadas-em-visao-computacional">
-<h1>Arquiteturas Especializadas em Visão Computacional<a class="headerlink" href="#arquiteturas-especializadas-em-visao-computacional" title="Link to this heading">#</a></h1>
-<p>A visão computacional e as redes neurais evoluíram de forma interligada ao longo das últimas décadas, com avanços em uma área frequentemente impulsionando o progresso da outra. Inicialmente, o foco da visão computacional estava em algoritmos projetados manualmente para detecção de bordas, segmentação e reconhecimento de padrões. No entanto, esses métodos enfrentavam limitações ao lidar com a complexidade e variabilidade das imagens do mundo real. A introdução de redes neurais artificiais, e mais tarde de redes neurais convolucionais (CNNs), transformou a maneira como sistemas automatizados interpretam imagens, permitindo que os modelos aprendessem representações diretamente dos dados. Isso marcou o início de uma nova era, em que o aprendizado profundo começou a superar as abordagens tradicionais em várias tarefas de visão computacional, como classificação de imagens, detecção de objetos e segmentação semântica. Esse desenvolvimento conjunto continua a evoluir, com as redes neurais modernas desempenhando um papel central na visão computacional aplicada a diversos domínios, desde veículos autônomos até diagnósticos médicos.</p>
-<section id="redes-neurais-convolucionais">
-<h2>Redes Neurais Convolucionais<a class="headerlink" href="#redes-neurais-convolucionais" title="Link to this heading">#</a></h2>
-<p>As Redes Neurais Convolucionais (CNNs) são uma classe de redes neurais projetadas especificamente para processar dados com uma estrutura de grade, como imagens. Elas são formadas por camadas de convolução, que aplicam filtros para extrair características locais do dado, como bordas e texturas. Esses filtros são aplicados em pequenas regiões da entrada, permitindo que a CNN capture padrões espaciais e hierárquicos. Além das camadas convolucionais, as CNNs incluem camadas de pooling, que reduzem a dimensionalidade dos dados, preservando as informações mais relevantes. Graças à sua capacidade de detectar e aprender características espaciais, as CNNs são amplamente utilizadas em tarefas como reconhecimento de imagens, segmentação e detecção de objetos.</p>
-<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/conv.jpg?raw=true" width="500"></center>
-<p>Internamente, o processo de convolução envolve o deslizamento de um filtro (ou kernel) sobre a entrada (imagem), onde o mesmo conjunto de pesos é aplicado a diferentes regiões da imagem. A cada posição, o filtro calcula a soma ponderada dos valores dos pixels sobrepostos, resultando em uma nova matriz, chamada de mapa de características. Esse compartilhamento de pesos permite que a CNN aprenda a detectar padrões como bordas, texturas ou formas, independentemente da posição desses padrões na imagem. Isso torna a convolução altamente eficiente, pois reduz drasticamente o número de parâmetros comparado a uma rede totalmente conectada (MLP), além de explorar a estrutura local dos dados de forma eficaz.</p>
-</section>
+  <p><a href="https://colab.research.google.com/github/vhrique/anne_ptbr/blob/main/A03_Visao_Computacional.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="historico-de-redes-neurais-especializadas-em-visao-computacional">
+<h1>Histórico de Redes Neurais Especializadas em Visão Computacional<a class="headerlink" href="#historico-de-redes-neurais-especializadas-em-visao-computacional" title="Link to this heading">#</a></h1>
+<p>A visão computacional e as redes neurais evoluíram de forma interligada ao longo das últimas décadas, com avanços em uma área frequentemente impulsionando o progresso da outra. Inicialmente, o foco da visão computacional estava em algoritmos projetados manualmente para detecção de bordas, segmentação e reconhecimento de padrões. No entanto, esses métodos enfrentavam limitações ao lidar com a complexidade e variabilidade das imagens do mundo real. A introdução de redes neurais artificiais, seguido de redes neurais convolucionais (CNNs) e Transformers, transformou a maneira como sistemas automatizados interpretam imagens, permitindo que os modelos aprendessem representações diretamente dos dados. Isso marcou o início de uma nova era, em que o aprendizado profundo começou a superar as abordagens tradicionais em várias tarefas de visão computacional, como classificação de imagens, detecção de objetos e segmentação semântica. Esse desenvolvimento conjunto continua a evoluir, com as redes neurais modernas desempenhando um papel central na visão computacional aplicada a diversos domínios, desde veículos autônomos até diagnósticos médicos.</p>
 <section id="ideias-iniciais">
 <h2>Idéias Iniciais<a class="headerlink" href="#ideias-iniciais" title="Link to this heading">#</a></h2>
-<p>As redes neurais convolucionais (CNNs) têm suas raízes em pesquisas realizadas na área de biologia. Uma das primeiras inspirações foi a compreensão biológica do cortex visual de mamíferos, que revelou que neurônios na visão são organizados de maneira hierárquica, detectando bordas e padrões simples em diferentes áreas do campo visual. Na década de 1980, o pesquisador Kunihiko Fukushima desenvolveu o Neocognitron, uma rede neural hierárquica inspirada na organização visual do cérebro. O Neocognitron introduziu conceitos de convolução e pooling (ou subsampling), permitindo o reconhecimento de padrões visuais. Embora fosse uma inovação marcante, o Neocognitron não utilizava aprendizado supervisionado, sendo pré-configurado em grande parte. Foi apenas com o surgimento de técnicas de treinamento supervisionado, como o backpropagation, que as CNNs começaram a evoluir em direção ao que conhecemos hoje, culminando mais tarde na LeNet-5 de Yann LeCun, que consolidou esses avanços no reconhecimento de dígitos manuscritos.</p>
+<p>Na década de 1980, o pesquisador Kunihiko Fukushima desenvolveu o Neocognitron, uma rede neural hierárquica inspirada na organização visual do cérebro. O Neocognitron introduziu conceitos de convolução e pooling (ou subsampling), permitindo o reconhecimento de padrões visuais. Embora fosse uma inovação marcante, o Neocognitron não utilizava aprendizado supervisionado, sendo pré-configurado em grande parte. Foi apenas com o surgimento de técnicas de treinamento supervisionado, como o backpropagation, que as CNNs começaram a evoluir em direção ao que conhecemos hoje, culminando mais tarde na LeNet-5 de Yann LeCun, que consolidou esses avanços no reconhecimento de dígitos manuscritos.</p>
 </section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="aplicacoes">
+<h1>Aplicações<a class="headerlink" href="#aplicacoes" title="Link to this heading">#</a></h1>
+<p>As Redes Neurais Artificiais (RNAs) são amplamente utilizadas em diversas aplicações de visão computacional, graças à sua capacidade de extrair características visuais de forma eficiente. No reconhecimento de imagens, elas classificam uma imagem em categorias predefinidas, sendo amplamente utilizadas em sistemas de reconhecimento facial, diagnóstico médico e classificação de imagens em redes sociais. Na detecção de objetos, além de classificar, elas também localizam múltiplos objetos dentro de uma imagem, fornecendo coordenadas para suas posições, o que é crucial para tarefas como veículos autônomos e vigilância. Já na segmentação de imagens, as RNAs não apenas identificam objetos, mas também os contornam pixel a pixel, permitindo a separação precisa de diferentes elementos dentro de uma imagem, sendo muito utilizadas em áreas como medicina (para segmentação de órgãos ou tumores) e processamento de cenas em robótica. Essas aplicações mostram a versatilidade destes modelos em resolver problemas visuais complexos.</p>
+<section id="reconhecimento-de-imagens">
+<h2>Reconhecimento de Imagens<a class="headerlink" href="#reconhecimento-de-imagens" title="Link to this heading">#</a></h2>
+<p>O reconhecimento de imagens, dentro de visão computacional, consiste em atribuir rótulos ou categorias a imagens a partir de seus padrões visuais. Esse processo envolve extrair representações discriminativas do conteúdo da imagem, como formas, texturas e cores, e mapear essas representações para classes predefinidas. Com o avanço das redes neurais, tornou-se possível aprender automaticamente essas representações a partir dos próprios dados, superando abordagens clássicas baseadas em descritores manuais e consolidando o deep learning como paradigma dominante em visão computacional.</p>
 <section id="lenet-5-1998">
-<h2>LeNet-5 (1998)<a class="headerlink" href="#lenet-5-1998" title="Link to this heading">#</a></h2>
+<h3>LeNet-5 (1998)<a class="headerlink" href="#lenet-5-1998" title="Link to this heading">#</a></h3>
 <p>A LeNet-5, desenvolvida por Yann LeCun em 1998, foi uma das primeiras redes neurais convolucionais de sucesso aplicadas ao reconhecimento de dígitos manuscritos, mais especificamente no conjunto de dados MNIST. A arquitetura da LeNet-5 consistia em várias camadas de convolução e pooling, seguidas de camadas totalmente conectadas para classificação. Ela usava convoluções para extrair características visuais locais e pooling (ou subsampling) para reduzir a dimensionalidade, preservando as informações mais importantes. A rede era treinada utilizando backpropagation, o que permitiu que ela ajustasse seus pesos de forma eficiente. A LeNet-5 foi pioneira na utilização de CNNs em aplicações reais, como o reconhecimento automático de números em cheques bancários, e é considerada um marco no desenvolvimento das redes convolucionais modernas.</p>
 <center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/lenet5.jpg?raw=true" width="800"></br>LeNet5, desenhada com NN-SVG</center>
 <p>Após isto, o progresso nas redes neurais convolucionais foi relativamente lento, em grande parte devido a limitações computacionais e à falta de grandes conjuntos de dados. Durante esse período, as CNNs eram usadas em aplicações específicas, mas não haviam atingido ampla adoção. No entanto, avanços como o uso de GPUs para acelerar o treinamento de redes profundas e o surgimento de grandes bases de dados, como o ImageNet, criaram as condições para que, em 2012, a AlexNet revolucionasse a visão computacional, demonstrando o poder das CNNs em tarefas complexas de classificação de imagens.</p>
 </section>
 <section id="alexnet-2012">
-<h2>AlexNet (2012)<a class="headerlink" href="#alexnet-2012" title="Link to this heading">#</a></h2>
+<h3>AlexNet (2012)<a class="headerlink" href="#alexnet-2012" title="Link to this heading">#</a></h3>
 <p>A AlexNet, desenvolvida por Alex Krizhevsky, Ilya Sutskever e Geoffrey Hinton em 2012, marcou um ponto de virada no campo da visão computacional ao vencer o ImageNet Large Scale Visual Recognition Challenge com uma margem significativa. Sua arquitetura foi composta por 8 camadas, sendo 5 camadas convolucionais seguidas de 3 camadas totalmente conectadas, além de funções de ativação ReLU para acelerar o treinamento e camadas de Local Response Normalization para melhorar a generalização. AlexNet introduziu o uso extensivo de GPUs para treinar redes profundas em grandes quantidades de dados, e utilizou técnicas como dropout para combater o overfitting e data augmentation para melhorar a generalização. A AlexNet demonstrou a eficácia das redes profundas e consolidou o uso de CNNs para classificação de imagens, influenciando toda uma nova geração de arquiteturas profundas.</p>
 <p>A arquitetura da AlexNet possui as seguintes camadas:</p>
 <ol class="arabic simple">
@@ -533,91 +500,30 @@ document.write(`
 <li><p>Totalmente Conectada 2: 4096 neurônios, ativação ReLU e Dropout</p></li>
 <li><p>Saída: 1000 neurônios, ativação Softmax</p></li>
 </ol>
-<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/alexnet.png?raw=true" width=800></br>AlexNet, desenhada com NN-SVG</center><section id="relu">
-<h3>ReLU<a class="headerlink" href="#relu" title="Link to this heading">#</a></h3>
-<p>A função de ativação ReLU (Rectified Linear Unit), popularizada com a AlexNet, é uma das mais utilizadas em redes neurais modernas devido à sua simplicidade e eficácia. Sua fórmula é
-<span class="math notranslate nohighlight">\(f(x)=\text{max}(0,x)\)</span> , o que significa que ela transforma valores negativos em zero, enquanto mantém valores positivos inalterados. Isso introduz não-linearidade na rede, permitindo que ela aprenda padrões complexos. Comparada a funções de ativação anteriores, como sigmoid e tanh, a ReLU tem a vantagem de ser computacionalmente mais eficiente e de mitigar o problema do desvanecimento do gradiente, uma vez que seus gradientes são constantes para entradas positivas. No entanto, ReLU também pode sofrer com o problema de “neurônios mortos” quando muitas unidades se tornam zero, o que pode ser tratado com variantes como Leaky ReLU.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">max</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">])</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;ReLU(x)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/720a3f0eddb4a4517f50e8da1e27862829a9a83ce1515b5bcb1076476035ce9e.png" src="_images/720a3f0eddb4a4517f50e8da1e27862829a9a83ce1515b5bcb1076476035ce9e.png" />
-</div>
-</div>
-</section>
-<section id="local-response-normalization">
-<h3>Local Response Normalization<a class="headerlink" href="#local-response-normalization" title="Link to this heading">#</a></h3>
-<p>A Local Response Normalization (LRN) é uma técnica de normalização usada em redes neurais convolucionais, introduzida pela primeira vez na AlexNet. Inspirada pela inibição lateral em neurônios biológicos, a LRN normaliza a ativação de um neurônio considerando a resposta de seus neurônios vizinhos dentro de uma pequena região. Isso ajuda a destacar ativações mais fortes e suprimir as mais fracas, promovendo uma competição entre neurônios e melhorando a generalização da rede. Embora tenha sido popular em arquiteturas antigas, como AlexNet e GoogLeNet, o LRN foi substituído por métodos mais modernos, como o Batch Normalization</p>
-<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/lrnorm.jpg?raw=true" width=300></center></section>
-<section id="data-augmentation">
-<h3>Data Augmentation<a class="headerlink" href="#data-augmentation" title="Link to this heading">#</a></h3>
-<p>Data augmentation é uma técnica amplamente utilizada em aprendizado profundo para aumentar artificialmente o tamanho de um conjunto de dados de treinamento, aplicando transformações nos exemplos existentes. O objetivo é criar variações dos dados originais, como rotações, translações, espelhamentos, alterações de brilho, entre outras, para tornar o modelo mais robusto e generalizável. Isso é especialmente útil em tarefas como classificação de imagens, onde a diversidade dos dados pode ser limitada. Ao expor o modelo a múltiplas variações dos mesmos exemplos, o data augmentation ajuda a prevenir overfitting e a melhorar o desempenho do modelo em novos dados. Essa técnica é frequentemente usada em conjunto com outras formas de regularização, como o Dropout, para aumentar a capacidade de generalização das redes neurais.</p>
-<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/augment.png?raw=true" width=700></br>Exemplo de Data Augmentation, conforme documentação do PyTorch</center></section>
-<section id="dropout">
-<h3>Dropout<a class="headerlink" href="#dropout" title="Link to this heading">#</a></h3>
-<p>O Dropout é uma técnica de regularização introduzida para reduzir o overfitting em redes neurais, particularmente em redes profundas. Ele funciona desativando aleatoriamente uma fração dos neurônios em cada camada durante o treinamento, o que força a rede a não depender excessivamente de neurônios específicos. Essa abordagem faz com que a rede aprenda representações mais robustas e generalizáveis, já que diferentes subconjuntos de neurônios são ativados em cada iteração. Durante a fase de teste, todos os neurônios são utilizados, mas os pesos são ajustados para compensar as desativações feitas no treinamento. O Dropout provou ser uma técnica eficiente em melhorar a capacidade de generalização das redes, especialmente em tarefas de classificação complexas.</p>
-<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/dropout.jpg?raw=true" width=700></center>
-<section id="descobertas-mais-recentes">
-<h4>Descobertas mais recentes<a class="headerlink" href="#descobertas-mais-recentes" title="Link to this heading">#</a></h4>
-<p>O uso Dropout é questionado no artigo intitulado Rethinking Generalization (2017), de Zhang et al., no qual os autores argumentam que técnicas de regularização, como o Dropout, podem não ser tão eficazes quanto se pensava em redes profundas. O estudo mostrou que redes neurais profundas conseguem memorizar dados mesmo quando treinadas em conjuntos de dados completamente aleatórios. Isso sugere que, em vez de confiar exclusivamente em técnicas como Dropout para melhorar a generalização, redes neurais podem ter uma alta capacidade de generalizar mesmo sem regularização explícita. Esse achado contraria a visão tradicional de que a regularização como o Dropout seria essencial para evitar overfitting, propondo que a capacidade de generalização das redes profundas pode ser explicada por fatores além dessas técnicas, como a arquitetura ou o algoritmo de otimização.</p>
-</section>
-</section>
-</section>
+<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/alexnet.png?raw=true" width=800></br>AlexNet, desenhada com NN-SVG</center></section>
 <section id="vgg-2014">
-<h2>VGG (2014)<a class="headerlink" href="#vgg-2014" title="Link to this heading">#</a></h2>
+<h3>VGG (2014)<a class="headerlink" href="#vgg-2014" title="Link to this heading">#</a></h3>
 <p>A VGG (Visual Geometry Group), introduzida por Simonyan e Zisserman em 2014, é uma arquitetura de rede neural convolucional projetada para classificação de imagens, que se destacou no desafio ImageNet. O principal avanço da VGG foi o uso de uma grande profundidade de camadas, com versões como VGG-16 e VGG-19, que têm 16 e 19 camadas de aprendizado, respectivamente. A arquitetura se caracteriza pelo uso de filtros convolucionais pequenos de tamanho 3x3 empilhados em sequência, juntamente com camadas de pooling para reduzir a dimensionalidade. A simplicidade dessa abordagem, aliada à profundidade, permitiu um grande aumento na capacidade de extração de características, melhorando o desempenho em várias tarefas de visão computacional. Embora a VGG tenha um alto custo computacional devido ao número elevado de parâmetros, ela teve uma influência significativa no desenvolvimento de redes neurais profundas.</p>
 <center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/vgg-16-90dg.png?raw=true" width=800></center></section>
 <section id="inception-googlenet-2014">
-<h2>Inception/GoogleNet (2014)<a class="headerlink" href="#inception-googlenet-2014" title="Link to this heading">#</a></h2>
+<h3>Inception/GoogleNet (2014)<a class="headerlink" href="#inception-googlenet-2014" title="Link to this heading">#</a></h3>
 <p>A Inception, introduzida por Szegedy et al. em 2014 no modelo GoogLeNet, representou uma importante inovação nas redes neurais convolucionais, projetada para melhorar tanto a eficiência computacional quanto o desempenho em tarefas de visão computacional, como o ImageNet Challenge. A principal inovação da arquitetura Inception é o módulo Inception, que aplica convoluções de diferentes tamanhos (1x1, 3x3, 5x5) e pooling em paralelo na mesma camada. Essa abordagem permite que a rede capture informações em múltiplas escalas e resoluções, melhorando a capacidade de extração de características sem aumentar significativamente o número de parâmetros.</p>
 <p>Outras inovações deste modelo foram a introdução de convoluções assimétricas, convoluções 1x1, e classificadores auxiliares. Essas inovações tornaram a GoogLeNet, com sua arquitetura Inception, uma das primeiras redes profundas a ser treinada com eficiência em grande escala, equilibrando profundidade e eficiência computacional. Essa arquitetura demonstrou que era possível criar redes neurais profundas que exploravam tanto a largura quanto a profundidade, sem incorrer no aumento exponencial de parâmetros, como acontecia com modelos anteriores. As convoluções assimétricas, em particular, foram um elemento chave para melhorar a flexibilidade e a eficiência da rede, contribuindo para sua escalabilidade e sucesso em competições de visão computacional.</p>
 <center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/googlenet.png?raw=true" width=900></center>
 <center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/inception.png?raw=true"></center>
-<section id="convolucoes-assimetricas">
-<h3>Convoluções Assimétricas<a class="headerlink" href="#convolucoes-assimetricas" title="Link to this heading">#</a></h3>
-<p>Além das convoluções de múltiplas escalas, um avanço significativo que surgiu em versões posteriores, como na Inception v2 e Inception v3, foi o uso de convoluções assimétricas, como as convoluções 3x1 e 1x3. Essas convoluções assimétricas foram introduzidas para melhorar ainda mais a eficiência da rede. Ao decompor uma convolução regular de 3x3 em duas operações menores, como uma convolução 3x1 (captura de características na dimensão horizontal) e uma 1x3 (captura de características na dimensão vertical), a rede pode manter o mesmo campo receptivo de uma convolução 3x3, porém com menos parâmetros e menor custo computacional. Essa técnica ajuda a rede a capturar padrões em direções específicas de forma mais eficiente, além de reduzir a quantidade de cálculos envolvidos.</p>
-</section>
-<section id="convolucoes-1x1">
-<h3>Convoluções 1x1<a class="headerlink" href="#convolucoes-1x1" title="Link to this heading">#</a></h3>
-<p>As convoluções 1x1 foram introduzidas para melhorar a eficiência computacional e a flexibilidade das redes neurais convolucionais, especialmente em arquiteturas como a Inception. Embora inicialmente possam parecer triviais, as convoluções 1x1 têm um papel crucial em reduzir a dimensionalidade dos dados sem perder informações relevantes. Ao aplicar um filtro 1x1, a convolução é realizada apenas sobre a profundidade (ou canais) da entrada, sem afetar a largura ou altura da imagem. Isso permite a fusão de informações de diferentes canais, o que facilita a combinação de características complexas de forma eficiente. Além disso, essa técnica reduz o número de parâmetros e operações, resultando em uma rede mais leve e rápida, o que foi fundamental para o sucesso de redes profundas como a GoogLeNet e ResNet.</p>
-</section>
-<section id="classificadores-auxiliares">
-<h3>Classificadores Auxiliares<a class="headerlink" href="#classificadores-auxiliares" title="Link to this heading">#</a></h3>
-<p>Além disso, a Inception introduziu os classificadores auxiliares, pequenas redes colocadas ao longo da arquitetura principal, com o objetivo de reduzir o problema do gradiente desvanecente e acelerar o treinamento da rede. Esses classificadores auxiliares atuam como uma espécie de regularizador, garantindo que camadas intermediárias da rede aprendam características úteis e não sejam prejudicadas pela dificuldade em propagar o gradiente nas camadas mais profundas.</p>
-</section>
 </section>
 <section id="resnet-2015">
-<h2>ResNet (2015)<a class="headerlink" href="#resnet-2015" title="Link to this heading">#</a></h2>
+<h3>ResNet (2015)<a class="headerlink" href="#resnet-2015" title="Link to this heading">#</a></h3>
 <p>A ResNet (Residual Network), proposta por He et al. em 2015, revolucionou o treinamento de redes neurais profundas ao introduzir o conceito de conexões residuais (skip connections). Essas conexões permitem que o sinal original seja passado diretamente de uma camada para outra, pulando algumas camadas intermediárias. O principal benefício desse mecanismo é a solução para o problema de degradação do desempenho em redes muito profundas, onde o aumento das camadas não necessariamente melhora a performance devido à dificuldade de treinamento. Com as conexões residuais, a ResNet facilita o fluxo de gradientes durante o treinamento, tornando possível a criação de redes extremamente profundas, como a ResNet-50 e ResNet-152, sem sofrer com o gradiente desvanecente. Além disso, a ResNet foi uma das primeiras arquiteturas a fazer uso do Batch Normalization (BN), que ajudou a estabilizar o treinamento de redes profundas, melhorando a convergência. A ResNet teve um impacto profundo na pesquisa em redes neurais, estabelecendo um novo padrão para o design de arquiteturas profundas e sendo amplamente adotada em diversas tarefas de visão computacional.</p>
-<section id="conexoes-residuais">
-<h3>Conexões Residuais<a class="headerlink" href="#conexoes-residuais" title="Link to this heading">#</a></h3>
-<p>As conexões residuais foram a principal inovação da ResNet e representam um avanço crucial no design de redes neurais profundas. Elas introduzem um atalho que permite que o sinal original da entrada seja passado diretamente para uma camada posterior, sem passar pelas camadas intermediárias, criando o que é chamado de mapeamento de identidade. Esse conceito resolve o problema do gradiente desvanecente, que dificultava o treinamento de redes muito profundas, ao garantir que os gradientes possam fluir de forma mais eficaz para as camadas anteriores. As conexões residuais permitem que a rede aprenda diferenças residuais em vez de tentar ajustar o mapeamento completo da função, o que facilita o aprendizado. Como resultado, redes muito profundas, como as versões da ResNet com 50, 101 ou até 152 camadas, podem ser treinadas de maneira eficaz, sem degradação de desempenho, permitindo que elas capturem representações complexas dos dados.</p>
 <center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/resnet.png?raw=true"></center></section>
-<section id="batch-normalization">
-<h3>Batch Normalization<a class="headerlink" href="#batch-normalization" title="Link to this heading">#</a></h3>
-<p>Batch Normalization (BN), introduzido por Ioffe e Szegedy em 2015, é uma técnica que normaliza as ativações de uma camada neural para cada mini-lote durante o treinamento. O principal objetivo do Batch Normalization é mitigar o problema do deslocamento interno da covariância, que ocorre quando as distribuições das ativações mudam de forma significativa entre as camadas durante o treinamento, dificultando a convergência. Ao normalizar as ativações de cada mini-lote com base na média e na variância, o BN estabiliza e acelera o treinamento, permitindo o uso de taxas de aprendizado maiores. Além disso, o BN atua como uma forma de regularização, reduzindo a necessidade de técnicas como o Dropout, e facilita o treinamento de redes neurais mais profundas. Essa técnica foi amplamente adotada em arquiteturas modernas, como a ResNet, e se tornou um componente padrão na maioria das redes neurais convolucionais.</p>
-<center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/batchnorm.jpg?raw=true" width=300></center></section>
-</section>
-<section id="outras-cnns">
-<h2>Outras CNNs<a class="headerlink" href="#outras-cnns" title="Link to this heading">#</a></h2>
+<section id="outras-cnns-para-reconhecimento-de-imagens">
+<h3>Outras CNNs para Reconhecimento de Imagens<a class="headerlink" href="#outras-cnns-para-reconhecimento-de-imagens" title="Link to this heading">#</a></h3>
 <p>Nos últimos anos, várias arquiteturas de redes neurais surgiram para atender diferentes demandas de eficiência e desempenho. A MobileNet foi projetada para dispositivos móveis e embarcados, focando em eficiência computacional com o uso de convoluções separáveis em profundidade (depthwise separable convolutions), que reduzem o número de parâmetros e operações. A EfficientNet introduziu uma abordagem de escalonamento sistemático, onde largura, profundidade e resolução da rede são ajustadas de maneira balanceada para otimizar o desempenho com eficiência computacional. Já a DenseNet inovou ao utilizar conexões densas, onde cada camada recebe como entrada os mapas de características de todas as camadas anteriores, promovendo a reutilização de características e reduzindo o problema do gradiente desvanecente. Por fim, a ConvNeXt é uma arquitetura recente que moderniza as redes convolucionais ao incorporar algumas das inovações dos Transformers (como normalizações e ativação pós-camada), tornando as CNNs competitivas novamente em tarefas como visão computacional, combinando eficiência com simplicidade de design. Essas redes representam diferentes abordagens para melhorar a eficiência e a escalabilidade das redes convolucionais.</p>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="aplicacoes">
-<h1>Aplicações<a class="headerlink" href="#aplicacoes" title="Link to this heading">#</a></h1>
-<p>As Redes Neurais Convolucionais (CNNs) são amplamente utilizadas em diversas aplicações de visão computacional, graças à sua capacidade de extrair características visuais de forma eficiente. No reconhecimento de imagens, as CNNs classificam uma imagem em categorias predefinidas, sendo amplamente utilizadas em sistemas de reconhecimento facial, diagnóstico médico e classificação de imagens em redes sociais. Na detecção de objetos, além de classificar, as CNNs também localizam múltiplos objetos dentro de uma imagem, fornecendo coordenadas para suas posições, o que é crucial para tarefas como veículos autônomos e vigilância. Já na segmentação de imagens, as CNNs não apenas identificam objetos, mas também os contornam pixel a pixel, permitindo a separação precisa de diferentes elementos dentro de uma imagem, sendo muito utilizadas em áreas como medicina (para segmentação de órgãos ou tumores) e processamento de cenas em robótica. Essas aplicações mostram a versatilidade das CNNs em resolver problemas visuais complexos.</p>
 <section id="deteccao-de-objetos">
 <h2>Detecção de Objetos<a class="headerlink" href="#deteccao-de-objetos" title="Link to this heading">#</a></h2>
-<p>A detecção de objetos com CNNs vai além do reconhecimento de imagens, pois não apenas identifica as categorias dos objetos, mas também localiza suas posições em uma imagem por meio de caixas delimitadoras (bounding boxes). Arquiteturas como YOLO (You Only Look Once), R-CNN e SSD (Single Shot MultiBox Detector) são amplamente utilizadas para essa tarefa. Essas redes utilizam camadas convolucionais para extrair características relevantes de uma imagem e, em seguida, classificam os objetos e preveem suas localizações simultaneamente. Geralmente, as camadas finais consistem em uma combinação de camadas totalmente conectadas ou convolucionais que geram dois tipos de saídas: uma matriz de probabilidades para classificar os objetos e outra matriz que define as posições das caixas delimitadoras, geralmente como coordenadas relativas à imagem.</p>
+<p>A detecção de objetos vai além do reconhecimento de imagens, pois não apenas identifica as categorias dos objetos, mas também localiza suas posições em uma imagem por meio de caixas delimitadoras (bounding boxes). Arquiteturas como YOLO (You Only Look Once), R-CNN e SSD (Single Shot MultiBox Detector) são amplamente utilizadas para essa tarefa. Essas redes utilizam camadas convolucionais para extrair características relevantes de uma imagem e, em seguida, classificam os objetos e preveem suas localizações simultaneamente. Geralmente, as camadas finais consistem em uma combinação de camadas totalmente conectadas ou convolucionais que geram dois tipos de saídas: uma matriz de probabilidades para classificar os objetos e outra matriz que define as posições das caixas delimitadoras, geralmente como coordenadas relativas à imagem.</p>
 <center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/obj_detection.jpg?raw=true"></center><section id="r-cnn-2014">
 <h3>R-CNN (2014)<a class="headerlink" href="#r-cnn-2014" title="Link to this heading">#</a></h3>
 <p>R-CNN (Regions with Convolutional Neural Networks) é uma arquitetura pioneira para detecção de objetos em visão computacional (Girshick et al, 2014). Ela funciona gerando propostas de regiões que possivelmente contêm objetos, usando algoritmos como busca seletiva. Cada região proposta é redimensionada e passada por uma rede neural convolucional para extração de características. Essas características são então alimentadas em um classificador, como uma SVM, para determinar a classe do objeto na região. Embora o R-CNN tenha melhorado significativamente a precisão na detecção de objetos, seu processamento é lento, pois cada região proposta precisa ser processada individualmente pela rede neural.</p>
@@ -690,37 +596,11 @@ document.write(`
 <center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/maskrcnn.JPG?raw=true" width=600></center>
 <p>O treinamento da Mask R-CNN é uma tarefa multi-objetivo que otimiza três componentes simultaneamente: detecção de objetos, regressão de caixas delimitadoras e segmentação de instâncias. A rede é treinada utilizando backpropagation com uma função de perda composta pela soma de três termos: a perda de classificação de objetos (usando cross-entropy), a perda de regressão de caixas (com smooth L1 ou L2), e a perda de segmentação de máscaras (com binary cross-entropy). O IoU (Intersection over Union) é utilizado para selecionar as propostas positivas durante o treinamento da Rede de Propostas de Região (RPN) e para definir as caixas usadas para a segmentação. Além disso, a operação RoIAlign é aplicada para garantir o correto alinhamento das regiões de interesse, permitindo que a Mask R-CNN produza predições precisas para detecção e segmentação.</p>
 </section>
-<section id="dice-loss-para-segmentacao">
-<h3>Dice Loss para Segmentação<a class="headerlink" href="#dice-loss-para-segmentacao" title="Link to this heading">#</a></h3>
-<p>A Dice Loss foi introduzida para segmentação de imagens com o objetivo de melhorar o desempenho em cenários de grande desbalanceamento entre classes, como em imagens médicas, onde a região de interesse pode ser muito pequena em comparação ao fundo. Um dos primeiros e mais notáveis usos da Dice Loss foi no contexto de segmentação volumétrica de imagens médicas, especificamente no paper “V-Net: Fully Convolutional Neural Networks for Volumetric Medical Image Segmentation” (2016) de Fausto Milletari et al. A Dice Loss, derivada do coeficiente de Dice, mede a similaridade entre as predições e os rótulos verdadeiros ao focar na sobreposição entre regiões, sendo especialmente eficaz para evitar que áreas menores sejam ignoradas durante o treinamento.</p>
-<p>Ao ser utilizada em vez de, ou em conjunto com, a cross-entropy loss, a Dice Loss permitiu segmentações mais precisas em áreas pequenas e desbalanceadas, consolidando-se como uma função de perda importante para tarefas de segmentação de imagens. Sua fórmula é definida abaixo:</p>
-<div class="math notranslate nohighlight">
-\[
-\text{Dice Loss} = 1 - \frac{2 \cdot \sum_i^N p_i g_i}{\sum_i^N p_i + \sum_i^N g_i}
-\]</div>
-<p>onde <span class="math notranslate nohighlight">\(p_i\)</span> é a previsão e <span class="math notranslate nohighlight">\(g_i\)</span> o valor real para o pixel <span class="math notranslate nohighlight">\(i\)</span>, entre os <span class="math notranslate nohighlight">\(N\)</span> pixels.</p>
 </section>
-</section>
-<section id="outras-aplicacoes">
-<h2>Outras Aplicações<a class="headerlink" href="#outras-aplicacoes" title="Link to this heading">#</a></h2>
-<p>Embora as CNNs sejam amplamente conhecidas por suas aplicações em visão computacional, elas também têm sido adaptadas para lidar com séries temporais e outros tipos de dados não visuais. Em séries temporais, as CNNs podem capturar padrões locais ao longo do tempo, assim como capturam padrões espaciais em imagens, aplicando convoluções para detectar tendências, sazonalidades ou eventos relevantes em sequências temporais. Por exemplo, CNNs são usadas em previsões financeiras, onde conseguem identificar padrões em dados históricos de preços, ou em análise de sinais biomédicos, como ECGs, para detectar anomalias de saúde. Além disso, CNNs têm sido aplicadas a dados textuais para tarefas de classificação de texto e análise de sentimentos, onde as convoluções identificam sequências de palavras ou frases relevantes. Ao lidar com dados sequenciais, as CNNs competem com RNNs e Transformers, mostrando que são versáteis e eficazes em diversos tipos de dados, além de imagens.</p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="exercicios">
-<h1>Exercícios<a class="headerlink" href="#exercicios" title="Link to this heading">#</a></h1>
-<ol class="arabic simple">
-<li><p>Verifique o exemplo da aula 3 para visão computacional.</p></li>
-<li><p>Porque a EfficientNet-Lite0 foi menos eficiente que a LeNet5?</p></li>
-<li><p>Como podemos melhorar a resultado da EfficientNet-Lite0? Implemente esta solução.</p></li>
-</ol>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="consideracoes-finais">
 <h1>Considerações Finais<a class="headerlink" href="#consideracoes-finais" title="Link to this heading">#</a></h1>
-<p>Nesta aula, falamos sobre redes neurais aplicadas a visão computacional. Mais especificamente, falamos sobre redes neurais convolucionais e suas aplicações e reconhecimento de imagens, detecção de objetos, e segmentação.</p>
-<section id="proxima-aula">
-<h2>Próxima Aula<a class="headerlink" href="#proxima-aula" title="Link to this heading">#</a></h2>
-<p>Na próxima aula, falaremos sobre arquiteturas especializadas em modelagem de sequencias, como séries temporais e texto, utilizando redes neurais recorrentes e transformers.</p>
-</section>
+<p>Neste capítulo, falamos sobre redes neurais aplicadas a visão computacional. Mais especificamente, falamos sobre redes neurais convolucionais e suas aplicações e reconhecimento de imagens, detecção de objetos, e segmentação.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="referencias">
 <h1>Referências<a class="headerlink" href="#referencias" title="Link to this heading">#</a></h1>
@@ -729,9 +609,6 @@ document.write(`
 <li><p>LeCun, Y., Bottou, L., Bengio, Y., &amp; Haffner, P. (1998). Gradient-based learning applied to document recognition. Proceedings of the IEEE, 86(11), 2278-2324.</p></li>
 <li><p>LeNail, (2019). NN-SVG: Publication-Ready Neural Network Architecture Schematics. Journal of Open Source Software, 4(33), 747, <a class="reference external" href="https://doi.org/10.21105/joss.00747">https://doi.org/10.21105/joss.00747</a></p></li>
 <li><p>Krizhevsky, A., Sutskever, I., &amp; Hinton, G. E. (2012). Imagenet classification with deep convolutional neural networks. Advances in neural information processing systems, 25.</p></li>
-<li><p>Nair, V., &amp; Hinton, G. E. (2010). Rectified linear units improve restricted boltzmann machines. In Proceedings of the 27th international conference on machine learning (ICML-10) (pp. 807-814).</p></li>
-<li><p>Zhang, C., Bengio, S., Hardt, M., Recht, B., &amp; Vinyals, O. (2021). Understanding deep learning (still) requires rethinking generalization. Communications of the ACM, 64(3), 107-115.</p></li>
-<li><p>Zhang, C., Bengio, S., Hardt, M., Recht, B., &amp; Vinyals, O. (2021). Understanding deep learning (still) requires rethinking generalization. Communications of the ACM, 64(3), 107-115.</p></li>
 <li><p>Simonyan, K., &amp; Zisserman, A. (2014). Very deep convolutional networks for large-scale image recognition. arXiv preprint arXiv:1409.1556.</p></li>
 <li><p>Szegedy, C., Liu, W., Jia, Y., Sermanet, P., Reed, S., Anguelov, D., … &amp; Rabinovich, A. (2015). Going deeper with convolutions. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 1-9).</p></li>
 <li><p>He, K., Zhang, X., Ren, S., &amp; Sun, J. (2016). Deep residual learning for image recognition. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 770-778).</p></li>
@@ -784,22 +661,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="02b_Otimizacao_Redes_Neurais.html"
+       href="A01_Fundamentos_de_Pytorch.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Algoritmos de Otimização para Redes Neurais Artificiais</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="A01_Fundamentos_de_Pytorch.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Fundamentos de Pytorch</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -817,36 +685,20 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Arquiteturas Especializadas em Visão Computacional</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redes-neurais-convolucionais">Redes Neurais Convolucionais</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Histórico de Redes Neurais Especializadas em Visão Computacional</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideias-iniciais">Idéias Iniciais</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lenet-5-1998">LeNet-5 (1998)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alexnet-2012">AlexNet (2012)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relu">ReLU</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-response-normalization">Local Response Normalization</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-augmentation">Data Augmentation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dropout">Dropout</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#descobertas-mais-recentes">Descobertas mais recentes</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vgg-2014">VGG (2014)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inception-googlenet-2014">Inception/GoogleNet (2014)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convolucoes-assimetricas">Convoluções Assimétricas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convolucoes-1x1">Convoluções 1x1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classificadores-auxiliares">Classificadores Auxiliares</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resnet-2015">ResNet (2015)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conexoes-residuais">Conexões Residuais</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-normalization">Batch Normalization</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outras-cnns">Outras CNNs</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacoes">Aplicações</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reconhecimento-de-imagens">Reconhecimento de Imagens</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lenet-5-1998">LeNet-5 (1998)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alexnet-2012">AlexNet (2012)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vgg-2014">VGG (2014)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inception-googlenet-2014">Inception/GoogleNet (2014)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resnet-2015">ResNet (2015)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outras-cnns-para-reconhecimento-de-imagens">Outras CNNs para Reconhecimento de Imagens</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteccao-de-objetos">Detecção de Objetos</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-cnn-2014">R-CNN (2014)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fast-r-cnn-2015">Fast R-CNN (2015)</a></li>
@@ -866,17 +718,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#u-net-2015">U-Net (2015)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deeplab-2015">DeepLab (2015 - …)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mask-r-cnn-2017">Mask R-CNN (2017)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dice-loss-para-segmentacao">Dice Loss para Segmentação</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outras-aplicacoes">Outras Aplicações</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consideracoes-finais">Considerações Finais</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proxima-aula">Próxima Aula</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consideracoes-finais">Considerações Finais</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referências</a></li>
 </ul>
 
