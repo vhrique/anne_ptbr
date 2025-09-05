@@ -50,3 +50,8 @@ Essencialmente, a função de perda informa à rede neural como melhorar suas pr
 ## Otimização
 
 O processo de otimização envolve a maneira como o modelo ajusta seus parâmetros internos para minimizar uma função de perda, que mede o quão longe as previsões estão das saídas desejadas. Em redes neurais, esse processo é realizado por **algoritmos de otimização**, como o **gradiente descendente**, que, com o auxílio do algoritmo de _backpropagation_, ajusta os pesos das conexões neurais para minimizar a diferença entre a predição do modelo e o rótulo correto. Em suma, a otimização busca garantir que o modelo aprenda da melhor maneira possível com os dados disponíveis, ajustando-se para capturar os padrões mais relevantes e reduzir o erro nas predições.
+
+# Referências
+
+- Murphy, K. P. (2022). Probabilistic machine learning: an introduction. MIT press.
+- Domingos, P. (2012). A few useful things to know about machine learning. Communications of the ACM, 55(10), 78-87.
