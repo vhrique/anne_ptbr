@@ -3,7 +3,7 @@
 Este livro foi desenvolvido como notas de aula para a disciplina "Engenharia de Redes Neurais Artificiais", do Programa de Pós-Graduação em Engenharia de Produção e Sistemas, da Pontifícia Universidade Católica do Paraná.
 
 O objetivo é ensinar conceitos básicos e avançados de redes neurais artificiais, assim como formas inovadoras de usar esta tecnologia para resolver problemas de _machine learning_ e engenharia.
-Por meio de exemplos e atividades, os estudantes irão resolver problemas de diversos de engenharia e _machine learning_, como processamento de imagens e sinais e geração de dados sintéticos.
+Por meio de exemplos e atividades, os estudantes irão resolver problemas diversos de engenharia e _machine learning_, como processamento de imagens e sinais e geração de dados sintéticos.
 
 ## Público Alvo
 
