@@ -18,6 +18,10 @@ Os estudantes devem ter conhecimento intermediário dos seguintes tópicos:
 - Aprendizagem de Máquina
 - Linguagem de Programação Python
 
+## Material de Aula
+
+O material da disciplina se encontra no seguinte livro: [Engenharia de Redes Neurais Artificiais](https://vhrique.github.io/anne_ptbr/)
+
 ## Temas de Estudo
 
 - Fundamentos de Redes Neurais Artificiais: _Perceptron_, _Multilayer Perceptron_ e _Backpropagation_.
@@ -41,23 +45,14 @@ Os estudantes devem ter conhecimento intermediário dos seguintes tópicos:
 
 ## Aulas
 
-- [Aula 01: Fundamentos de Redes Neurais Artificiais](01_Fundamentos_de_Redes_Neurais_Artificiais.ipynb)
-- [Aula 02: Introdução à Paradigmas de Aprendizagem](02_Paradigmas_Aprendizagem.ipynb)
-- [Aula 03: Arquiteturas Especializadas em Visão Computacional](03_CNN.ipynb)
-- [Aula 04: Arquiteturas Especializadas em Dados Sequenciais](04_RNN_Transformers.ipynb)
-- [Aula 05: Paradigmas de Aprendizagem Avançadas](05_Paradigmas_Avancados.ipynb)
-- [Aula 06: Paradigmas de Aprendizagem Compostas](06_Paradigmas_Compostos.ipynb)
-- [Aula 07: Aspectos Práticos](07_Aspectos_Praticos.ipynb)
-- [Aula 08: Novas Fronteiras](08a_Novas_Fronteiras.ipynb) e [Aula 08: Tópicos Especiais](08b_Topicos_Especiais.ipynb)
-- [Aula 09: Apresentação do Projeto Final](09_Intrucoes_para_Projeto_Final.md)
-
-## Materiais Adicionais
-
-- [Aula 01: Fundamentos de Pytorch](01a_Fundamentos_de_Pytorch.ipynb)
-- [Aula 03: Exemplo Visão Computacional](03a_Exemplo_Visao_Computacional.ipynb)
-- [Aula 04: Exemplo de Série Temporal](04a_Exemplo_Serie_Temporal.ipynb)
-- [Aula 04: Exemplo de Processamento de Linguagem Natural](04b_Exemplo_PLN.ipynb)
-
+- Aula 01:
+  - [Introdução à Redes Neurais Artificiais](https://vhrique.github.io/anne_ptbr/00b_Introducao.html)
+  - [Fundamentos de Aprendizagem](https://vhrique.github.io/anne_ptbr/01a_Fundamentos_Aprendizagem.html)
+  - [Representação de Redes Neurais Artificiais](https://vhrique.github.io/anne_ptbr/01b_Representacao_Redes_Neurais_Artificiais.html)
+- Aula 02:
+  - [Funções de Perda](https://vhrique.github.io/anne_ptbr/02a_Funcoes_Perda_Redes_Neurais.html)
+  - [Algoritmos de Otimização](https://vhrique.github.io/anne_ptbr/02b_Otimizacao_Redes_Neurais.html)
+ 
 ## Avaliação
 
 Esta disciplina será avaliada da seguinte forma:
@@ -67,8 +62,14 @@ Esta disciplina será avaliada da seguinte forma:
   - As listas deverão ser entregues como arquivos ipynb pelo sistema da disciplina.
 - Projeto Final (60%):
   - O projeto final deve ser desenvolvido durante a disciplina, conforme [Instruções do Projeto Final](09_Intrucoes_para_Projeto_Final.md)
-  - O projeto final deverá ser apresentado na Aula 09
-  - O relatório deverá ser entregue no sistema da disciplina.
+  - O projeto final deverá ser apresentado na Aula 09.
+
+## Materiais Adicionais
+
+- [Aula 01: Fundamentos de Pytorch](01a_Fundamentos_de_Pytorch.ipynb)
+- [Aula 03: Exemplo Visão Computacional](03a_Exemplo_Visao_Computacional.ipynb)
+- [Aula 04: Exemplo de Série Temporal](04a_Exemplo_Serie_Temporal.ipynb)
+- [Aula 04: Exemplo de Processamento de Linguagem Natural](04b_Exemplo_PLN.ipynb)
 
 ## Materiais Externos
 
