@@ -21,21 +21,6 @@ O projeto deve:
   - Alteração de Funções de Otimização/Taxa de Aprendizado/Scheduler.
 - Utilizar uma métrica para comparar os resultados do estudo de ablação.
 
-### Requisitos do Relatório
-
-O relatório deve:
-- Seguir o template de artigo de conferências da IEEE.
-- Possuir entre 6 e 10 páginas.
-- Possuir as seguintes seções:
-  - Resumo
-  - Introdução
-  - Revisão de Literatura
-  - Métodos
-  - Resultados
-  - Discussão
-  - Conclusão
-  - Referencias Bibliográficas
-
 ### Requisitos da Apresentação
 
 O aluno deve realizar a apresentação do problema, do estudo realizado e dos resultados durante a Aula 09.
@@ -44,9 +29,3 @@ Para isto, a apresentação deve:
 - Durar no máximo 15 minutos
 
 Mais 5 minutos são abertos para os outros alunos e o professor realizarem perguntas sobre o projeto.
-
-## Avaliação
-
-A nota será distribuída da seguinte forma:
-- Relatório (70%)
-- Apresentação (30%)
