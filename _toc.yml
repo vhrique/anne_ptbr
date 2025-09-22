@@ -15,7 +15,7 @@ parts:
     - file: 02b_Otimizacao_Redes_Neurais
   - caption: Arquiteturas Especializadas
     chapters:
-    - file: 03_CNN
+    - file: 03_Redes_Neurais_Convolucionais
   - caption: Anexos
     chapters:
     - file: A01_Fundamentos_de_Pytorch
