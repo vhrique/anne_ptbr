@@ -11,8 +11,8 @@ parts:
     chapters:
     - file: 01a_Fundamentos_Aprendizagem
     - file: 01b_Representacao_Redes_Neurais_Artificiais
-    - file: 02a_Funcoes_Perda_Redes_Neurais
     - file: 02b_Otimizacao_Redes_Neurais
+    - file: 02a_Funcoes_Perda_Redes_Neurais
   - caption: Arquiteturas Especializadas
     chapters:
     - file: 03_Redes_Neurais_Convolucionais
