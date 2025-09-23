@@ -17,6 +17,7 @@ parts:
     chapters:
     - file: 03_Redes_Neurais_Convolucionais
     - file: 04a_Redes_Neurais_Recorrentes
+    - file: 04b_Transformers
   - caption: Anexos
     chapters:
     - file: A01_Fundamentos_de_Pytorch
