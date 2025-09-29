@@ -18,6 +18,13 @@ parts:
     - file: 03_Redes_Neurais_Convolucionais
     - file: 04a_Redes_Neurais_Recorrentes
     - file: 04b_Transformers
+  - caption: Tópicos Avançados
+    chapters:
+    - file: 05_Paradigmas_Avancados
+    - file: 06_Paradigmas_Compostos
+    - file: 07_Aspectos_Praticos
+    - file: 08a_Novas_Fronteiras
+    - file: 08b_Topicos_Especiais
   - caption: Anexos
     chapters:
     - file: A01_Fundamentos_de_Pytorch
