@@ -45,6 +45,13 @@ O material da disciplina se encontra no seguinte livro: [Engenharia de Redes Neu
   - [Funções de Perda](https://vhrique.github.io/anne_ptbr/02a_Funcoes_Perda_Redes_Neurais.html)
 - Aula 03:
   - [Redes Neurais Convolucionais](https://vhrique.github.io/anne_ptbr/03_Redes_Neurais_Convolucionais.html)
+- Aula 04:
+  - [Redes Neurais Recorrentes](https://vhrique.github.io/anne_ptbr/04a_Redes_Neurais_Recorrentes.html)
+  - [Transformers](https://vhrique.github.io/anne_ptbr/04b_Transformers.html)
+- Aula 05:
+  - [Aprendizagem de Métricas](https://vhrique.github.io/anne_ptbr/05a_Aprendizagem_de_Metricas.html)
+  - [Aprendizagem Auto-Supervisionado](https://vhrique.github.io/anne_ptbr/05b_Aprendizagem_Auto_Supervisionado.html)
+  - [Modelos Generativos](https://vhrique.github.io/anne_ptbr/05c_Modelos_Generativos.html)
 
 ## Conteúdos Adicionais
 
