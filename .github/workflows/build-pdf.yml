@@ -1,0 +1,41 @@
+name: Build Jupyter Book PDF
+
+on:
+  workflow_dispatch:  # only runs manually
+
+permissions:
+  contents: read
+  actions: write
+
+env:
+  BOOK_PATH: "."  # change if your book is in a subfolder, e.g. "book"
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Jupyter Book + minimal LaTeX
+        run: |
+          pip install jupyter-book
+          sudo apt-get update
+          sudo apt-get install -y texlive-latex-extra texlive-xetex latexmk
+
+      - name: Build Jupyter Book PDF
+        run: |
+          jupyter-book build "$BOOK_PATH" --builder pdflatex
+          cd "$BOOK_PATH/_build/latex"
+          latexmk -pdf book.tex
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: jupyter-book-pdf
+          path: ${{ env.BOOK_PATH }}/_build/latex/book.pdf
