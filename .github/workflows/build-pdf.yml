@@ -27,23 +27,13 @@ jobs:
           pip install jupyter-book
           sudo apt-get update
           sudo apt-get install -y \
-            latexmk \
-            texlive-latex-base \
-            texlive-latex-recommended \
             texlive-latex-extra \
-            texlive-fonts-recommended \
             texlive-fonts-extra \
-            texlive-luatex \
-            texlive-xetex \
-            texlive-plain-generic \
-            texlive-extra-utils \
-            texlive-lang-european
+            texlive-xetex latexmk
 
       - name: Build Jupyter Book PDF
         run: |
-          jupyter-book build "$BOOK_PATH" --builder pdflatex --keep-going || true
-          cd "$BOOK_PATH/_build/latex"
-          latexmk -lualatex -interaction=nonstopmode -f book.tex
+          jupyter-book build "$BOOK_PATH" --builder pdflatex
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
