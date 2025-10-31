@@ -13,6 +13,9 @@ execute:
 # Define the name of the latex output file for PDF builds
 latex:
   latex_engine: pdflatex
+  use_jupyterbook_latex: true
+  output_figure_type: pdf
+  output_figure_base64: false
   latex_documents:
     targetname: book.tex
 
