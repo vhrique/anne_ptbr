@@ -30,8 +30,9 @@ jobs:
             texlive-latex-extra \
             texlive-fonts-extra \
             texlive-xetex latexmk
-          sudo mkdir -p /usr/local/texlive/texmf-local/web2c
-          echo "buf_size = 1000000" | sudo tee /usr/local/texlive/texmf-local/web2c/texmf.cnf
+          OVERRIDE="/etc/texmf/web2c/texmf.cnf"
+          sudo mkdir -p "$(dirname "$OVERRIDE")"
+          echo "buf_size = 1000000" | sudo tee "$OVERRIDE"
           sudo mktexlsr
 
       - name: Build Jupyter Book PDF
