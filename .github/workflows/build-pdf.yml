@@ -26,7 +26,12 @@ jobs:
         run: |
           pip install jupyter-book
           sudo apt-get update
-          sudo apt-get install -y texlive-latex-extra texlive-luatex texlive-fonts-extra latexmk
+          sudo apt-get install -y \
+            texlive-latex-extra \
+            texlive-luatex \
+            texlive-fonts-extra \
+            texlive-humanities \
+            latexmk
 
       - name: Build Jupyter Book PDF
         run: |
