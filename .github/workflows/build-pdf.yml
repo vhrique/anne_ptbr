@@ -30,10 +30,13 @@ jobs:
             texlive-latex-extra \
             texlive-fonts-extra \
             texlive-xetex latexmk
+          sudo mkdir -p /usr/local/texlive/texmf-local/web2c
+          echo "buf_size = 1000000" | sudo tee /usr/local/texlive/texmf-local/web2c/texmf.cnf
+          sudo mktexlsr
 
       - name: Build Jupyter Book PDF
         run: |
-          jupyter-book build "$BOOK_PATH" --builder pdflatex
+          jupyter-book build "$BOOK_PATH" --builder pdflatex --keep-going
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
