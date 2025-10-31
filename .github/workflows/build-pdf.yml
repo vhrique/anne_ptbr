@@ -28,10 +28,8 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y \
             texlive-latex-extra \
-            texlive-luatex \
+            texlive-xetex \
             texlive-fonts-extra \
-            texlive-humanities \
-            texlive-ucharclasses \
             latexmk
 
       - name: Build Jupyter Book PDF
