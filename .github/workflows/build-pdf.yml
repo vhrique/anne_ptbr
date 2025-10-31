@@ -32,7 +32,7 @@ jobs:
         run: |
           jupyter-book build "$BOOK_PATH" --builder pdflatex
           cd "$BOOK_PATH/_build/latex"
-          latexmk -pdf book.tex
+          latexmk -pdf -interaction=nonstopmode -f book.tex
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
