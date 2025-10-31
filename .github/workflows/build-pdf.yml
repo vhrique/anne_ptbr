@@ -22,16 +22,11 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install Jupyter Book + minimal LaTeX
+      - name: Install Jupyter Book + LaTeX
         run: |
           pip install jupyter-book
           sudo apt-get update
-          sudo apt-get install -y \
-            texlive-latex-extra \
-            texlive-luatex \
-            texlive-fonts-extra \
-            texlive-humanities \
-            latexmk
+          sudo apt-get install -y texlive-full latexmk
 
       - name: Build Jupyter Book PDF
         run: |
