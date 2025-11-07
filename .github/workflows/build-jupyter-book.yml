@@ -35,9 +35,11 @@ jobs:
 
       - name: Build book
         run: |
-          jupyter-book build "$BOOK_PATH"
-          # extra safety: ensure Pages doesn't run Jekyll
-          touch "$BOOK_PATH/_build/html/.nojekyll"
+          jupyter-book build "$BOOK_PATH" --builder html
+          # add .nojekyll only if html exists
+          if [ -d "$BOOK_PATH/_build/html" ]; then
+            touch "$BOOK_PATH/_build/html/.nojekyll"
+          fi
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
