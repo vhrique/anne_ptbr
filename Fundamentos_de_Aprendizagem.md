@@ -1,8 +1,11 @@
 # Fundamentos de Aprendizagem
 
+
+## Introdução
+
 Existem diferentes paradigmas de aprendizagem em redes neurais artificiais (RNAs), baseados em diferentes maneiras de treinar um modelo e interagir com os dados.
 De forma geral, existem três paradigmas principais, comuns à área de aprendizagem de máquina: aprendizagem supervisionada, aprendizagem não supervisionada e aprendizagem por reforço.
-Cada um desses paradigmas possui métodos distintos de treinar modelos, com base na disponibilidade e tipo de dados, bem como no objetivo final da tarefa.
+Cada um desses paradigmas possui métodos distintos de treinar modelos, com base na disponibilidade e no tipo de dados, bem como no objetivo final da tarefa.
 
 Na aprendizagem supervisionada, o modelo aprende a partir de dados rotulados, tentando prever uma saída correta com base em entradas específicas.
 
@@ -16,7 +19,8 @@ Por fim, na aprendizagem por reforço, o modelo aprende através da interação 
 
 <center><img src="https://github.com/vhrique/anne_ptbr/blob/main/figures/reinforcement.jpg?raw=true" width="300"></center>
 
-Com o uso de redes neurais, novas formas de aprendizagem também surgiram, como aprendizagem auto-supervisionada e aprendizagem contrastiva, as quais veremos nos materiais seguitnes.
+Com o uso de redes neurais, novas formas de aprendizagem também surgiram, como aprendizagem autossupervisionada e aprendizagem contrastiva, as quais veremos nos capítulos seguintes.
+
 
 ## Aprendizagem = Representação + Avaliação + Otimização
 
@@ -26,11 +30,13 @@ A interação entre esses componentes define o sucesso e a eficácia de um model
 
 <center><img src="https://raw.githubusercontent.com/vhrique/anne2024/8eb24ed5fc4d5ffd55d1664b512417ad8a2d71a0/figures/mapa_mental_supervised_learning_reduced.drawio.svg" width="600"></center>
 
+
 ### Representação
 
-A representação refere-se a como os dados e o conhecimento são modelados internamente pelo modelo. Ela define como as características dos dados serão manipuladas para que o modelo possa aprender padrões úteis, e sua escolha tem um impacto significativo no desempenho de um modelo.
+A representação refere-se a como os dados e o conhecimento são organizados internamente pelo modelo. Ela define como as características dos dados serão manipuladas para que o modelo possa aprender padrões úteis, e sua escolha tem impacto significativo no desempenho do modelo.
 
-Nas redes neurais, os dados são representados de forma abstrata através de camadas de neurônios, onde cada camada transforma os dados em representações progressivamente mais complexas e abstratas, refletindo um viés indutivo de que os padrões nos dados podem ser aprendidos através de composições hierárquicas de funções não-lineares. Em uma rede neural profunda, por exemplo, camadas sucessivas de neurônios aprendem representações progressivamente mais complexas dos dados. No início de redes neurais que processam imagens, as camadas iniciais podem detectar bordas ou formas simples em uma imagem enquanto camadas seguintes podem aprender a identificar objetos ou partes mais complexas.
+Nas redes neurais, os dados são representados de forma abstrata através de camadas de neurônios, onde cada camada transforma os dados em representações progressivamente mais complexas e abstratas, refletindo um viés indutivo de que os padrões nos dados podem ser aprendidos por meio de composições hierárquicas de funções não-lineares. Em uma rede neural profunda, por exemplo, camadas sucessivas de neurônios aprendem representações progressivamente mais complexas dos dados. No início de redes neurais que processam imagens, as camadas iniciais podem detectar bordas ou formas simples em uma imagem enquanto camadas seguintes podem aprender a identificar objetos ou partes mais complexas.
+
 
 ### Avaliação
 
@@ -46,6 +52,7 @@ Essencialmente, a função de perda informa à rede neural como melhorar suas pr
 ### Otimização
 
 O processo de otimização envolve a maneira como o modelo ajusta seus parâmetros internos para minimizar uma função de perda, que mede o quão longe as previsões estão das saídas desejadas. Em redes neurais, esse processo é realizado por **algoritmos de otimização**, como o **gradiente descendente**, que, com o auxílio do algoritmo de _backpropagation_, ajusta os pesos das conexões neurais para minimizar a diferença entre a predição do modelo e o rótulo correto. Em suma, a otimização busca garantir que o modelo aprenda da melhor maneira possível com os dados disponíveis, ajustando-se para capturar os padrões mais relevantes e reduzir o erro nas predições.
+
 
 ## Referências
 
