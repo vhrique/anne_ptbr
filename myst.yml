@@ -18,22 +18,18 @@ project:
         - file: Perceptron.ipynb
         - file: Perceptron_Multicamadas.ipynb
         - file: Otimizacao_Redes_Neurais.ipynb
-    - title: Fundamentos de Aprendizagem
-      children:
         - file: Fundamentos_de_Aprendizagem.md
-        - file: 02a_Funcoes_Perda_Redes_Neurais.ipynb
     - title: Componentes de Redes Neurais Artificiais
       children:
         - file: 03_Redes_Neurais_Convolucionais.ipynb
         - file: 04a_Redes_Neurais_Recorrentes.ipynb
         - file: 04b_Transformers.ipynb
-    - title: Paradigmas de Aprendizagem Avançados
+    - title: Paradigmas de Aprendizagem
       children:
+        - file: Aprendizagem_Supervisionada.ipynb
         - file: 05a_Aprendizagem_de_Metricas.ipynb
         - file: 05c_Aprendizagem_Nao_Supervisionada.ipynb
         - file: 05b_Aprendizagem_Auto_Supervisionado.ipynb
-    - title: Tópicos Avançados
-      children:
         - file: 06_Paradigmas_Compostos.ipynb
     - title: Aspectos Práticos
       children:
