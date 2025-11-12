@@ -54,3 +54,6 @@ site:
 html:
   myst:
     disable_banner: true
+  theme:
+    options:
+      sidebar_toggle: true
