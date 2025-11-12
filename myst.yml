@@ -21,6 +21,7 @@ project:
         - file: Fundamentos_de_Aprendizagem.md
     - title: Componentes de Redes Neurais Artificiais
       children:
+        - file: Camadas_Lineares_Ativacao.ipynb
         - file: 03_Redes_Neurais_Convolucionais.ipynb
         - file: 04a_Redes_Neurais_Recorrentes.ipynb
         - file: 04b_Transformers.ipynb
