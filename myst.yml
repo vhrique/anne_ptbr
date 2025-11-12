@@ -50,6 +50,7 @@ site:
   options:
     logo: logo.png
     folders: true
+    sidebar_toggle: true
   template: book-theme
 html:
   myst:
