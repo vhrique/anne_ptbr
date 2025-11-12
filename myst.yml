@@ -48,16 +48,6 @@ project:
         - file: A03_Visao_Computacional.ipynb
 site:
   options:
-    logo: logo.png
     folders: true
-    hide_toc: true
-    hide_outline: true
   template: book-theme
-  nav:
-    - title: Engenharia de Redes Neurais Artificiais
-html:
-  myst:
-    disable_banner: true
-  theme:
-    options:
-      sidebar_toggle: true
+
