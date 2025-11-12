@@ -19,7 +19,7 @@ project:
         - file: Perceptron_Multicamadas.ipynb
     - title: Fundamentos de Aprendizagem
       children:
-        - file: 01a_Fundamentos_Aprendizagem.md
+        - file: Fundamentos_de_Aprendizagem.md
         - file: 02b_Otimizacao_Redes_Neurais.ipynb
         - file: 02a_Funcoes_Perda_Redes_Neurais.ipynb
     - title: Componentes de Redes Neurais Artificiais
