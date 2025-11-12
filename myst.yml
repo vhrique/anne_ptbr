@@ -12,27 +12,33 @@ project:
       output: exports/book.pdf
   toc:
     - file: 00a_Prefacio.md
-    - title: Introdução
+    - title: Fundamentos de Redes Neurais Artificiais
       children:
         - file: 00b_Introducao.md
-    - title: Fundamentos
-      children:
+        - file: Perceptron.ipynb
+        - file: Perceptron_Multicamadas.ipynb
         - file: 01a_Fundamentos_Aprendizagem.md
-        - file: 01b_Representacao_Redes_Neurais_Artificiais.ipynb
-        - file: 02b_Otimizacao_Redes_Neurais.ipynb
+    - title: Tarefas Supervisionadas
+      children:
         - file: 02a_Funcoes_Perda_Redes_Neurais.ipynb
-    - title: Arquiteturas Especializadas
+        - file: 02b_Otimizacao_Redes_Neurais.ipynb
+    - title: Componentes de Redes Neurais Artificiais
       children:
         - file: 03_Redes_Neurais_Convolucionais.ipynb
         - file: 04a_Redes_Neurais_Recorrentes.ipynb
         - file: 04b_Transformers.ipynb
-    - title: Tópicos Avançados
+    - title: Paradigmas de Aprendizagem Avançados
       children:
         - file: 05a_Aprendizagem_de_Metricas.ipynb
-        - file: 05b_Aprendizagem_Auto_Supervisionado.ipynb
         - file: 05c_Aprendizagem_Nao_Supervisionada.ipynb
+        - file: 05b_Aprendizagem_Auto_Supervisionado.ipynb
+    - title: Tópicos Avançados
         - file: 06_Paradigmas_Compostos.ipynb
+    - title: Aspectos Práticos
+      children:
         - file: 07_Aspectos_Praticos.ipynb
+    - title: Tópicos Especiais
+      children:
         - file: 08a_Novas_Fronteiras.ipynb
         - file: 08b_Topicos_Especiais.ipynb
     - title: Anexos
