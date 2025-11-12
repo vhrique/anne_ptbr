@@ -17,11 +17,11 @@ project:
         - file: 00b_Introducao.md
         - file: Perceptron.ipynb
         - file: Perceptron_Multicamadas.ipynb
-        - file: 01a_Fundamentos_Aprendizagem.md
-    - title: Tarefas Supervisionadas
+    - title: Fundamentos de Aprendizagem
       children:
-        - file: 02a_Funcoes_Perda_Redes_Neurais.ipynb
+        - file: 01a_Fundamentos_Aprendizagem.md
         - file: 02b_Otimizacao_Redes_Neurais.ipynb
+        - file: 02a_Funcoes_Perda_Redes_Neurais.ipynb
     - title: Componentes de Redes Neurais Artificiais
       children:
         - file: 03_Redes_Neurais_Convolucionais.ipynb
