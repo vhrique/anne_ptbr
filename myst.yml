@@ -30,12 +30,14 @@ project:
         - file: 05a_Aprendizagem_de_Metricas.ipynb
         - file: 05c_Aprendizagem_Nao_Supervisionada.ipynb
         - file: 05b_Aprendizagem_Auto_Supervisionado.ipynb
-        - file: 06_Paradigmas_Compostos.ipynb
+        - file: Aprendizagem_Multitarefas.ipynb
+        - file: Aprendizagem_Joint_Embedding.ipynb
     - title: Aspectos Práticos
       children:
         - file: 07_Aspectos_Praticos.ipynb
     - title: Tópicos Especiais
       children:
+        - file: Modelos_Multimodais.ipynb
         - file: 08a_Novas_Fronteiras.ipynb
         - file: 08b_Topicos_Especiais.ipynb
     - title: Anexos
