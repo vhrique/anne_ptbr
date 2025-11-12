@@ -33,6 +33,7 @@ project:
         - file: 05c_Aprendizagem_Nao_Supervisionada.ipynb
         - file: 05b_Aprendizagem_Auto_Supervisionado.ipynb
     - title: Tópicos Avançados
+      children:
         - file: 06_Paradigmas_Compostos.ipynb
     - title: Aspectos Práticos
       children:
