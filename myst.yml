@@ -18,7 +18,7 @@ project:
         - file: Perceptron.ipynb
         - file: Perceptron_Multicamadas.ipynb
         - file: Otimizacao_Redes_Neurais.ipynb
-        - file: Fundamentos_de_Aprendizagem.md
+        # - file: Fundamentos_de_Aprendizagem.md
     - title: Componentes de Redes Neurais Artificiais
       children:
         - file: Camadas_Lineares_Ativacao.ipynb
