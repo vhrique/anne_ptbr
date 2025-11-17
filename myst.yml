@@ -33,15 +33,15 @@ project:
         - file: 05b_Aprendizagem_Auto_Supervisionado.ipynb
         - file: Aprendizagem_Multitarefas.ipynb
         - file: Aprendizagem_Joint_Embedding.ipynb
-    - title: Aspectos Práticos
-      children:
-        - file: 07_Aspectos_Praticos.ipynb
     - title: Tópicos Especiais
       children:
         - file: Modelos_Multimodais.ipynb
         - file: 08a_Novas_Fronteiras.ipynb
         - file: 08b_Topicos_Especiais.ipynb
-    - title: Anexos
+    - title: Aspectos Práticos
+      children:
+        - file: 07_Aspectos_Praticos.ipynb
+    - title: Conteúdos Adicionais
       children:
         - file: A01_Fundamentos_de_Pytorch.ipynb
         - file: A03_Visao_Computacional.ipynb
