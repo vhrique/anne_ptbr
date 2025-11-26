@@ -25,6 +25,7 @@ project:
         - file: 03_Redes_Neurais_Convolucionais.ipynb
         - file: 04a_Redes_Neurais_Recorrentes.ipynb
         - file: 04b_Transformers.ipynb
+        - file: Regularizacao.ipynb
     - title: Paradigmas de Aprendizagem
       children:
         - file: Aprendizagem_Supervisionada.ipynb
