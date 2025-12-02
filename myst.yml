@@ -38,6 +38,7 @@ project:
     - title: Aspectos Práticos
       children:
         - file: Transfer_Learning.ipynb
+        - file: Reducao_Modelos.ipynb
         - file: Adaptacao_Dominio.ipynb
         - file: Receita_Treino_ANN.ipynb
     - title: Tópicos Especiais
