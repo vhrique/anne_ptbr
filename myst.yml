@@ -35,13 +35,15 @@ project:
         - file: Aprendizagem_Multitarefas.ipynb
         - file: Modelos_Multimodais.ipynb
         - file: Aprendizagem_Joint_Embedding.ipynb
+    - title: Aspectos Práticos
+      children:
+        - file: Transfer_Learning.ipynb
+        - file: Adaptacao_Dominio.ipynb
+        - file: Receita_Treino_ANN.ipynb
     - title: Tópicos Especiais
       children:
         - file: 08a_Novas_Fronteiras.ipynb
         - file: 08b_Topicos_Especiais.ipynb
-    - title: Aspectos Práticos
-      children:
-        - file: 07_Aspectos_Praticos.ipynb
     - title: Conteúdos Adicionais
       children:
         - file: A01_Fundamentos_de_Pytorch.ipynb
