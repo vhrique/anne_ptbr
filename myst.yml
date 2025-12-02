@@ -33,10 +33,10 @@ project:
         - file: 05c_Aprendizagem_Nao_Supervisionada.ipynb
         - file: 05b_Aprendizagem_Auto_Supervisionado.ipynb
         - file: Aprendizagem_Multitarefas.ipynb
+        - file: Modelos_Multimodais.ipynb
         - file: Aprendizagem_Joint_Embedding.ipynb
     - title: Tópicos Especiais
       children:
-        - file: Modelos_Multimodais.ipynb
         - file: 08a_Novas_Fronteiras.ipynb
         - file: 08b_Topicos_Especiais.ipynb
     - title: Aspectos Práticos
