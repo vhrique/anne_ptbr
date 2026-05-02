@@ -4,10 +4,6 @@ on:
   workflow_dispatch:
   push:
     branches: [main, claude/add-pdf-generation-action-qwbr0]
-    paths:
-      - '**.ipynb'
-      - '**.md'
-      - 'myst.yml'
 
 permissions:
   contents: read
