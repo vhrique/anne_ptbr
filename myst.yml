@@ -6,6 +6,13 @@ project:
   github: vhrique/anne_ptbr
   bibliography:
     - references.bib
+  numbering:
+    heading_1: false
+    heading_2: false
+    heading_3: false
+    heading_4: false
+    heading_5: false
+    heading_6: false
   exports:
     - format: pdf
       template: plain_latex_book
