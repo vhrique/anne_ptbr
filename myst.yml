@@ -12,21 +12,21 @@ project:
       output: exports/book.pdf
   toc:
     - file: 00a_Prefacio.md
-    - title: Fundamentos de Redes Neurais Artificiais
+    - file: 01_Fundamentos.md
       children:
         - file: 00b_Introducao.md
         - file: Perceptron.ipynb
         - file: Perceptron_Multicamadas.ipynb
         - file: Otimizacao_Redes_Neurais.ipynb
         # - file: Fundamentos_de_Aprendizagem.md
-    - title: Componentes de Redes Neurais Artificiais
+    - file: 02_Componentes.md
       children:
         - file: Camadas_Lineares_Ativacao.ipynb
         - file: 03_Redes_Neurais_Convolucionais.ipynb
         - file: 04a_Redes_Neurais_Recorrentes.ipynb
         - file: 04b_Transformers.ipynb
         - file: Regularizacao.ipynb
-    - title: Paradigmas de Aprendizagem
+    - file: 03_Paradigmas.md
       children:
         - file: Aprendizagem_Supervisionada.ipynb
         - file: 05a_Aprendizagem_de_Metricas.ipynb
@@ -35,17 +35,17 @@ project:
         - file: Aprendizagem_Multitarefas.ipynb
         - file: Modelos_Multimodais.ipynb
         - file: Aprendizagem_Joint_Embedding.ipynb
-    - title: Aspectos Práticos
+    - file: 04_Aspectos.md
       children:
         - file: Transfer_Learning.ipynb
         - file: Reducao_Modelos.ipynb
         - file: Adaptacao_Dominio.ipynb
         - file: Receita_Treino_ANN.ipynb
-    - title: Tópicos Especiais
+    - file: 05_Topicos.md
       children:
         - file: 08a_Novas_Fronteiras.ipynb
         - file: 08b_Topicos_Especiais.ipynb
-    - title: Conteúdos Adicionais
+    - file: 06_Conteudos.md
       children:
         - file: A01_Fundamentos_de_Pytorch.ipynb
         - file: A03_Visao_Computacional.ipynb
