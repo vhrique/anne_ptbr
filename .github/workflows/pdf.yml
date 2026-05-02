@@ -3,7 +3,7 @@ name: Jupyter Book PDF Generation
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches: [main, claude/add-pdf-generation-action-qwbr0]
     paths:
       - '**.ipynb'
       - '**.md'
