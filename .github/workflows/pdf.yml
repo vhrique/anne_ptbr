@@ -1,0 +1,43 @@
+name: Jupyter Book PDF Generation
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, claude/add-pdf-generation-action-qwbr0]
+
+permissions:
+  contents: read
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+
+      - name: Install Jupyter Book (via myst)
+        run: npm install -g jupyter-book
+
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y \
+            texlive-latex-extra \
+            texlive-fonts-recommended \
+            texlive-fonts-extra \
+            texlive-lang-portuguese \
+            texlive-xetex \
+            latexmk
+
+      - name: Build PDF
+        run: jupyter-book build --pdf
+
+      - name: Upload PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-pdf
+          path: exports/book.pdf
+          retention-days: 30
