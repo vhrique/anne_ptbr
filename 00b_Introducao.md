@@ -1,4 +1,4 @@
-# Introdução
+## Introdução
 
 Redes Neurais Artificiais (RNAs) são modelos matemáticos/computacionais que buscam simular a estrutura e a função do cérebro para processar dados e realizar tarefas complexas.
 As pesquisas nesta área começaram na década de 1940, quando foram desenvolvidas as idéias iniciais de criar modelos computacionais para simular redes neurais.
